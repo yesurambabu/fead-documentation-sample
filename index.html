@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FEAD Documentation</title>
+  <!-- Prism CSS (choose a theme) -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+
+  <!-- Prism JS -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <!-- HTML language support -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
+  
+  <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+  <div id="header">
+    <h3>FEAD Documentation</h3>
+  </div>
+
+  <div id="main-layout">
+    <nav id="navigation">
+      <h4>HTML</h4>
+      <ul>
+        <li><a href="./introduction_to_html.html" target="content"> HTML Introduction </a></li>
+        <li><a href="./creating_structured_documents.html" target="content"> Creating Structured Documents </a></li>
+        <li><a href="./basic_tags.html" target="content"> Basic Tags </a></li>
+        <li><a href="./links_and_navigation.html" target="content"> Links and Navigation </a></li>
+        <li><a href="./tables.html" target="content"> Tables </a></li>
+        <li><a href="./forms.html" target="content"> Forms </a></li>
+        <li><a href="./frames.html" target="content"> Frames </a></li>
+        <li><a href="./introduction_to_html5.html" target="content"> Introduction to HTML5 </a></li>
+        <li><a href="./the_html5_canvas.html" target="content"> The HTML5 Canvas </a></li>
+        <li><a href="./html5_audio_and_video.html" target="content"> HTML5 Audio and Video </a></li>
+      </ul>
+      <h4>CSS</h4>
+      <ul>
+        <li><a href="./css_introduction.html" target="content"> CSS Introduction </a></li>
+        <li><a href="./css_syntax.html" target="content"> CSS Syntax </a></li>
+        <li><a href="./css_properties.html" target="content"> CSS Properties </a></li>
+        <li><a href="./css_selectors.html" target="content"> CSS Selectors </a></li>
+        <li><a href="./css_display.html" target="content"> CSS Display </a></li>
+        <li><a href="./css_specificity.html" target="content"> CSS Specificity </a></li>
+        <li><a href="./css_positioning.html" target="content"> CSS Positioning </a></li>
+        <li><a href="./css_combiners.html" target="content"> CSS Combiners </a></li>
+        <li><a href="./css_flexbox.html" target="content"> CSS Flexbox </a></li>
+        <li><a href="./css_animation.html" target="content"> CSS Animation </a></li>
+      </ul>
+      <h4>JavaScript</h4>
+      <ul>
+        <li><a href="./introduction_to_javascript.html" target="content"> Introduction to JavaScript </a></li>
+        <li><a href="./dom.html" target="content"> DOM </a></li>
+        <li><a href="./variables.html" target="content"> Variables </a></li>
+        <li><a href="./operators.html" target="content"> Operators </a></li>
+        <li><a href="./data_types.html" target="content"> JavaScript Data Types </a></li>
+        <li><a href="./special_characters.html" target="content"> JavaScript Special Characters </a></li>
+        <li><a href="./arrays.html" target="content"> JavaScript Arrays </a></li>
+        <li><a href="./boolean.html" target="content"> JavaScript Boolean </a></li>
+        <li><a href="./loops.html" target="content"> Loops </a></li>
+        <li><a href="./events.html" target="content"> JavaScript Events </a></li>
+        <li><a href="./objects.html" target="content"> Built in Objects </a></li>
+        <li><a href="./form_and_regular_expression.html" target="content"> Form and Regular Expression </a></li>
+        <li><a href="./validation.html" target="content"> Validation </a></li>
+      </ul>
+    </nav>
+  
+    <div id="main-area">
+      <div class="content-wrapper">
+        <main id="content">
+          <p>Welcome! Click a link on the left to load content.</p>
+        </main>
+  
+        <section id="right-sidebar">
+          <div>
+            <h3>In this Article</h3>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  
+    <!-- your script for dynamic loading + Prism.js -->
+
+    <script>
+      const links = document.querySelectorAll("a[target='content']");
+      const content = document.getElementById("content");
+      const sidebar = document.getElementById("right-sidebar");
+    
+      // Function to bind quiz and assignment answer button click events
+      function bindAnswerButtons() {
+        const quiz_answers_btn = document.getElementById("quiz-answers-btn");
+        const quiz_answers = document.getElementById("quiz-answers");
+        const assignment_solution_btn = document.getElementById("assignment-solution-btn");
+        const assignment_solution = document.getElementById("assignment-solution");
+    
+        if (quiz_answers_btn && quiz_answers) {
+          quiz_answers_btn.addEventListener("click", function () {
+            quiz_answers_btn.style.display = "none";
+            quiz_answers.style.display = "block";
+          });
+        }
+    
+        if (assignment_solution_btn && assignment_solution) {
+          assignment_solution_btn.addEventListener("click", function () {
+            assignment_solution_btn.style.display = "none";
+            assignment_solution.style.display = "block";
+          });
+        }
+      }
+    
+      // Initial bind for current content
+      bindAnswerButtons();
+    
+      // Handle navigation link clicks
+      links.forEach(link => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+    
+          fetch(this.href)
+            .then(res => res.text())
+            .then(html => {
+              const temp = document.createElement("div");
+              temp.innerHTML = html;
+    
+              const newContent = temp.querySelector("#content");
+              const newSidebar = temp.querySelector("#right-sidebar");
+    
+              content.innerHTML = newContent ? newContent.innerHTML : "<p>No content found.</p>";
+              sidebar.innerHTML = newSidebar ? newSidebar.innerHTML : "<p>No sidebar found.</p>";
+    
+              // Highlight Prism code after dynamic load
+              if (typeof Prism !== "undefined") {
+                Prism.highlightAll();
+              }
+    
+              // Re-bind buttons after dynamic content is loaded
+              bindAnswerButtons();
+            })
+            .catch(err => {
+              content.innerHTML = "<p>Error loading content.</p>";
+              sidebar.innerHTML = "";
+            });
+        });
+      });
+    </script>
+    
+    
+    
+  </body>
+</html>
+  
