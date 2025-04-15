@@ -1,0 +1,230 @@
+<div id="content">
+  <h2>CSS Positioning</h2>
+
+  <section id="position-static">
+    <h3>1. position: static</h3>
+    <p>This is the default positioning of all HTML elements.</p>
+    <p>Elements are placed according to the normal document flow.</p>
+    <p><code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> have no effect.</p>
+    <h4>Example</h4>
+    <pre><code class="language-css">div {
+  position: static;
+}</code></pre>
+  </section>
+
+  <section id="position-relative">
+    <h3>2. position: relative</h3>
+    <p>The element is positioned relative to its normal position.</p>
+    <p>Using <code>top</code>, <code>right</code>, <code>bottom</code>, or <code>left</code> will move it from where it would normally appear.</p>
+    <h4>Example</h4>
+    <pre><code class="language-css">div {
+  position: relative;
+  top: 10px;
+  left: 20px;
+}</code></pre>
+  </section>
+
+  <section id="position-absolute">
+    <h3>3. position: absolute</h3>
+    <p>The element is positioned relative to the nearest positioned ancestor (i.e., an ancestor with any position other than static).</p>
+    <p>If no such ancestor exists, it is positioned relative to the <code>&lt;html&gt;</code> element.</p>
+    <p>It is removed from the document flow.</p>
+    <h4>Example</h4>
+    <pre><code class="language-css">div {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}</code></pre>
+  </section>
+
+  <section id="position-fixed">
+    <h3>4. position: fixed</h3>
+    <p>The element is positioned relative to the browser window.</p>
+    <p>It does not move when the page is scrolled.</p>
+    <p>Commonly used for navigation bars, "back to top" buttons, etc.</p>
+    <h4>Example</h4>
+    <pre><code class="language-css">div {
+  position: fixed;
+  top: 0;
+  right: 0;
+}</code></pre>
+  </section>
+
+  <section id="position-sticky" class="last-item">
+    <h3>5. position: sticky</h3>
+    <p>The element behaves like relative until it reaches a specific scroll position, then it "sticks" like fixed.</p>
+    <p>Only works when a <code>top</code>, <code>left</code>, <code>right</code>, or <code>bottom</code> value is given.</p>
+    <p>Often used in headers and table of contents.</p>
+    <h4>Example</h4>
+    <pre><code class="language-css">div {
+  position: sticky;
+  top: 0;
+}</code></pre>
+  </section>
+
+  <section>
+    <h4>Quiz Questions</h4>
+    <ol>
+      <li>
+        What is the default value of the position property?<br>
+        a) relative<br>
+        b) absolute<br>
+        c) static<br>
+        d) fixed
+      </li>
+      <li>
+        Which position removes the element from the normal document flow and positions it relative to its nearest positioned ancestor?<br>
+        a) relative<br>
+        b) absolute<br>
+        c) fixed<br>
+        d) static
+      </li>
+      <li>
+        Which position type will keep an element fixed at the top even when the user scrolls?<br>
+        a) absolute<br>
+        b) relative<br>
+        c) fixed<br>
+        d) sticky
+      </li>
+      <li>
+        When does position: sticky; start acting like fixed?<br>
+        a) When the page loads<br>
+        b) When the element is clicked<br>
+        c) When the scroll position reaches its threshold<br>
+        d) It always behaves like fixed
+      </li>
+      <li>
+        Which position respects top/right/bottom/left but keeps the element in document flow?<br>
+        a) static<br>
+        b) relative<br>
+        c) fixed<br>
+        d) absolute
+      </li>
+    </ol>
+  </section>
+  
+
+  <section>
+    <h4>Quiz Answers</h4>
+    <ul>
+      <li>Q1: c) static</li>
+      <li>Q2: b) absolute</li>
+      <li>Q3: c) fixed</li>
+      <li>Q4: c) When the scroll position reaches its threshold</li>
+      <li>Q5: b) relative</li>
+    </ul>
+  </section>
+
+  <section>
+    <h4>Assignment</h4>
+    <p>Create a webpage with 5 <code>&lt;div&gt;</code> elements, each demonstrating a different position value:</p>
+    <ul>
+      <li>One with <code>position: static</code></li>
+      <li>One with <code>position: relative</code> and offset from the top-left</li>
+      <li>One with <code>position: absolute</code> inside a relatively positioned container</li>
+      <li>One with <code>position: fixed</code> at the bottom-right corner</li>
+      <li>One with <code>position: sticky</code> that sticks to the top on scroll</li>
+    </ul>
+    <p>Add borders or background colors to clearly see the behavior of each element.</p>
+  </section>
+
+  <section class="last-item">
+    <h4>Assignment Solution</h4>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;CSS Positioning Example&lt;/title&gt;
+  &lt;style&gt;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #333;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .container {
+      display: flex;
+      margin-top: 70px; /* Space for fixed header */
+      padding: 20px;
+      position: relative;
+    }
+
+    .sidebar {
+      width: 200px;
+      height: 300px;
+      background-color: #f4f4f4;
+      position: sticky;
+      top: 70px;
+      padding: 10px;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      background-color: #e9e9e9;
+      min-height: 500px;
+      position: relative;
+    }
+
+    .relative-box {
+      width: 200px;
+      height: 100px;
+      background-color: lightblue;
+      position: relative;
+      top: 20px;
+      left: 30px;
+      margin-bottom: 40px;
+    }
+
+    .absolute-box {
+      width: 200px;
+      height: 100px;
+      background-color: salmon;
+      position: absolute;
+      top: 150px;
+      left: 300px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;header&gt;Fixed Header&lt;/header&gt;
+
+  &lt;div class="container"&gt;
+    &lt;nav class="sidebar"&gt;Sticky Sidebar&lt;/nav&gt;
+    &lt;main&gt;
+      &lt;div class="relative-box"&gt;Relative Positioned Box&lt;/div&gt;
+      &lt;div class="absolute-box"&gt;Absolute Positioned Box&lt;/div&gt;
+    &lt;/main&gt;
+  &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  </section>  
+
+</div>
+
+<aside id="right-sidebar">
+  <div>
+    <h3>In this Article</h3>
+    <ul>
+      <li><a href="#position-static">position: static</a></li>
+      <li><a href="#position-relative">position: relative</a></li>
+      <li><a href="#position-absolute">position: absolute</a></li>
+      <li><a href="#position-fixed">position: fixed</a></li>
+      <li><a href="#position-sticky">position: sticky</a></li>
+    </ul>
+  </div>
+</aside>

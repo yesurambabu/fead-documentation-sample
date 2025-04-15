@@ -1,0 +1,171 @@
+<div id="content">
+
+  <section id="form-validation">
+    <h3>JavaScript Form Validation</h3>
+    <p>Form validation is the process of checking user input before it's sent to the server. JavaScript allows you to implement both client-side and custom validation rules using conditions, regular expressions, and DOM manipulation.</p>
+
+    <h4>Why Validate Forms?</h4>
+    <ul>
+      <li>Ensure required fields are filled.</li>
+      <li>Prevent invalid data formats (like emails or phone numbers).</li>
+      <li>Improve user experience by providing instant feedback.</li>
+      <li>Reduce load on the server by avoiding unnecessary requests.</li>
+    </ul>
+
+    <h4>Types of Validation</h4>
+    <ul>
+      <li><strong>Required Field Check:</strong> Ensure input is not empty.</li>
+      <li><strong>Pattern Matching:</strong> Use regular expressions to check formats (e.g., email, phone number).</li>
+      <li><strong>Length Checks:</strong> Minimum or maximum characters.</li>
+      <li><strong>Numeric Checks:</strong> Ensure only numbers are entered.</li>
+    </ul>
+
+    <h4>Example: Validating a Simple Registration Form</h4>
+    <pre><code class="language-html">&lt;form id="registerForm"&gt;
+  &lt;input type="text" id="username" placeholder="Username"&gt;&lt;br&gt;
+  &lt;input type="text" id="email" placeholder="Email"&gt;&lt;br&gt;
+  &lt;input type="text" id="phone" placeholder="Phone Number"&gt;&lt;br&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const username = document.getElementById("username").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+
+  const userPattern = /^[a-zA-Z0-9]+$/;
+  const emailPattern = /^[a-zA-Z0-9._]+@[a-z]+\.[a-z]{2,3}$/;
+  const phonePattern = /^\d{10}$/;
+
+  if (!userPattern.test(username)) {
+    alert("Invalid username! Only alphanumeric characters are allowed.");
+    return;
+  }
+  if (!emailPattern.test(email)) {
+    alert("Invalid email format.");
+    return;
+  }
+  if (!phonePattern.test(phone)) {
+    alert("Phone number must be exactly 10 digits.");
+    return;
+  }
+
+  alert("All inputs are valid!");
+});
+&lt;/script&gt;</code></pre>
+  </section>
+
+  <section id="quiz-form-validation">
+    <h3>Quiz</h3>
+    <ol>
+      <li>What is the purpose of form validation?<br>
+        a) To style input elements<br>
+        b) To reload the page<br>
+        c) To check user input before submission<br>
+        d) To change the layout</li>
+
+      <li>Which method stops the default form submission in JavaScript?<br>
+        a) stopSubmission()<br>
+        b) cancelDefault()<br>
+        c) preventDefault()<br>
+        d) blockSubmit()</li>
+
+      <li>Which of these is a valid RegExp pattern to validate a 10-digit phone number?<br>
+        a) /[0-9]{10}/<br>
+        b) /^\d{10}$/<br>
+        c) /^[0-9]$/<br>
+        d) /phone[10]/</li>
+
+      <li>What does the following line return?<br>
+        <code>/^\d{10}$/.test("9876543210")</code><br>
+        a) "true"<br>
+        b) "false"<br>
+        c) undefined<br>
+        d) 9876543210</li>
+    </ol>
+
+    <button id="quiz-answers-btn">Show Answer</button>
+    <section id="quiz-answers">
+      <h4>Answers:</h4>
+      <ol>
+        <li>(c)</li>
+        <li>(c)</li>
+        <li>(b)</li>
+        <li>(a)</li>
+      </ol>
+    </section>
+  </section>
+
+  <section id="assignment-form-validation">
+    <h3>Assignment</h3>
+    <p>Build a registration form with the following fields:</p>
+    <ul>
+      <li>Full Name (Required, only letters and spaces)</li>
+      <li>Email (Must be a valid email format)</li>
+      <li>Password (Minimum 6 characters)</li>
+      <li>Mobile Number (Exactly 10 digits)</li>
+    </ul>
+    <p>Use JavaScript to validate these fields before submission. Display relevant alerts if the validation fails.</p>
+
+    <button id="assignment-solution-btn">Show Answer</button>
+    <section id="assignment-solution">
+      <h4>Solution Example: Validating Registration Form</h4>
+      <pre><code class="language-html">&lt;form id="regForm"&gt;
+  &lt;input type="text" id="fullname" placeholder="Full Name"&gt;&lt;br&gt;
+  &lt;input type="email" id="email" placeholder="Email"&gt;&lt;br&gt;
+  &lt;input type="password" id="password" placeholder="Password"&gt;&lt;br&gt;
+  &lt;input type="text" id="mobile" placeholder="Mobile Number"&gt;&lt;br&gt;
+  &lt;button type="submit"&gt;Register&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+document.getElementById("regForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const fullname = document.getElementById("fullname").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const mobile = document.getElementById("mobile").value.trim();
+
+  const namePattern = /^[a-zA-Z ]+$/;
+  const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/;
+  const mobilePattern = /^\\d{10}$/;
+
+  if (!namePattern.test(fullname)) {
+    alert("Full name must contain only letters and spaces.");
+    return;
+  }
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid email.");
+    return;
+  }
+  if (password.length &lt; 6) {
+    alert("Password must be at least 6 characters long.");
+    return;
+  }
+  if (!mobilePattern.test(mobile)) {
+    alert("Mobile number must be 10 digits.");
+    return;
+  }
+
+  alert("Form submitted successfully!");
+});
+&lt;/script&gt;</code></pre>
+    </section>
+  </section>
+
+</div>
+
+<aside id="right-sidebar">
+    <div>
+      <h3>In this Article</h3>
+      <ul>
+        <li><a href="#form-validation">JavaScript Form Validation</a></li>
+        <li><a href="#quiz-form-validation">Quiz</a></li>
+        <li><a href="#assignment-form-validation">Assignment</a></li>
+      </ul>
+    </div>
+</aside>

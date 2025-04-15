@@ -1,0 +1,199 @@
+<div id="content">
+  <h2>DOM</h2>
+
+  <section id="introduction-to-dom">
+    <h3>Introduction</h3>
+    <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a webpage as a tree of objects, allowing JavaScript to manipulate HTML elements dynamically.</p>
+  </section>
+
+  <section id="understanding-the-dom-tree">
+    <h3>Understanding the DOM Tree</h3>
+    <p>When a web page loads, the browser creates a DOM tree based on the HTML document. The DOM consists of:</p>
+    <ul>
+      <li><strong>Document:</strong> The root node of the tree.</li>
+      <li><strong>Elements:</strong> HTML elements like <code>&lt;body&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>.</li>
+      <li><strong>Attributes:</strong> Properties of elements (e.g., id, class).</li>
+      <li><strong>Text Nodes:</strong> The text inside an HTML element.</li>
+    </ul>
+
+    <h4>Example HTML:</h4>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;DOM Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 id="title"&gt;Hello, DOM!&lt;/h1&gt;
+    &lt;p class="description"&gt;This is a paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h4>Corresponding DOM Tree:</h4>
+    <pre><code>Document
+  ├── html
+      ├── head
+      │   └── title
+      └── body
+          ├── h1 (id="title")
+          └── p (class="description")</code></pre>
+  </section>
+
+  <section id="accessing-dom-elements">
+    <h3>Accessing DOM Elements</h3>
+    <p>JavaScript provides methods to access and manipulate DOM elements:</p>
+    <h4>1. Using getElementById()</h4>
+    <pre><code class="language-javascript">let title = document.getElementById("title");
+title.style.color = "blue"; // Changes text color</code></pre>
+
+    <h4>2. Using getElementsByClassName()</h4>
+    <pre><code class="language-javascript">let paragraphs = document.getElementsByClassName("description");
+paragraphs[0].style.fontSize = "20px";</code></pre>
+
+    <h4>3. Using getElementsByTagName()</h4>
+    <pre><code class="language-javascript">let allParagraphs = document.getElementsByTagName("p");
+console.log(allParagraphs.length); // Logs number of &lt;p&gt; elements</code></pre>
+
+    <h4>4. Using querySelector() and querySelectorAll()</h4>
+    <pre><code class="language-javascript">let title = document.querySelector("#title"); // Selects by ID
+let paragraphs = document.querySelectorAll(".description"); 
+// Selects all elements with class "description"</code></pre>
+  </section>
+
+  <section id="modifying-dom-elements">
+    <h3>Modifying DOM Elements</h3>
+    <pre><code class="language-javascript">document.getElementById("title").innerHTML = "New Heading";
+document.getElementById("title").style.backgroundColor = "yellow";</code></pre>
+  </section>
+
+  <section id="adding-and-removing-elements">
+    <h3>Adding and Removing Elements</h3>
+    <h4>1. Creating Elements</h4>
+    <pre><code class="language-javascript">let newPara = document.createElement("p");
+newPara.textContent = "This is a new paragraph.";
+document.body.appendChild(newPara);</code></pre>
+
+    <h4>2. Removing Elements</h4>
+    <pre><code class="language-javascript">let removeTitle = document.getElementById("title");
+removeTitle.remove();</code></pre>
+  </section>
+
+  <section id="quiz-questions">
+    <h3>Quiz Questions</h3>
+    <ol>
+      <li>What does DOM stand for?<br>
+        a) Document Object Model<br>
+        b) Data Object Management<br>
+        c) Document Order Module<br>
+        d) Dynamic Object Manipulation
+      </li>
+      <li>Which method is used to select an element by its ID?<br>
+        a) getElementsByClassName()<br>
+        b) querySelectorAll()<br>
+        c) getElementById()<br>
+        d) getElementsByTagName()
+      </li>
+      <li>What does <code>document.createElement("div")</code> do?<br>
+        a) Selects an existing &lt;div&gt; element<br>
+        b) Creates a new &lt;div&gt; element<br>
+        c) Deletes a &lt;div&gt; element<br>
+        d) Modifies a &lt;div&gt; element
+      </li>
+      <li>Which method removes an element from the DOM?<br>
+        a) removeChild()<br>
+        b) appendChild()<br>
+        c) querySelector()<br>
+        d) getElementsByTagName()
+      </li>
+      <li>What will <code>document.querySelector("p").innerHTML = "Updated";</code> do?<br>
+        a) Delete all &lt;p&gt; elements<br>
+        b) Select all &lt;p&gt; elements and change their text<br>
+        c) Select the first &lt;p&gt; element and change its text<br>
+        d) Change the background color of &lt;p&gt; elements
+      </li>
+    </ol>
+  </section>
+
+  <section id="quiz-answers">
+    <h3>Answers</h3>
+    <ol>
+      <li>a) Document Object Model</li>
+      <li>c) getElementById()</li>
+      <li>b) Creates a new &lt;div&gt; element</li>
+      <li>a) removeChild()</li>
+      <li>c) Select the first &lt;p&gt; element and change its text</li>
+    </ol>
+  </section>
+
+  <section id="assignment">
+    <h3>Assignment</h3>
+    <p>Build a dynamic webpage using JavaScript to manipulate the DOM.</p>
+
+    <h4>Instructions:</h4>
+    <ul>
+      <li>Create an HTML page with at least the following:</li>
+      <li>A heading (<code>&lt;h1&gt;</code>) that can change text when clicked.</li>
+      <li>A paragraph (<code>&lt;p&gt;</code>) that changes color on mouse hover.</li>
+      <li>A button (<code>&lt;button&gt;</code>) that adds a new list item to an unordered list (<code>&lt;ul&gt;</code>).</li>
+      <li>A button that removes the last item from the list.</li>
+      <li>Use JavaScript event listeners to handle interactions.</li>
+      <li>Submit the project as a ZIP file containing the HTML, CSS, and JavaScript file.</li>
+    </ul>
+  </section>
+
+  <section id="assignment-answer" class="last-item">
+    <h3>Assignment Answer</h3>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;DOM Interaction&lt;/title&gt;
+  &lt;style&gt;
+    p:hover { color: red; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1 id="mainHeading"&gt;Click Me!&lt;/h1&gt;
+  &lt;p class="description"&gt;Hover over this text.&lt;/p&gt;
+  &lt;ul id="itemList"&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button onclick="addItem()"&gt;Add Item&lt;/button&gt;
+  &lt;button onclick="removeItem()"&gt;Remove Item&lt;/button&gt;
+
+  &lt;script&gt;
+    document.getElementById("mainHeading").addEventListener("click", function() {
+      this.innerText = "You clicked the heading!";
+    });
+
+    function addItem() {
+      const ul = document.getElementById("itemList");
+      const li = document.createElement("li");
+      li.textContent = "New Item";
+      ul.appendChild(li);
+    }
+
+    function removeItem() {
+      const ul = document.getElementById("itemList");
+      if (ul.lastChild) {
+        ul.removeChild(ul.lastChild);
+      }
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  </section>
+</div>
+
+<aside id="right-sidebar">
+    <div>
+      <h3>In this Article</h3>
+      <ul>
+        <li><a href="#introduction-to-dom">Introduction to DOM</a></li>
+        <li><a href="#understanding-the-dom-tree">Understanding the DOM Tree</a></li>
+        <li><a href="#accessing-dom-elements">Accessing DOM Elements</a></li>
+        <li><a href="#modifying-dom-elements">Modifying DOM Elements</a></li>
+        <li><a href="#adding-and-removing-elements">Adding and Removing Elements</a></li>
+        <li><a href="#quiz-questions">Quiz Questions</a></li>
+        <li><a href="#assignment">Assignment</a></li>
+      </ul>
+    </div>
+</aside>

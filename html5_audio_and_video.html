@@ -1,0 +1,177 @@
+<div id="content">
+  <h2>HTML5 Audio and Video</h2>
+
+  <section id="introduction">
+    <h3>Introduction to HTML5 Media Elements</h3>
+    <p>HTML5 introduced native support for audio and video playback using the <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> elements. These elements allow media embedding without plugins and support multiple file formats and user controls.</p>
+  </section>
+
+  <section id="audio-element">
+    <h3>The &lt;audio&gt; Element</h3>
+    <p>The <code>&lt;audio&gt;</code> tag embeds sound content in a document. It supports multiple file types for wider browser compatibility.</p>
+    <pre><code class="language-html">&lt;audio controls&gt;
+  &lt;source src="sound.mp3" type="audio/mpeg"&gt;
+  &lt;source src="sound.ogg" type="audio/ogg"&gt;
+  Your browser does not support the audio element.
+&lt;/audio&gt;</code></pre>
+
+    <h4>Common Attributes</h4>
+    <ul>
+      <li><code>controls</code> – shows playback controls</li>
+      <li><code>autoplay</code> – plays automatically</li>
+      <li><code>loop</code> – plays repeatedly</li>
+      <li><code>muted</code> – starts muted</li>
+    </ul>
+  </section>
+
+  <section id="video-element">
+    <h3>The &lt;video&gt; Element</h3>
+    <p>The <code>&lt;video&gt;</code> element is used to embed video content. Like <code>&lt;audio&gt;</code>, it supports multiple sources and formats.</p>
+    <pre><code class="language-html">&lt;video width="400" controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;source src="video.ogg" type="video/ogg"&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;</code></pre>
+
+    <h4>Common Attributes</h4>
+    <ul>
+      <li><code>width</code>, <code>height</code> – defines dimensions</li>
+      <li><code>controls</code> – displays UI controls</li>
+      <li><code>autoplay</code>, <code>loop</code>, <code>muted</code></li>
+      <li><code>poster</code> – shows an image before video plays</li>
+    </ul>
+  </section>
+
+  <section id="media-formats">
+    <h3>Common Media Formats</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Media Type</th>
+          <th>Common Formats</th>
+          <th>MIME Types</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Audio</td>
+          <td>MP3, Ogg, WAV</td>
+          <td>audio/mpeg, audio/ogg</td>
+        </tr>
+        <tr>
+          <td>Video</td>
+          <td>MP4, WebM, Ogg</td>
+          <td>video/mp4, video/webm</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="accessibility">
+    <h3>Accessibility Tip</h3>
+    <p>Always provide fallback text inside <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> for unsupported browsers.</p>
+    <pre><code class="language-html">Your browser does not support the audio/video element.</code></pre>
+    <p>Use the <code>&lt;track&gt;</code> element with <code>&lt;video&gt;</code> to include subtitles.</p>
+  </section>
+
+  <section id="media-quiz">
+    <h3>Quiz</h3>
+    <ol>
+      <li>Which tag is used to embed audio in HTML5?</li>
+      <li>Which tag is used to embed video in HTML5?</li>
+      <li>What attribute is used to enable default controls for media playback?</li>
+      <li>What does the <code>autoplay</code> attribute do?</li>
+      <li>True/False: The <code>&lt;audio&gt;</code> tag can contain multiple <code>&lt;source&gt;</code> tags.</li>
+      <li>Which attribute shows a preview image for video before it starts?</li>
+      <li>Write the correct MIME type for an MP3 audio file.</li>
+      <li>What will happen if the browser doesn’t support the media tag?</li>
+      <li>Name two formats supported by the <code>&lt;video&gt;</code> tag.</li>
+      <li>Which element is used to provide subtitles for video?</li>
+    </ol>
+  </section>
+
+  <section id="quiz-answers">
+    <h3>Answers</h3>
+    <ol>
+      <li><code>&lt;audio&gt;</code></li>
+      <li><code>&lt;video&gt;</code></li>
+      <li><code>controls</code></li>
+      <li>Automatically plays media when the page loads</li>
+      <li>True</li>
+      <li><code>poster</code></li>
+      <li><code>audio/mpeg</code></li>
+      <li>The fallback text will be displayed</li>
+      <li>MP4, WebM</li>
+      <li><code>&lt;track&gt;</code></li>
+    </ol>
+  </section>
+
+  <section id="assignment">
+    <h3>Assignment</h3>
+
+    <h4>Objective</h4>
+    <p>Create a webpage that demonstrates HTML5 media embedding using audio and video.</p>
+
+    <ul>
+      <li>Embed one audio file with at least two formats</li>
+      <li>Embed one video file with poster and multiple sources</li>
+      <li>Provide fallback text</li>
+      <li>Use appropriate headings and labels</li>
+    </ul>
+
+    <h4>Submission Guidelines</h4>
+    <ul>
+      <li>Name the file <code>media.html</code></li>
+      <li>Use semantic tags and proper indentation</li>
+      <li>Test audio and video playback in the browser</li>
+    </ul>
+  </section>
+
+  <section id="assignment-answer" class="last-item">
+    <h3>Assignment Solution</h3>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Media Showcase&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h2&gt;Audio Sample&lt;/h2&gt;
+  &lt;p&gt;This is a demo audio file:&lt;/p&gt;
+  &lt;audio controls&gt;
+    &lt;source src="sample.mp3" type="audio/mpeg"&gt;
+    &lt;source src="sample.ogg" type="audio/ogg"&gt;
+    Your browser does not support the audio element.
+  &lt;/audio&gt;
+
+  &lt;h2&gt;Video Sample&lt;/h2&gt;
+  &lt;p&gt;This is a demo video with poster image and fallback:&lt;/p&gt;
+  &lt;video width="400" controls poster="poster.jpg"&gt;
+    &lt;source src="sample.mp4" type="video/mp4"&gt;
+    &lt;source src="sample.webm" type="video/webm"&gt;
+    Your browser does not support the video tag.
+  &lt;/video&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  </section>
+
+</div>
+
+<aside id="right-sidebar">
+    <div>
+      <h3>In this Article</h3>
+      <ul>
+        <li><a href="#introduction">Introduction to HTML5 Media Elements</a></li>
+        <li><a href="#audio-element">The &lt;audio&gt; Element</a></li>
+        <li><a href="#video-element">The &lt;video&gt; Element</a></li>
+        <li><a href="#media-formats">Common Media Formats</a></li>
+        <li><a href="#accessibility">Accessibility Tip</a></li>
+        <li><a href="#media-quiz">Quiz</a></li>
+        <li><a href="#quiz-answers">Answers</a></li>
+        <li><a href="#assignment">Assignment</a></li>
+        <li><a href="#assignment-answer">Assignment Solution</a></li>
+      </ul>
+    </div>
+  </aside>

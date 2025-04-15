@@ -1,0 +1,254 @@
+<div id="content">
+
+  <h2>Data Types</h2>
+  <section id="introduction-to-javascript-data-types">
+    <h3>Introduction</h3>
+    <p>JavaScript is a loosely typed language, meaning variables can hold values of any type without specifying their type explicitly. There are two main categories of data types:</p>
+    <ul>
+      <li>Primitive Data Types</li>
+      <li>Non-Primitive (Reference) Data Types</li>
+    </ul>
+  </section>
+
+  <section id="primitive-data-types">
+    <h3>Primitive Data Types</h3>
+    <p>These are the most basic data types in JavaScript and are immutable (cannot be changed once created). They include:</p>
+
+    <table>
+      <tr><th>Data Type</th><th>Description</th><th>Example</th></tr>
+      <tr><td>Number</td><td>Represents numeric values</td><td><code>let x = 10;</code></td></tr>
+      <tr><td>String</td><td>Represents textual data</td><td><code>let name = "John";</code></td></tr>
+      <tr><td>Boolean</td><td>Represents true or false</td><td><code>let isActive = true;</code></td></tr>
+      <tr><td>Null</td><td>Represents an empty or unknown value</td><td><code>let value = null;</code></td></tr>
+      <tr><td>Undefined</td><td>A variable that has been declared but not assigned a value</td><td><code>let y;</code></td></tr>
+      <tr><td>Symbol</td><td>Represents a unique identifier</td><td><code>let sym = Symbol("id");</code></td></tr>
+      <tr><td>BigInt</td><td>Used for large integers beyond Number.MAX_SAFE_INTEGER</td><td><code>let bigNumber = 9007199254740991n;</code></td></tr>
+    </table>
+
+    <h4>Example</h4>
+    <pre><code class="language-javascript">let num = 25;
+let text = "Hello, JavaScript!";
+let isAvailable = false;
+console.log(typeof num); // Output: number
+console.log(typeof text); // Output: string
+console.log(typeof isAvailable); // Output: boolean</code></pre>
+  </section>
+
+  <section id="non-primitive-data-types">
+    <h3>Non-Primitive (Reference) Data Types</h3>
+    <p>These data types store references to memory locations. They include:</p>
+
+    <table>
+      <tr><th>Data Type</th><th>Description</th></tr>
+      <tr><td>Object</td><td>A collection of key-value pairs</td></tr>
+      <tr><td>Array</td><td>An ordered list of values</td></tr>
+      <tr><td>Function</td><td>A block of reusable code</td></tr>
+    </table>
+
+    <h4>Example</h4>
+    <pre><code class="language-javascript">// Object
+let person = { name: "John", age: 30 };
+console.log(person.name); // Output: John
+
+// Array
+let colors = ["Red", "Green", "Blue"];
+console.log(colors[0]); // Output: Red
+
+// Function
+function greet() {
+    return "Hello, World!";
+}
+console.log(greet()); // Output: Hello, World!</code></pre>
+  </section>
+
+  <section id="type-conversion-in-javascript">
+    <h3>Type Conversion in JavaScript</h3>
+    <p>JavaScript allows implicit and explicit type conversion:</p>
+
+    <h4>Implicit Conversion (Type Coercion)</h4>
+    <pre><code class="language-javascript">console.log("5" + 5); // Output: "55" (String Concatenation)
+console.log("5" - 3); // Output: 2 (Converted to Number)</code></pre>
+
+    <h4>Explicit Conversion</h4>
+    <pre><code class="language-javascript">let str = "123";
+let num = Number(str); // Converts string to number
+console.log(typeof num); // Output: number</code></pre>
+  </section>
+
+    <section id="mutable-vs-immutable">
+    <h3>Mutable vs Immutable Objects</h3>
+    <p>The terms <strong>mutable</strong> and <strong>immutable</strong> refer to whether an object’s state can be changed after it is created.</p>
+
+    <h4>Mutable Objects</h4>
+    <p>Mutable objects can be modified after their creation.</p>
+    <p>Changes to a mutable object affect the original object, rather than creating a new one.</p>
+    <p><strong>Examples:</strong> Arrays, Objects</p>
+
+    <pre><code class="language-js">let arr = [1, 2, 3];
+arr.push(4);  // Modifies the original array
+console.log(arr); // Output: [1, 2, 3, 4]</code></pre>
+
+    <h4>Immutable Objects</h4>
+    <p>Immutable objects cannot be modified after creation.</p>
+    <p>Any operation that tries to modify an immutable object creates a new object instead.</p>
+    <p><strong>Examples:</strong> Strings, Numbers, Booleans</p>
+
+    <pre><code class="language-js">let str = "Hello";
+str = str + " World";  // Creates a new string, does not modify the original one
+console.log(str); // Output: "Hello World"</code></pre>
+
+    <h4>Key Differences</h4>
+    <table>
+      <tr>
+        <th>Feature</th>
+        <th>Mutable Objects</th>
+        <th>Immutable Objects</th>
+      </tr>
+      <tr>
+        <td>Can be changed?</td>
+        <td>Yes</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Affects original object?</td>
+        <td>Yes</td>
+        <td>No, creates a new object</td>
+      </tr>
+      <tr>
+        <td>Examples</td>
+        <td>Arrays, Objects</td>
+        <td>Strings, Numbers, Booleans</td>
+      </tr>
+      <tr>
+        <td>Performance</td>
+        <td>May be slower due to changes in memory</td>
+        <td>Often faster due to optimization</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="quiz-javascript-data-types">
+    <h3>Quiz: JavaScript Data Types</h3>
+    <ol>
+      <li>What are the primitive data types in JavaScript?<br>
+        a. Object, Array, Function<br>
+        b. Number, String, Boolean, Null, Undefined, Symbol, BigInt<br>
+        c. Number, Object, Array<br>
+        d. Function, Boolean, Symbol
+      </li>
+      <li>What is the difference between null and undefined?<br>
+        a. Both are the same<br>
+        b. null is a string; undefined is a number<br>
+        c. null is intentional absence of value; undefined means a variable is declared but not assigned<br>
+        d. undefined is used for objects only
+      </li>
+      <li>How do you define an object in JavaScript?<br>
+        a. let obj = [name: "John"]<br>
+        b. let obj = {name: "John"}<br>
+        c. let obj = "John"<br>
+        d. let obj = (name = "John")
+      </li>
+      <li>What will be the output of console.log("5" + 5);?<br>
+        a. 10<br>
+        b. 55<br>
+        c. "55"<br>
+        d. Error
+      </li>
+      <li>What is the purpose of the Symbol data type?<br>
+        a. To store images<br>
+        b. To store multiple values<br>
+        c. To create unique and immutable identifiers<br>
+        d. To convert types
+      </li>
+    </ol>
+  </section>
+
+  <section id="quiz-answers-javascript-data-types">
+    <h3>Quiz Answers: JavaScript Data Types</h3>
+    <ol>
+      <li>b. Number, String, Boolean, Null, Undefined, Symbol, BigInt</li>
+      <li>c. null is intentional absence of value; undefined means a variable is declared but not assigned</li>
+      <li>b. let obj = {name: "John"}</li>
+      <li>c. "55"</li>
+      <li>c. To create unique and immutable identifiers</li>
+    </ol>
+  </section>
+
+  <section id="assignment-javascript-data-types">
+    <h3>Assignment: JavaScript Data Types</h3>
+    <p>Create a web page that demonstrates your understanding of JavaScript data types.</p>
+
+    <h4>Instructions</h4>
+    <ul>
+      <li>Demonstrate all primitive data types with examples.</li>
+      <li>Include examples of objects and arrays.</li>
+      <li>Write a function that manipulates different data types.</li>
+      <li>Show both implicit and explicit type conversion examples.</li>
+    </ul>
+  </section>
+
+  <section id="assignment-answer-javascript-data-types" class="last-item">
+    <h3>Assignment Answer: JavaScript Data Types</h3>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;JavaScript Data Types Demo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;script&gt;
+// Primitive Data Types
+let num = 42;
+let str = "JavaScript";
+let isValid = true;
+let empty = null;
+let notAssigned;
+let sym = Symbol("unique");
+let bigIntNum = 1234567890123456789012345678901234567890n;
+
+console.log(typeof num);
+console.log(typeof str);
+console.log(typeof isValid);
+console.log(typeof empty);
+console.log(typeof notAssigned);
+console.log(typeof sym);
+console.log(typeof bigIntNum);
+
+// Object and Array
+let student = { name: "Alice", grade: "A" };
+let fruits = ["Apple", "Banana", "Cherry"];
+
+console.log(student.name);
+console.log(fruits[1]);
+
+// Function
+function mixData(name, score) {
+  return name + " scored " + (score + 10);
+}
+console.log(mixData("Bob", 80));
+
+// Type Conversion
+console.log("10" + 5); // Implicit
+console.log("10" - 3); // Implicit
+console.log(Number("123")); // Explicit
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  </section>
+</div>
+
+<aside id="right-sidebar">
+    <div>
+    <h3>In this Article</h3>
+    <ul>
+        <li><a href="#introduction-to-javascript-data-types">Introduction to JavaScript Data Types</a></li>
+        <li><a href="#primitive-data-types">Primitive Data Types</a></li>
+        <li><a href="#non-primitive-data-types">Non-Primitive (Reference) Data Types</a></li>
+        <li><a href="#type-conversion-in-javascript">Type Conversion in JavaScript</a></li>
+        <li><a href="#mutable-vs-immutable">Mutable vs Immutable Objects</a></li>
+        <li><a href="#quiz-javascript-data-types">Quiz: JavaScript Data Types</a></li>
+        <li><a href="#assignment-javascript-data-types">Assignment: JavaScript Data Types</a></li>
+      </ul>
+    </div>
+</aside>

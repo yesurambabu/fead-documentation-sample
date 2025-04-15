@@ -1,0 +1,139 @@
+<div id="content">
+  <h2>CSS Display</h2>
+
+  <section id="css-display">
+    <h3>CSS Display</h3>
+
+    <h4>display: block</h4>
+    <p>Makes the element start on a new line and take up the full width available. Common block elements include <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, and headings like <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>.</p>
+    <pre><code class="language-css">div {
+  display: block;
+}</code></pre>
+
+    <h4>display: inline</h4>
+    <p>Makes the element not start on a new line and only take up as much width as needed. Cannot set width, height, margin-top/bottom or padding-top/bottom.</p>
+    <pre><code class="language-css">span {
+  display: inline;
+}</code></pre>
+
+    <h4>display: inline-block</h4>
+    <p>Displays the element in-line like <code>inline</code> but allows setting height and width like <code>block</code>.</p>
+    <pre><code class="language-css">button {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+}</code></pre>
+
+    <h4>display: none</h4>
+    <p>Completely removes the element from the document flow; it will not be visible and will not occupy any space.</p>
+    <pre><code class="language-css">#hide-me {
+  display: none;
+}</code></pre>
+  </section>
+
+  <section id="quiz-questions">
+    <h3>Quiz Questions</h3>
+    <ol>
+      <li>What does <code>display: block;</code> do?<br>
+        a) Makes the element appear in the same line<br>
+        b) Hides the element<br>
+        c) Makes the element take full width and start on a new line<br>
+        d) Makes the element disappear but still take space
+      </li>
+      <li>Which display value allows setting width and height but still behaves like inline?<br>
+        a) block<br>
+        b) inline-block<br>
+        c) inline<br>
+        d) none
+      </li>
+      <li>What happens when <code>display: none;</code> is applied?<br>
+        a) The element is hidden and takes up space<br>
+        b) The element becomes visible<br>
+        c) The element is hidden and does not take up space<br>
+        d) The element becomes a block
+      </li>
+      <li>Can you apply margin and padding to an element with <code>display: inline;</code>?<br>
+        a) Yes, fully<br>
+        b) Only left and right<br>
+        c) Only top and bottom<br>
+        d) No, not at all
+      </li>
+      <li>What type of element is <code>&lt;div&gt;</code> by default?<br>
+        a) Inline<br>
+        b) None<br>
+        c) Inline-block<br>
+        d) Block
+      </li>
+    </ol>
+  </section>
+
+  <section id="quiz-answers">
+    <h3>Answers</h3>
+    <ol>
+      <li>c) Makes the element take full width and start on a new line</li>
+      <li>b) inline-block</li>
+      <li>c) The element is hidden and does not take up space</li>
+      <li>b) Only left and right</li>
+      <li>d) Block</li>
+    </ol>
+  </section>
+
+  <section id="assignment">
+    <h3>Assignment</h3>
+    <p>Create an HTML page that demonstrates the different <code>display</code> values:</p>
+    <ul>
+      <li>A <code>&lt;div&gt;</code> styled with <code>display: block</code></li>
+      <li>A <code>&lt;span&gt;</code> styled with <code>display: inline</code></li>
+      <li>A <code>&lt;button&gt;</code> styled with <code>display: inline-block</code></li>
+      <li>A <code>&lt;p&gt;</code> styled with <code>display: none</code></li>
+      <li>Use background colors and borders to clearly show how each display type behaves.</li>
+    </ul>
+  </section>
+
+  <section id="assignment-answer" class="last-item">
+    <h3>Assignment Solution</h3>
+
+    <pre><code class="language-html">&lt;div class="box1"&gt;Block Element&lt;/div&gt;
+&lt;span class="box2"&gt;Inline Element&lt;/span&gt;
+&lt;button class="box3"&gt;Inline-Block&lt;/button&gt;
+&lt;p class="box4"&gt;This paragraph is hidden&lt;/p&gt;
+</code></pre>
+
+    <pre><code class="language-css">.box1 {
+  display: block;
+  background-color: lightblue;
+  border: 1px solid blue;
+}
+
+.box2 {
+  display: inline;
+  background-color: lightgreen;
+  border: 1px solid green;
+}
+
+.box3 {
+  display: inline-block;
+  background-color: lightcoral;
+  border: 1px solid red;
+  width: 150px;
+  height: 40px;
+}
+
+.box4 {
+  display: none;
+}
+</code></pre>
+  </section>
+
+</div>
+  
+  <aside id="right-sidebar">
+    <div>
+      <h3>In this Article</h3>
+      <ul>
+        <li><a href="#css-display">CSS Display</a></li>
+        <li><a href="#quiz-questions">Quiz Questions</a></li>
+        <li><a href="#assignment">Assignment</a></li>
+      </ul>
+    </div>
+  </aside>

@@ -1,0 +1,232 @@
+<div id="content">
+  <h2>Basic Tags</h2>
+
+
+  <section id="heading-tags">
+    <h3>Heading Tags</h3>
+    <p>Used to define headings, from <code>&lt;h1&gt;</code> (largest) to <code>&lt;h6&gt;</code> (smallest).</p>
+    <pre><code class="language-html">&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Subheading&lt;/h2&gt;
+&lt;h3&gt;Sub-subheading&lt;/h3&gt;</code></pre>
+    <p><strong>Note:</strong> Only one <code>&lt;h1&gt;</code> is recommended per page for SEO.</p>
+  </section>
+
+  <section id="paragraph-tag">
+    <h3>Paragraph Tag</h3>
+    <p><code>&lt;p&gt;</code> defines a paragraph.</p>
+    <pre><code class="language-html">&lt;p&gt;This is a paragraph of text.&lt;/p&gt;</code></pre>
+  </section>
+
+  <section id="horizontal-rule-line-break">
+    <h3>Horizontal Rule & Line Break</h3>
+    <ul>
+      <li><code>&lt;hr&gt;</code>: Inserts a horizontal line (thematic break).</li>
+      <li><code>&lt;br&gt;</code>: Inserts a line break without starting a new paragraph.</li>
+    </ul>
+    <pre><code class="language-html">&lt;p&gt;Line one.&lt;br&gt;Line two.&lt;/p&gt;
+&lt;hr&gt;</code></pre>
+  </section>
+
+  <section id="anchor-tag">
+    <h3>Anchor Tag (&lt;a&gt;)</h3>
+    <p>Creates hyperlinks.</p>
+    <pre><code class="language-html">&lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;</code></pre>
+    <ul>
+      <li><code>href</code> is the destination URL.</li>
+      <li>Can link to external sites, internal pages, or sections within the same page using <code>#id</code>.</li>
+    </ul>
+  </section>
+
+  <section id="image-tag">
+    <h3>Image Tag</h3>
+    <p>Displays an image.</p>
+    <pre><code class="language-html">&lt;img src="image.jpg" alt="A description of the image"&gt;</code></pre>
+    <ul>
+      <li><code>src</code>: Path to image.</li>
+      <li><code>alt</code>: Text shown if image fails to load (important for accessibility).</li>
+    </ul>
+  </section>
+
+  <section id="lists">
+    <h3>Lists</h3>
+    <h4>Unordered List</h4>
+    <pre><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Item One&lt;/li&gt;
+  &lt;li&gt;Item Two&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+    <h4>Ordered List</h4>
+    <pre><code class="language-html">&lt;ol&gt;
+  &lt;li&gt;First&lt;/li&gt;
+  &lt;li&gt;Second&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+  </section>
+
+  <section id="strong-emphasis-comments">
+    <h3>Strong, Emphasis, and Comments</h3>
+    <pre><code class="language-html">&lt;strong&gt;Important text&lt;/strong&gt;
+&lt;em&gt;Italicized text&lt;/em&gt;
+&lt;!-- This is a comment --&gt;</code></pre>
+    <ul>
+      <li><code>&lt;strong&gt;</code>: Semantically important.</li>
+      <li><code>&lt;em&gt;</code>: Emphasized text.</li>
+      <li><code>&lt;!-- --&gt;</code>: Used to add comments in HTML.</li>
+    </ul>
+  </section>
+
+  <section id="div-span">
+    <h3>Div and Span</h3>
+    <ul>
+      <li><code>&lt;div&gt;</code>: Block-level container.</li>
+      <li><code>&lt;span&gt;</code>: Inline container.</li>
+    </ul>
+    <pre><code class="language-html">&lt;div&gt;This is a block container&lt;/div&gt;
+&lt;span&gt;This is inline&lt;/span&gt;</code></pre>
+  </section>
+
+  <section id="quiz-html-basics">
+    <h3>Quiz</h3>
+    <ol>
+      <li>Which tag is used for the largest heading?<br>
+      a) &lt;head&gt;<br>
+      b) &lt;h6&gt;<br>
+      c) &lt;h1&gt;<br>
+      d) &lt;title&gt;</li>
+
+      <li>What does the &lt;br&gt; tag do?<br>
+      a) Starts a new paragraph<br>
+      b) Breaks the page<br>
+      c) Inserts a line break<br>
+      d) Adds bold text</li>
+
+      <li>Which tag creates an unordered list?<br>
+      a) &lt;ol&gt;<br>
+      b) &lt;li&gt;<br>
+      c) &lt;ul&gt;<br>
+      d) &lt;list&gt;</li>
+
+      <li>What is the purpose of the alt attribute in &lt;img&gt;?<br>
+      a) Change alignment<br>
+      b) Improve image quality<br>
+      c) Add text description<br>
+      d) Add title to the image</li>
+
+      <li>The &lt;div&gt; tag is an inline container.<br>
+      a) True<br>
+      b) False</li>
+
+      <li>The &lt;strong&gt; tag makes text bold and adds importance.<br>
+      a) True<br>
+      b) False</li>
+    </ol>
+
+    <button id="quiz-answers-btn">Show Answer</button>
+    <section id="quiz-answers">
+      <h4>Answers:</h4>
+      <ol>
+        <li>(c)</li>
+        <li>(c)</li>
+        <li>(c)</li>
+        <li>(c)</li>
+        <li>(b)</li>
+        <li>(a)</li>
+      </ol>
+    </section>
+  </section>
+
+  <section id="assignment-basic-html-page" class="last-item">
+    <h3>Assignment</h3>
+
+    <p>Create a simple webpage using basic HTML tags covered in this lecture.</p>
+
+    <p>You must write the HTML code for a personal introduction page that includes the following:</p>
+    <ul>
+      <li>Use all six heading tags (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>) at least once.</li>
+      <li>Add at least two paragraphs.</li>
+      <li>Use <code>&lt;hr&gt;</code> and <code>&lt;br&gt;</code> appropriately.</li>
+      <li>Create a hyperlink to any external website.</li>
+      <li>Display one image with alt text.</li>
+      <li>Include both ordered and unordered lists.</li>
+      <li>Add a <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> in one of your paragraphs.</li>
+      <li>Wrap different sections in <code>&lt;div&gt;</code> tags.</li>
+      <li>Add a comment in your code.</li>
+      <li>Use a <code>&lt;span&gt;</code> to style or highlight a part of your text.</li>
+      <li>Make sure your code is properly indented and readable.</li>
+    </ul>
+
+    <h4>Bonus (Optional):</h4>
+    <p>Try linking to another HTML file using <code>&lt;a href="anotherfile.html"&gt;</code></p>
+
+    <button id="assignment-solution-btn">Show Answer</button>
+    <section id="assignment-solution">
+    <h4>Solution Example:</h4>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Introduction Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1&gt;Welcome to My Page&lt;/h1&gt;
+  &lt;hr&gt;
+
+  &lt;div&gt;
+    &lt;h2&gt;About Me&lt;/h2&gt;
+    &lt;p&gt;Hello! My name is &lt;strong&gt;Alex&lt;/strong&gt;. I am a student learning web development.&lt;/p&gt;
+    &lt;p&gt;I enjoy coding, reading, and watching documentaries.&lt;br&gt;It's fun to learn HTML!&lt;/p&gt;
+    &lt;img src="profile.jpg" alt="Profile photo of Alex" width="200"&gt;
+  &lt;/div&gt;
+
+  &lt;div&gt;
+    &lt;h3&gt;My Favorite Websites&lt;/h3&gt;
+    &lt;a href="https://www.wikipedia.org" target="_blank"&gt;Visit Wikipedia&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;div&gt;
+    &lt;h4&gt;My Skills&lt;/h4&gt;
+    &lt;ul&gt;
+      &lt;li&gt;HTML&lt;/li&gt;
+      &lt;li&gt;CSS&lt;/li&gt;
+      &lt;li&gt;JavaScript&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+
+  &lt;div&gt;
+    &lt;h5&gt;Things I Want to Learn&lt;/h5&gt;
+    &lt;ol&gt;
+      &lt;li&gt;React&lt;/li&gt;
+      &lt;li&gt;Node.js&lt;/li&gt;
+      &lt;li&gt;Database Management&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+
+  &lt;div&gt;
+    &lt;h6&gt;Contact Info&lt;/h6&gt;
+    &lt;p&gt;Email me at &lt;span style="color:blue;"&gt;alex@example.com&lt;/span&gt;&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;!-- This is a comment explaining the end of the document --&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+  </section>
+</div>
+
+<aside id="right-sidebar">
+  <div>
+    <h3>In this Article</h3>
+    <ul>
+      <li><a href="#heading-tags">Heading Tags</a></li>
+      <li><a href="#paragraph-tag">Paragraph Tag</a></li>
+      <li><a href="#horizontal-rule-line-break">Horizontal Rule & Line Break</a></li>
+      <li><a href="#anchor-tag">Anchor Tag (&lt;a&gt;)</a></li>
+      <li><a href="#image-tag">Image Tag</a></li>
+      <li><a href="#lists">Lists</a></li>
+      <li><a href="#strong-emphasis-comments">Strong, Emphasis, and Comments</a></li>
+      <li><a href="#div-span">Div and Span</a></li>
+      <li><a href="#quiz-html-basics">Quiz</a></li>
+      <li><a href="#assignment-basic-html-page">Assignment</a></li>
+    </ul>
+  </div>
+</aside>

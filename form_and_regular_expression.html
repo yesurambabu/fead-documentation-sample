@@ -1,0 +1,361 @@
+<div id="content">
+  <h2>Form and Regular Expression</h2>
+
+<section id="html-forms">
+  <h3>HTML Forms</h3>
+
+  <h4>Introduction</h4>
+  <p>An HTML <code>&lt;form&gt;</code> is used to gather user input. It can contain form controls like input fields, checkboxes, radio buttons, text areas, and submit buttons. Each input element collects specific types of data.</p>
+
+  <pre><code class="language-html">&lt;form action="/submit" method="post"&gt;
+  &lt;label&gt;Name: &lt;/label&gt;
+  &lt;input type="text" name="username" required&gt;&lt;br&gt;
+  &lt;label&gt;Email: &lt;/label&gt;
+  &lt;input type="email" name="email" required&gt;&lt;br&gt;
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;</code></pre>
+
+</section>
+
+<section id="regular-expressions">
+  <h3>Regular Expressions</h3>
+
+  <h4>What is a Regular Expression?</h4>
+  <p>A <strong>Regular Expression (RegEx)</strong> is a sequence of characters that form a search pattern. It is primarily used for string pattern matching and data validation. RegEx can be simple or very complex depending on the pattern you want to define.</p>
+
+  <h4>Basic Syntax</h4>
+  <p>Using the Literal notation:</p>
+  <pre><code class="language-js">const pattern = /expression/;</code></pre>
+
+  <p>Or using the RegExp constructor:</p>
+  <pre><code class="language-js">const pattern = new RegExp("expression");</code></pre>
+
+<section id="regular-expression-tokens">
+    <h3>Regular Expression Tokens</h3>
+    <h4>Character Sets</h4>
+    <table>
+      <tr>
+        <th>Pattern</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td>[abc]</td>
+        <td>Match any one of a, b, or c</td>
+        <td>/[abc]/ matches "a" in "cat"</td>
+      </tr>
+      <tr>
+        <td>[^abc]</td>
+        <td>Match any character except a, b, or c</td>
+        <td>/[^abc]/ matches "d" in "dog"</td>
+      </tr>
+      <tr>
+        <td>[a-z]</td>
+        <td>Match any lowercase letter</td>
+        <td>/[a-z]/ matches "h" in "hello"</td>
+      </tr>
+      <tr>
+        <td>[A-Z]</td>
+        <td>Match any uppercase letter</td>
+        <td>/[A-Z]/ matches "H" in "Hello"</td>
+      </tr>
+      <tr>
+        <td>[0-9]</td>
+        <td>Match any digit</td>
+        <td>/[0-9]/ matches "2" in "a2b"</td>
+      </tr>
+    </table>
+
+    <h4>Quantifiers</h4>
+    <table>
+      <tr>
+        <th>Symbol</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td>*</td>
+        <td>0 or more times</td>
+        <td>/a*/ matches "", "a", "aaa"</td>
+      </tr>
+      <tr>
+        <td>+</td>
+        <td>1 or more times</td>
+        <td>/a+/ matches "a", "aa"</td>
+      </tr>
+      <tr>
+        <td>?</td>
+        <td>0 or 1 time</td>
+        <td>/a?/ matches "", "a"</td>
+      </tr>
+      <tr>
+        <td>{n}</td>
+        <td>Exactly n times</td>
+        <td>/a{3}/ matches "aaa"</td>
+      </tr>
+      <tr>
+        <td>{n,}</td>
+        <td>n or more times</td>
+        <td>/a{2,}/ matches "aa", "aaa", "aaaa"</td>
+      </tr>
+      <tr>
+        <td>{n,m}</td>
+        <td>Between n and m times</td>
+        <td>/a{2,4}/ matches "aa", "aaa", "aaaa"</td>
+      </tr>
+    </table>
+
+    <h4>Anchors and Special Characters</h4>
+    <table>
+      <tr>
+        <th>Symbol</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td>^</td>
+        <td>Start of string</td>
+        <td>/^a/ matches "a" at start of "apple"</td>
+      </tr>
+      <tr>
+        <td>$</td>
+        <td>End of string</td>
+        <td>/e$/ matches "e" at end of "apple"</td>
+      </tr>
+      <tr>
+        <td>\d</td>
+        <td>Any digit (0–9)</td>
+        <td>/\d/ matches "5" in "abc5"</td>
+      </tr>
+      <tr>
+        <td>\D</td>
+        <td>Any non-digit</td>
+        <td>/\D/ matches "a" in "a1"</td>
+      </tr>
+      <tr>
+        <td>\w</td>
+        <td>Word character (a-z, A-Z, 0-9, _)</td>
+        <td>/\w/ matches "a", "Z", "1", "_"</td>
+      </tr>
+      <tr>
+        <td>\W</td>
+        <td>Non-word character</td>
+        <td>/\W/ matches "!" in "Hi!"</td>
+      </tr>
+      <tr>
+        <td>\s</td>
+        <td>Whitespace character</td>
+        <td>/\s/ matches space in "a b"</td>
+      </tr>
+      <tr>
+        <td>\S</td>
+        <td>Non-whitespace</td>
+        <td>/\S/ matches "a" in " a"</td>
+      </tr>
+      <tr>
+        <td>.</td>
+        <td>Any character except newline</td>
+        <td>/./ matches "a", "1", "!"</td>
+      </tr>
+      <tr>
+        <td>\</td>
+        <td>Escape character</td>
+        <td>/\./ matches "." literally</td>
+      </tr>
+    </table>
+
+  <h4>Grouping and Alternation</h4>
+  <table>
+    <tr>
+      <th>Symbol</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td>(abc)</td>
+      <td>Group expression</td>
+      <td>/(abc)+/ matches "abcabc"</td>
+    </tr>
+    <tr>
+      <td>a|b</td>
+      <td>Either a or b</td>
+      <td>/cat|dog/ matches "cat" or "dog"</td>
+    </tr>
+  </table>
+</section>
+
+  <section id="regexp-methods">
+  <h3>Methods</h3>
+  <h4>Regular Expression Methods</h4>
+  <table>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td><code>test()</code></td>
+      <td>Returns <code>true</code> or <code>false</code> if match is found</td>
+      <td><code>/a/.test("apple")</code> → <code>true</code></td>
+    </tr>
+    <tr>
+      <td><code>exec()</code></td>
+      <td>Returns match result array or <code>null</code></td>
+      <td><code>/\d+/.exec("abc123")</code> → <code>["123"]</code></td>
+    </tr>
+  </table>
+
+  <h4>String Methods Using RegExp</h4>
+  <table>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td><code>match()</code></td>
+      <td>Retrieves matches</td>
+      <td><code>"abc123".match(/\d+/)</code> → <code>["123"]</code></td>
+    </tr>
+    <tr>
+      <td><code>replace()</code></td>
+      <td>Replaces matched substring</td>
+      <td><code>"abc123".replace(/\d/, "#")</code> → <code>"abc#23"</code></td>
+    </tr>
+    <tr>
+      <td><code>search()</code></td>
+      <td>Returns index of first match</td>
+      <td><code>"abc123".search(/\d/)</code> → <code>3</code></td>
+    </tr>
+    <tr>
+      <td><code>split()</code></td>
+      <td>Splits string using regex</td>
+      <td><code>"one,two,three".split(/,/)</code> → <code>["one", "two", "three"]</code></td>
+    </tr>
+  </table>
+
+  <h4>Example:</h4>
+  <pre><code class="language-js">const text = "My number is 9876543210";
+const result = text.replace(/\d{10}/, "XXXXXXXXXX");
+console.log(result); // "My number is XXXXXXXXXX"
+
+const found = /\d+/.exec(text);
+console.log(found[0]); // "9876543210"
+
+console.log(text.match(/\d+/)); // ["9876543210"]</code></pre>
+
+  <h4>Validation Example: Email</h4>
+  <pre><code class="language-js">const emailPattern = /^[a-zA-Z0-9._]+@[a-z]+\.[a-z]{2,3}$/;
+emailPattern.test("user1@gmail.com"); // true
+emailPattern.test("user@site");       // false</code></pre>
+</section>
+
+<section id="quiz">
+  <h3>Quiz</h3>
+  <ol>
+    <li>
+      What does the pattern <code>/\d{3}/</code> match?<br>
+      A. Three letters in a row<br>
+      B. Three digits in a row<br>
+      C. Any three characters<br>
+      D. A digit followed by a letter
+    </li>
+    <li>
+      What does <code>test()</code> do?<br>
+      A. Replaces characters<br>
+      B. Checks if pattern matches<br>
+      C. Extracts all matches<br>
+      D. Loops through string
+    </li>
+    <li>
+      What is the output of <code>/^Hi/.test("Hi there")</code>?<br>
+      A. true<br>
+      B. false<br>
+      C. error<br>
+      D. undefined
+    </li>
+    <li>
+      What is the purpose of <code>\s</code> in RegEx?<br>
+      A. To match symbols<br>
+      B. To match whitespace<br>
+      C. To match lowercase<br>
+      D. To skip a character
+    </li>
+  </ol>
+</section>
+
+<section id="quiz-answers">
+  <h3>Quiz Answers</h3>
+  <ol>
+    <li>B. Three digits in a row</li>
+    <li>B. Checks if pattern matches</li>
+    <li>A. true</li>
+    <li>B. To match whitespace</li>
+  </ol>
+</section>
+
+<section id="assignment">
+  <h3>Assignment</h3>
+  <p>Create a form with the following fields:</p>
+  <ul>
+    <li>Username (must only contain letters and numbers)</li>
+    <li>Email (must be a valid email format)</li>
+    <li>Phone Number (must be 10 digits)</li>
+  </ul>
+  <p>Use JavaScript with Regular Expressions to validate the input when the form is submitted. Show alerts if input is invalid.</p>
+</section>
+
+<section id="assignment-solution" class="last-item">
+  <h3>Assignment Solution</h3>
+  <pre><code class="language-html">&lt;form id="userForm"&gt;
+  &lt;input type="text" id="username" placeholder="Username"&gt;&lt;br&gt;
+  &lt;input type="text" id="email" placeholder="Email"&gt;&lt;br&gt;
+  &lt;input type="text" id="phone" placeholder="Phone Number"&gt;&lt;br&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;</code>
+<code class="language-js">document.getElementById("userForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const username = document.getElementById("username").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+
+  const userPattern = /^[a-zA-Z0-9]+$/;
+  const emailPattern = /^[a-zA-Z0-9._]+@[a-z]+\.[a-z]{2,3}$/;
+  const phonePattern = /^\d{10}$/;
+
+  if (!userPattern.test(username)) {
+    alert("Invalid username!");
+    return;
+  }
+  if (!emailPattern.test(email)) {
+    alert("Invalid email!");
+    return;
+  }
+  if (!phonePattern.test(phone)) {
+    alert("Phone must be 10 digits!");
+    return;
+  }
+
+  alert("All inputs are valid!");
+});</code>
+<code class="language-html">&lt;/script&gt;</code></pre>
+</section>
+
+</div>
+
+<aside id="right-sidebar">
+    <div>
+      <h3>In this Article</h3>
+      <ul>
+        <li><a href="#html-forms">HTML Forms</a></li>
+        <li><a href="#regular-expressions">Regular Expressions</a></li>
+        <li><a href="#regular-expression-tokens">Regular Expression Tokens</a></li>
+        <li><a href="#regexp-methods">Regular Expression Methods</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#assignment">Assignment</a></li>
+      </ul>
+    </div>
+</aside>

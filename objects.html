@@ -1,0 +1,421 @@
+<div id="content">
+  <h2>Built-in Objects</h2>
+
+  <section id="javascript-built-in-objects">
+    <h3>Introduction</h3>
+    <p>JavaScript comes with several built-in objects that provide useful functionalities. These objects contain properties and methods that make it easier to manipulate data types, perform mathematical operations, handle dates, and more.</p>
+  </section>
+
+  <section id="string-object">
+    <h3>String Object</h3>
+    <p>The <code>String</code> object is used to work with text.</p>
+    <h4>Useful String Methods</h4>
+      <table>
+        <tr>
+          <th>Method</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+        <tr>
+          <td>length</td>
+          <td>Returns the length of the string.</td>
+          <td>"Hello".length → 5</td>
+        </tr>
+        <tr>
+          <td>toUpperCase()</td>
+          <td>Converts to uppercase.</td>
+          <td>"hello".toUpperCase() → "HELLO"</td>
+        </tr>
+        <tr>
+          <td>toLowerCase()</td>
+          <td>Converts to lowercase.</td>
+          <td>"HELLO".toLowerCase() → "hello"</td>
+        </tr>
+        <tr>
+          <td>trim()</td>
+          <td>Removes whitespace.</td>
+          <td>" Hello ".trim() → "Hello"</td>
+        </tr>
+        <tr>
+          <td>charAt(index)</td>
+          <td>Returns character at index.</td>
+          <td>"Java".charAt(1) → "a"</td>
+        </tr>
+        <tr>
+          <td>includes(substr)</td>
+          <td>Checks if string contains substring.</td>
+          <td>"Hello".includes("He") → true</td>
+        </tr>
+        <tr>
+          <td>replace(a, b)</td>
+          <td>Replaces text.</td>
+          <td>"Hello".replace("H", "J") → "Jello"</td>
+        </tr>
+        <tr>
+          <td>split(delimiter)</td>
+          <td>Splits string into an array.</td>
+          <td>"A,B,C".split(",") → ["A", "B", "C"]</td>
+        </tr>
+      </table>
+      <h4>Example: String Manipulation</h4>
+      <pre><code class="language-javascript">let text = " JavaScript ";
+console.log(text.trim().toUpperCase()); // Outputs: "JAVASCRIPT"</code></pre>
+  </section>
+
+  <section id="number-object">
+    <h3>Number Object</h3>
+    <p>The <code>Number</code> object is used to work with numbers.</p>
+    <h4>Useful Number Methods</h4>
+  <table>
+    <tr><th>Method</th><th>Description</th><th>Example</th></tr>
+    <tr>
+      <td>toFixed(n)</td>
+      <td>Formats number with n decimals.</td>
+      <td>(3.14159).toFixed(2) → "3.14"</td>
+    </tr>
+    <tr>
+      <td>parseInt()</td>
+      <td>Parses a string and returns an integer.</td>
+      <td>parseInt("42") → 42</td>
+    </tr>
+    <tr>
+      <td>parseFloat()</td>
+      <td>Parses a string and returns a floating point number.</td>
+      <td>parseFloat("3.14") → 3.14</td>
+    </tr>
+    <tr>
+      <td>isNaN()</td>
+      <td>Checks if a value is NaN (Not a Number).</td>
+      <td>isNaN("abc") → true</td>
+    </tr>
+    <tr>
+      <td>isFinite()</td>
+      <td>Checks if value is a finite number.</td>
+      <td>isFinite(123) → true</td>
+    </tr>
+    <tr>
+      <td>toString()</td>
+      <td>Converts number to string.</td>
+      <td>(123).toString() → "123"</td>
+    </tr>
+  </table>
+
+  <h4>Example: Number Conversion</h4>
+  <pre><code class="language-javascript">let num = 3.14159;
+console.log(num.toFixed(2)); // Outputs: "3.14"</code></pre>
+  </section>
+
+  <section id="math-object">
+    <h3>Math Object</h3>
+    <p>The <code>Math</code> object allows you to perform mathematical tasks.</p>
+    <h4>Useful Math Methods</h4>
+  <table>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td>Math.round()</td>
+      <td>Rounds to the nearest integer.</td>
+      <td>Math.round(4.6) → 5</td>
+    </tr>
+    <tr>
+      <td>Math.floor()</td>
+      <td>Rounds down to the nearest integer.</td>
+      <td>Math.floor(4.9) → 4</td>
+    </tr>
+    <tr>
+      <td>Math.ceil()</td>
+      <td>Rounds up to the nearest integer.</td>
+      <td>Math.ceil(4.1) → 5</td>
+    </tr>
+    <tr>
+      <td>Math.random()</td>
+      <td>Returns a random number between 0 and 1.</td>
+      <td>Math.random() → 0.123 (example)</td>
+    </tr>
+    <tr>
+      <td>Math.max()</td>
+      <td>Returns the highest number.</td>
+      <td>Math.max(1, 2, 3) → 3</td>
+    </tr>
+    <tr>
+      <td>Math.min()</td>
+      <td>Returns the lowest number.</td>
+      <td>Math.min(1, 2, 3) → 1</td>
+    </tr>
+    <tr>
+      <td>Math.sqrt()</td>
+      <td>Returns the square root of a number.</td>
+      <td>Math.sqrt(9) → 3</td>
+    </tr>
+  </table>
+  <h4>Example: Math Operations</h4>
+  <pre><code class="language-javascript">let x = Math.ceil(4.3) + Math.floor(4.7);
+console.log(x); // 9</code></pre>
+  </section>
+
+  <section id="date-object">
+    <h3>Date Object</h3>
+    <p>The <code>Date</code> object is used to work with dates and times.</p>
+    <h4>Useful Date Methods</h4>
+  <table>
+    <tr><th>Method</th><th>Description</th><th>Example</th></tr>
+    <tr>
+      <td>new Date()</td>
+      <td>Creates a new date object with the current date and time.</td>
+      <td>new Date()</td>
+    </tr>
+    <tr>
+      <td>getFullYear()</td>
+      <td>Returns the four-digit year.</td>
+      <td>date.getFullYear()</td>
+    </tr>
+    <tr>
+      <td>getMonth()</td>
+      <td>Returns the month (0–11).</td>
+      <td>date.getMonth()</td>
+    </tr>
+    <tr>
+      <td>getDate()</td>
+      <td>Returns the day of the month (1–31).</td>
+      <td>date.getDate()</td>
+    </tr>
+    <tr>
+      <td>getDay()</td>
+      <td>Returns the day of the week (0–6).</td>
+      <td>date.getDay()</td>
+    </tr>
+    <tr>
+      <td>getHours()</td>
+      <td>Returns the hour (0–23).</td>
+      <td>date.getHours()</td>
+    </tr>
+    <tr>
+      <td>getMinutes()</td>
+      <td>Returns the minutes (0–59).</td>
+      <td>date.getMinutes()</td>
+    </tr>
+  </table>
+
+  <h4>Example: Date Manipulation</h4>
+  <pre><code class="language-javascript">let now = new Date();
+console.log(now.getFullYear()); // Outputs: current year
+console.log(now.getMonth()); // Outputs: current month (0-11)</code></pre>
+  </section>
+
+  <section id="array-object">
+    <h3>Array Object</h3>
+    <p>The <code>Array</code> object is used to store multiple values in a single variable.</p>
+    <h4>Useful Array Methods</h4>
+  <table>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td>push()</td>
+      <td>Adds elements to the end of an array.</td>
+      <td>[1, 2].push(3) → [1, 2, 3]</td>
+    </tr>
+    <tr>
+      <td>pop()</td>
+      <td>Removes the last element from an array.</td>
+      <td>[1, 2, 3].pop() → [1, 2]</td>
+    </tr>
+    <tr>
+      <td>shift()</td>
+      <td>Removes the first element of an array.</td>
+      <td>[1, 2, 3].shift() → [2, 3]</td>
+    </tr>
+    <tr>
+      <td>unshift()</td>
+      <td>Adds elements to the beginning of an array.</td>
+      <td>[2, 3].unshift(1) → [1, 2, 3]</td>
+    </tr>
+    <tr>
+      <td>slice(start, end)</td>
+      <td>Returns a shallow copy of a portion of an array.</td>
+      <td>[1, 2, 3, 4].slice(1, 3) → [2, 3]</td>
+    </tr>
+    <tr>
+      <td>splice(start, deleteCount, items)</td>
+      <td>Changes the contents of an array by removing or replacing elements.</td>
+      <td>[1, 2, 3].splice(1, 1, 4) → [1, 4, 3]</td>
+    </tr>
+    <tr>
+      <td>includes()</td>
+      <td>Checks if an array includes a certain value.</td>
+      <td>[1, 2, 3].includes(2) → true</td>
+    </tr>
+    <tr>
+      <td>indexOf()</td>
+      <td>Returns the first index of a value.</td>
+      <td>[1, 2, 3].indexOf(2) → 1</td>
+    </tr>
+  </table>
+  <h4>Example: Array Manipulation</h4>
+  <pre><code class="language-javascript">let arr = ["a", "b", "c"];
+arr.push("d");
+console.log(arr); // ["a", "b", "c", "d"]</code></pre>
+  </section>
+
+  <section id="regex-Object">
+    <h3>RegExp Object</h3>
+    <p>The <code>RegExp</code> object is used for matching text with a pattern. Regular expressions are patterns used to match character combinations in strings.</p>
+    <h4>Useful RegExp Methods</h4>
+    <table>
+      <tr><th>Method</th><th>Description</th><th>Example</th></tr>
+      <tr>
+        <td>test()</td>
+        <td>Tests for a match in a string. Returns true or false.</td>
+        <td>/abc/.test("abc") → true</td>
+      </tr>
+      <tr>
+        <td>exec()</td>
+        <td>Executes a search for a match and returns result array.</td>
+        <td>/a/.exec("abc") → ["a"]</td>
+      </tr>
+      <tr>
+        <td>match()</td>
+        <td>Returns matches using a pattern.</td>
+        <td>"abc".match(/a/) → ["a"]</td>
+      </tr>
+      <tr>
+        <td>replace()</td>
+        <td>Replaces matched substring with new substring.</td>
+        <td>"abc".replace(/a/, "x") → "xbc"</td>
+      </tr>
+      <tr>
+        <td>search()</td>
+        <td>Returns index of match or -1 if not found.</td>
+        <td>"abc".search(/b/) → 1</td>
+      </tr>
+      <tr>
+        <td>split()</td>
+        <td>Splits string based on pattern.</td>
+        <td>"a,b,c".split(/,/) → ["a", "b", "c"]</td>
+      </tr>
+    </table>
+  
+    <h4>Example: Regular Expression Matching</h4>
+    <pre><code class="language-javascript">let str = "hello world";
+  console.log(/world/.test(str)); // Outputs: true</code></pre>
+  </section>
+  
+
+  <section id="quiz-questions">
+    <h3>Quiz Questions</h3>
+    <ol>
+      <li>Which method is used to convert a string to uppercase?<br>
+        a) toUpper()<br>
+        b) upperCase()<br>
+        c) toUpperCase()<br>
+        d) makeUpper()
+      </li>
+      <li>Which Math method returns a random number between 0 and 1?<br>
+        a) Math.random()<br>
+        b) Math.rand()<br>
+        c) Math.float()<br>
+        d) Math.num()
+      </li>
+      <li>Which Date method returns the year?<br>
+        a) getYear()<br>
+        b) year()<br>
+        c) getFullYear()<br>
+        d) fetchYear()
+      </li>
+      <li>Which method is used to add an element at the end of an array?<br>
+        a) addLast()<br>
+        b) append()<br>
+        c) push()<br>
+        d) insert()
+      </li>
+      <li>Which Number method checks if a value is an integer?<br>
+        a) isWhole()<br>
+        b) isNumber()<br>
+        c) isInt()<br>
+        d) isInteger()
+      </li>
+    </ol>
+  </section>
+
+  <section id="quiz-answers">
+    <h3>Quiz Answers</h3>
+    <ol>
+      <li>c) toUpperCase()</li>
+      <li>a) Math.random()</li>
+      <li>c) getFullYear()</li>
+      <li>c) push()</li>
+      <li>d) isInteger()</li>
+    </ol>
+  </section>
+
+  <section id="assignment">
+    <h3>Assignment</h3>
+    <ul>
+      <li>Create a program that displays today’s date in the format “DD/MM/YYYY”.</li>
+      <li>Create an array of five fruits and print them using a loop.</li>
+      <li>Write a function that converts a given string into uppercase using String methods.</li>
+      <li>Use Math.random() to simulate the rolling of a 6-sided dice.</li>
+      <li>Create a number and use toFixed() to show it with 2 decimal places.</li>
+    </ul>
+  </section>
+
+  <section id="assignment-solution" class="last-item">
+    <h3>Assignment Solution</h3>
+    <p><strong>1. Date Format:</strong></p>
+    <pre><code class="language-javascript">
+let today = new Date();
+let formatted = today.getDate() + "/" + (today.getMonth()+1) + "/" + today.getFullYear();
+console.log(formatted);
+    </code></pre>
+
+    <p><strong>2. Fruit Array:</strong></p>
+    <pre><code class="language-javascript">
+let fruits = ["Apple", "Banana", "Orange", "Mango", "Pineapple"];
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+    </code></pre>
+
+    <p><strong>3. Uppercase Function:</strong></p>
+    <pre><code class="language-javascript">
+function toUpper(str) {
+  return str.toUpperCase();
+}
+console.log(toUpper("hello"));
+    </code></pre>
+
+    <p><strong>4. Dice Roll:</strong></p>
+    <pre><code class="language-javascript">
+let dice = Math.floor(Math.random() * 6) + 1;
+console.log("You rolled:", dice);
+    </code></pre>
+
+    <p><strong>5. Number to Fixed:</strong></p>
+    <pre><code class="language-javascript">
+let num = 4.56789;
+console.log(num.toFixed(2));
+    </code></pre>
+  </section>
+</div>
+
+<aside id="right-sidebar">
+    <div>
+      <h3>In this Article</h3>
+      <ul>
+        <li><a href="#javascript-built-in-objects">JavaScript Built-in Objects</a></li>
+        <li><a href="#string-object">String Object</a></li>
+        <li><a href="#number-object">Number Object</a></li>
+        <li><a href="#math-object">Math Object</a></li>
+        <li><a href="#date-object">Date Object</a></li>
+        <li><a href="#array-object">Array Object</a></li>
+        <li><a href="#regex-Object">RegEx Object</a></li>
+        <li><a href="#quiz-questions">Quiz Questions</a></li>
+        <li><a href="#assignment">Assignment</a></li>
+      </ul>
+    </div>
+</aside>

@@ -1,0 +1,214 @@
+<div id="content">
+  <h2>Creating Structured Documents</h2>
+  
+  <section id="introduction-to-structured-documents">
+    <h3>Introduction</h3>
+    <p>A structured document is a web page or file that follows a well-organized hierarchy, making it easier to read, maintain, and style. The foundation of structured documents on the web is HTML (HyperText Markup Language).</p>
+
+    <h4>Why Structure Matters?</h4>
+    <ul>
+      <li>Improves readability and maintainability of web pages.</li>
+      <li>Enhances SEO (Search Engine Optimization) for better visibility.</li>
+      <li>Ensures accessibility for users with disabilities (screen readers).</li>
+    </ul>
+  </section>
+
+  <section id="basic-structure-of-an-html-document">
+    <h3>Basic Structure of an HTML Document</h3>
+    <p>Every HTML document follows a standard structure consisting of different elements.</p>
+
+    <h4>Basic HTML Template</h4>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My First Structured Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;p&gt;Your go-to source for structured content.&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+
+  &lt;section&gt;
+    &lt;h2&gt;About This Page&lt;/h2&gt;
+    &lt;p&gt;This is a structured document demonstrating the best practices of HTML.&lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;&copy; 2024 My Website | All Rights Reserved&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  </section>
+
+  <section id="key-structural-elements-in-html">
+    <h3>Key Structural Elements in HTML</h3>
+    <table>
+      <tr><th>Element</th><th>Description</th></tr>
+      <tr><td>&lt;header&gt;</td><td>Defines the introductory content or heading section.</td></tr>
+      <tr><td>&lt;nav&gt;</td><td>Contains links for navigation within the site.</td></tr>
+      <tr><td>&lt;section&gt;</td><td>Groups related content together.</td></tr>
+      <tr><td>&lt;article&gt;</td><td>Represents an independent section of content.</td></tr>
+      <tr><td>&lt;aside&gt;</td><td>Used for side content like ads or related links.</td></tr>
+      <tr><td>&lt;footer&gt;</td><td>Contains copyright, author, or contact information.</td></tr>
+    </table>
+  </section>
+
+  <section id="enhancing-structure-with-semantic-html">
+    <h3>Enhancing Structure with Semantic HTML</h3>
+    <p>Semantic HTML helps in creating meaningful elements, improving both SEO and accessibility.</p>
+
+    <h4>Example: Using Semantic Tags vs. Non-Semantic Tags</h4>
+    <p><strong>Without Semantic Tags (Bad Practice):</strong></p>
+    <pre><code class="language-html">&lt;div class="header"&gt;Welcome&lt;/div&gt;
+&lt;div class="nav"&gt;Home | About | Contact&lt;/div&gt;
+&lt;div class="content"&gt;This is a website.&lt;/div&gt;
+&lt;div class="footer"&gt;&copy; 2024 My Website&lt;/div&gt;</code></pre>
+
+    <p><strong>With Semantic Tags (Best Practice):</strong></p>
+    <pre><code class="language-html">&lt;header&gt;Welcome&lt;/header&gt;
+&lt;nav&gt;Home | About | Contact&lt;/nav&gt;
+&lt;section&gt;This is a website.&lt;/section&gt;
+&lt;footer&gt;&copy; 2024 My Website&lt;/footer&gt;</code></pre>
+  </section>
+
+  <section id="best-practices-for-creating-structured-documents">
+    <h3>Best Practices for Creating Structured Documents</h3>
+    <ul>
+      <li>Use semantic HTML tags for better readability and SEO.</li>
+      <li>Maintain a clear hierarchy (headings, sections, articles).</li>
+      <li>Ensure accessibility by adding alt attributes to images and using &lt;label&gt; for forms.</li>
+      <li>Keep the CSS and JavaScript separate from the HTML file.</li>
+      <li>Validate HTML using tools like W3C Validator.</li>
+    </ul>
+  </section>
+  
+  <section id="conclusion">
+    <h3>Conclusion</h3>
+    <p>Creating structured documents is essential for building maintainable, accessible, and SEO-friendly web pages. By using semantic HTML elements and proper formatting, developers ensure a consistent, scalable, and user-friendly web experience.</p>
+  </section>
+
+  <section id="quiz-creating-structured-documents">
+    <h3>Quiz</h3>
+    <ol>
+      <li>What does the &lt;header&gt; tag represent in HTML?<br>
+      a) Main navigation<br>
+      b) A section at the bottom of the page<br>
+      c) Introductory content or heading section<br>
+      d) Footer section</li>
+
+      <li>Which of the following is NOT a semantic HTML tag?<br>
+      a) &lt;article&gt;<br>
+      b) &lt;section&gt;<br>
+      c) &lt;div&gt;<br>
+      d) &lt;aside&gt;</li>
+
+      <li>Which tag is used for grouping navigation links?<br>
+      a) &lt;header&gt;<br>
+      b) &lt;nav&gt;<br>
+      c) &lt;footer&gt;<br>
+      d) &lt;section&gt;</li>
+
+      <li>Which of the following is the correct way to define a DOCTYPE for an HTML5 document?<br>
+      a) &lt;!DOCTYPE HTML5&gt;<br>
+      b) &lt;!DOCTYPE html&gt;<br>
+      c) &lt;doctype html&gt;<br>
+      d) &lt;!HTML DOCTYPE&gt;</li>
+    </ol>
+
+    <button id="quiz-answers-btn">Show Answer</button>
+    <section id="quiz-answers">
+      <h4>Answers:</h4>
+      <ol>
+        <li>(c)</li>
+        <li>(c)</li>
+        <li>(b)</li>
+        <li>(b)</li>
+      </ol>
+    </section>
+  </section>
+
+  <section id="assignment-structured-website-design" class="last-item">
+    <h3>Assignment</h3>
+    <p>Create a personal portfolio website that includes:</p>
+    <ul>
+      <li>A structured homepage (with a header, navigation, and sections).</li>
+      <li>An "About Me" page (structured using semantic HTML).</li>
+      <li>A contact form (with structured form elements).</li>
+      <li>A table of projects (showcasing structured data).</li>
+      <li>Use semantic HTML and follow best practices.</li>
+    </ul>
+
+    <button id="assignment-solution-btn">Show Answer</button>
+    <section id="assignment-solution">
+    <h4>Solution Example: Basic Portfolio Page</h4>
+  <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;John Doe - Portfolio&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;John Doe&lt;/h1&gt;
+    &lt;p&gt;Web Developer | Designer | Freelancer&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+
+  &lt;section&gt;
+    &lt;h2&gt;Projects&lt;/h2&gt;
+    &lt;table border="1"&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Project Name&lt;/th&gt;
+        &lt;th&gt;Description&lt;/th&gt;
+        &lt;th&gt;Technologies Used&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Portfolio Website&lt;/td&gt;
+        &lt;td&gt;A personal portfolio to showcase my work.&lt;/td&gt;
+        &lt;td&gt;HTML, CSS, JavaScript&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;&copy; 2024 John Doe&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  </section>
+  </section>
+
+</div>
+
+<aside id="right-sidebar">
+  <div>
+    <h3>In this Article</h3>
+    <ul>
+      <li><a href="#introduction-to-structured-documents">Introduction</a></li>
+      <li><a href="#basic-structure-of-an-html-document">Basic Structure of an HTML Document</a></li>
+      <li><a href="#key-structural-elements-in-html">Key Structural Elements in HTML</a></li>
+      <li><a href="#enhancing-structure-with-semantic-html">Enhancing Structure with Semantic HTML</a></li>
+      <li><a href="#best-practices-for-creating-structured-documents">Best Practices for Creating Structured Documents</a></li>
+      <li><a href="#conclusion">Conclusion</a></li>
+      <li><a href="#quiz-creating-structured-documents">Quiz</a></li>
+      <li><a href="#assignment-structured-website-design">Assignment</a></li>
+    </ul>
+  </div>
+</aside>

@@ -1,0 +1,186 @@
+<div id="content">
+  <h2>The HTML5 Canvas</h2>
+
+  <section id="what-is-canvas">
+    <h3>What is HTML5 Canvas?</h3>
+    <p>The <code>&lt;canvas&gt;</code> element is used to draw graphics via JavaScript. It acts as a container for graphics that can include shapes, text, images, and animations. Everything drawn inside the canvas must be handled through scripting.</p>
+  </section>
+
+  <section id="basic-canvas-syntax">
+    <h3>Basic Canvas Syntax</h3>
+    <pre><code class="language-html">&lt;canvas id="myCanvas" width="400" height="300"&gt;&lt;/canvas&gt;</code></pre>
+    <p>This creates a canvas with a specified width and height. All actual drawing is done using JavaScript.</p>
+  </section>
+
+  <section id="canvas-context">
+    <h3>Getting the Context</h3>
+    <pre><code class="language-javascript">const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");</code></pre>
+    <p>The <code>getContext("2d")</code> method returns a drawing context for 2D rendering.</p>
+  </section>
+
+  <section id="drawing-shapes">
+    <h3>Drawing Shapes</h3>
+
+    <h4>Rectangle</h4>
+    <pre><code class="language-javascript">ctx.fillStyle = "blue";
+ctx.fillRect(50, 50, 100, 100);</code></pre>
+
+    <h4>Line</h4>
+    <pre><code class="language-javascript">ctx.beginPath();
+ctx.moveTo(10, 10);
+ctx.lineTo(200, 10);
+ctx.stroke();</code></pre>
+
+    <h4>Circle</h4>
+    <pre><code class="language-javascript">ctx.beginPath();
+ctx.arc(150, 75, 50, 0, 2 * Math.PI);
+ctx.fillStyle = "red";
+ctx.fill();</code></pre>
+  </section>
+
+  <section id="drawing-text">
+    <h3>Drawing Text</h3>
+    <pre><code class="language-javascript">ctx.font = "20px Arial";
+ctx.fillStyle = "black";
+ctx.fillText("Hello Canvas", 50, 200);</code></pre>
+  </section>
+
+  <section id="drawing-images">
+    <h3>Drawing Images</h3>
+    <pre><code class="language-javascript">const img = new Image();
+img.onload = () =&gt; ctx.drawImage(img, 10, 10);
+img.src = "image.jpg";</code></pre>
+  </section>
+
+  <section id="canvas-use-cases">
+    <h3>Canvas Use Cases</h3>
+    <ul>
+      <li>Games and animations</li>
+      <li>Data visualizations and charts</li>
+      <li>Interactive applications</li>
+      <li>Image editing</li>
+    </ul>
+  </section>
+
+  <section id="canvas-quiz">
+    <h3>Quiz</h3>
+    <ol>
+      <li>What HTML tag is used to create a canvas on a webpage?</li>
+      <li>Which JavaScript method is used to access the drawing context of a canvas?</li>
+      <li>What function is used to draw a filled rectangle?</li>
+      <li>What method begins a new path for drawing?</li>
+      <li>How do you draw a circle using the canvas API?</li>
+      <li>True/False: The canvas element can display graphics without JavaScript.</li>
+      <li>Which context type is used for 2D drawing?</li>
+      <li>What is the purpose of <code>ctx.stroke()</code>?</li>
+      <li>Which function writes text to the canvas?</li>
+      <li>Can canvas be used for animations? (Yes/No)</li>
+    </ol>
+  </section>
+
+  <section id="quiz-answers">
+    <h3>Answers</h3>
+    <ol>
+      <li><code>&lt;canvas&gt;</code></li>
+      <li><code>getContext()</code></li>
+      <li><code>fillRect()</code></li>
+      <li><code>beginPath()</code></li>
+      <li><code>arc()</code></li>
+      <li>False</li>
+      <li><code>"2d"</code></li>
+      <li>Draws the outline of the current path</li>
+      <li><code>fillText()</code></li>
+      <li>Yes</li>
+    </ol>
+  </section>
+
+  <section id="assignment">
+    <h3>Assignment</h3>
+    <h4>Objective</h4>
+    <p>Draw a scene using HTML5 canvas that includes:</p>
+    <ul>
+      <li>A rectangle</li>
+      <li>A circle</li>
+      <li>A straight line</li>
+      <li>A short text label</li>
+      <li>An image</li>
+    </ul>
+
+    <h4>Submission Guidelines</h4>
+    <ul>
+      <li>Create an HTML file with a <code>&lt;canvas&gt;</code> element.</li>
+      <li>Use JavaScript to draw all items.</li>
+      <li>Include comments to explain your code.</li>
+    </ul>
+  </section>
+
+  <section id="assignment-answer" class="last-item">
+    <h3>Assignment Solution</h3>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Canvas Assignment&lt;/title&gt;
+  &lt;style&gt;
+    canvas { border: 1px solid #ccc; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;canvas id="myCanvas" width="500" height="400"&gt;&lt;/canvas&gt;
+  &lt;script&gt;
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Rectangle
+    ctx.fillStyle = 'skyblue';
+    ctx.fillRect(20, 20, 100, 80);
+
+    // Circle
+    ctx.beginPath();
+    ctx.arc(200, 60, 40, 0, 2 * Math.PI);
+    ctx.fillStyle = 'green';
+    ctx.fill();
+
+    // Line
+    ctx.beginPath();
+    ctx.moveTo(10, 200);
+    ctx.lineTo(300, 200);
+    ctx.stroke();
+
+    // Text
+    ctx.font = '18px sans-serif';
+    ctx.fillStyle = 'black';
+    ctx.fillText('My Canvas Drawing', 150, 250);
+
+    // Image
+    const img = new Image();
+    img.onload = function() {
+      ctx.drawImage(img, 350, 50, 100, 100);
+    };
+    img.src = 'https://via.placeholder.com/100';
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  </section>
+
+</div>
+
+<aside id="right-sidebar">
+    <div>
+      <h3>In this Article</h3>
+      <ul>
+        <li><a href="#what-is-canvas">What is HTML5 Canvas?</a></li>
+        <li><a href="#basic-canvas-syntax">Basic Canvas Syntax</a></li>
+        <li><a href="#canvas-context">Getting the Context</a></li>
+        <li><a href="#drawing-shapes">Drawing Shapes</a></li>
+        <li><a href="#drawing-text">Drawing Text</a></li>
+        <li><a href="#drawing-images">Drawing Images</a></li>
+        <li><a href="#canvas-use-cases">Canvas Use Cases</a></li>
+        <li><a href="#canvas-quiz">Quiz</a></li>
+        <li><a href="#quiz-answers">Answers</a></li>
+        <li><a href="#assignment">Assignment</a></li>
+        <li><a href="#assignment-answer">Assignment Solution</a></li>
+      </ul>
+    </div>
+  </aside>

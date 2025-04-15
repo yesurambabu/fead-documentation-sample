@@ -1,0 +1,177 @@
+<div id="content">
+  <h2>CSS Syntax</h2>
+
+    <section id="css-syntax-overview">
+      <h3>CSS Syntax Overview</h3>
+      <p>CSS syntax is the structure used to apply styles to HTML elements. A CSS rule-set consists of:</p>
+      <ul>
+        <li><strong>Selector</strong> – Targets the HTML element to be styled.</li>
+        <li><strong>Declaration Block</strong> – Contains one or more declarations (property-value pairs), enclosed in curly braces.</li>
+      </ul>
+  
+      <h4>Basic Syntax Example</h4>
+      <pre><code class="language-css">selector {
+    property: value;
+  }</code></pre>
+  
+      <h4>Example</h4>
+      <pre><code class="language-css">h1 {
+    color: blue;
+    font-size: 24px;
+  }</code></pre>
+  
+      <p>In this example:</p>
+      <ul>
+        <li><code>h1</code> is the selector.</li>
+        <li><code>color</code> and <code>font-size</code> are properties.</li>
+        <li><code>blue</code> and <code>24px</code> are the values assigned to those properties.</li>
+      </ul>
+    </section>
+  
+    <section id="multiple-declarations">
+      <h3>Using Multiple Declarations</h3>
+      <p>You can add multiple declarations inside a single rule block, separated by semicolons:</p>
+      <pre><code class="language-css">p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+  }</code></pre>
+    </section>
+  
+    <section id="whitespace-and-comments">
+      <h3>Whitespace and Comments</h3>
+      <ul>
+        <li>Whitespace (spaces, tabs, newlines) is ignored by the browser but improves readability.</li>
+        <li>CSS comments are written using <code>/* ... */</code> syntax.</li>
+      </ul>
+  
+      <pre><code class="language-css">/* This is a comment */
+  h2 {
+    color: green; /* Green heading */
+  }</code></pre>
+    </section>
+  
+    <section id="quiz-css-syntax">
+      <h3>Quiz</h3>
+      <ol>
+        <li>What are the two main parts of a CSS rule?</li>
+        <li>Write a CSS rule to make all <code>p</code> elements red.</li>
+        <li>What symbol separates a property from its value?</li>
+        <li>What is used to group multiple declarations?</li>
+        <li>How do you write a comment in CSS?</li>
+        <li>True or False: CSS is case-sensitive.</li>
+        <li>Can you include multiple properties in one rule block?</li>
+        <li>What does this rule do: <code>body { background-color: black; }</code>?</li>
+        <li>Is whitespace required between declarations?</li>
+        <li>Why are semicolons important in CSS?</li>
+      </ol>
+    </section>
+  
+    <section id="answers-css-syntax">
+      <h3>Answers</h3>
+      <ol>
+        <li>Selector and Declaration Block</li>
+        <li><code>p { color: red; }</code></li>
+        <li>Colon <code>:</code></li>
+        <li>Curly braces <code>{ }</code></li>
+        <li><code>/* comment */</code></li>
+        <li>False</li>
+        <li>Yes</li>
+        <li>Changes background color of the entire page to black</li>
+        <li>No, but it's used for readability</li>
+        <li>They separate each declaration; forgetting them may break the rule</li>
+      </ol>
+    </section>
+  
+    <section id="assignment-css-syntax">
+      <h3>Assignment</h3>
+  
+      <h4>Objective</h4>
+      <p>Apply your understanding of CSS syntax by creating and styling basic HTML elements using proper CSS rules.</p>
+  
+      <h4>Task Instructions</h4>
+      <ul>
+        <li>Create an HTML file named <code>css-syntax.html</code>.</li>
+        <li>Include the following elements:
+          <ul>
+            <li>A heading (<code>&lt;h1&gt;</code>)</li>
+            <li>A paragraph (<code>&lt;p&gt;</code>)</li>
+            <li>An unordered list with at least 3 items</li>
+          </ul>
+        </li>
+        <li>Use internal CSS to:
+          <ul>
+            <li>Style the heading with color = navy and font size = 28px</li>
+            <li>Style the paragraph with color = gray and line height = 1.6</li>
+            <li>Style the list items with font-family = Arial and padding = 10px</li>
+          </ul>
+        </li>
+        <li>Include at least one comment in your CSS.</li>
+      </ul>
+  
+      <h4>Submission Guidelines</h4>
+      <ul>
+        <li>Submit only the <code>css-syntax.html</code> file.</li>
+        <li>Use proper indentation and formatting.</li>
+      </ul>
+    </section>
+  
+    <section id="assignment-solution-css-syntax" class="last-item">
+      <h3>Assignment Solution</h3>
+  
+      <h4>File: <code>css-syntax.html</code></h4>
+      <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+  &lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;CSS Syntax Assignment&lt;/title&gt;
+    &lt;style&gt;
+      /* This is a CSS comment */
+      h1 {
+        color: navy;
+        font-size: 28px;
+      }
+  
+      p {
+        color: gray;
+        line-height: 1.6;
+      }
+  
+      ul li {
+        font-family: Arial, sans-serif;
+        padding: 10px;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  
+    &lt;h1&gt;Learning CSS Syntax&lt;/h1&gt;
+  
+    &lt;p&gt;This paragraph demonstrates styling using CSS rules, properties, and values.&lt;/p&gt;
+  
+    &lt;ul&gt;
+      &lt;li&gt;First item&lt;/li&gt;
+      &lt;li&gt;Second item&lt;/li&gt;
+      &lt;li&gt;Third item&lt;/li&gt;
+    &lt;/ul&gt;
+  
+  &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+    </section>
+  
+  </div>
+  
+  <aside id="right-sidebar">
+    <div>
+      <h3>In this Article</h3>
+      <ul>
+        <li><a href="#css-syntax-overview">CSS Syntax Overview</a></li>
+        <li><a href="#multiple-declarations">Using Multiple Declarations</a></li>
+        <li><a href="#whitespace-and-comments">Whitespace and Comments</a></li>
+        <li><a href="#quiz-css-syntax">Quiz</a></li>
+        <li><a href="#answers-css-syntax">Answers</a></li>
+        <li><a href="#assignment-css-syntax">Assignment</a></li>
+        <li><a href="#assignment-solution-css-syntax">Assignment Solution</a></li>
+      </ul>
+    </div>
+  </aside>

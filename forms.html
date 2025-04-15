@@ -1,0 +1,236 @@
+<div id="content">
+  <h2>Forms</h2>
+
+  <section id="introduction-to-html-forms">
+    <h3>Introduction</h3>
+    <p>HTML forms are used to collect user input and send it to a server for processing. Forms are essential in web applications for tasks like user registration, login, search, feedback, and payment processing.</p>
+  
+    <h4>Basic Structure of a Form</h4>
+    <p>A form in HTML is created using the <code>&lt;form&gt;</code> element, which contains input fields, buttons, and other interactive elements.</p>
+  
+    <pre><code class="language-html">&lt;form action="submit.php" method="post"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;</code></pre>
+  
+    <h4>Key Elements in a Form</h4>
+    <ul>
+      <li><code>&lt;form&gt;</code>: Defines a form.</li>
+      <li><code>action</code>: Specifies the URL where form data is sent.</li>
+      <li><code>method</code>: Defines how data is sent (<code>GET</code> or <code>POST</code>).</li>
+      <li><code>&lt;label&gt;</code>: Defines a label for an input field.</li>
+      <li><code>&lt;input&gt;</code>: Allows user input.</li>
+      <li><code>&lt;submit&gt;</code>: A button to submit the form.</li>
+    </ul>
+  </section>
+  
+  <section id="form-attributes">
+    <h3>Form Attributes</h3>
+  
+    <h4>Common Form Attributes</h4>
+    <table>
+      <tr><th>Attribute</th><th>Description</th></tr>
+      <tr><td>action</td><td>Specifies where to send form data</td></tr>
+      <tr><td>method</td><td>Defines GET or POST request type</td></tr>
+      <tr><td>target</td><td>_self, _blank, _parent, _top</td></tr>
+      <tr><td>autocomplete</td><td>Enables or disables autofill (on/off)</td></tr>
+      <tr><td>novalidate</td><td>Disables form validation</td></tr>
+    </table>
+  
+    <h4>GET vs. POST Method</h4>
+    <table>
+      <tr><th>Method</th><th>Description</th><th>When to Use</th></tr>
+      <tr><td>GET</td><td>Sends data in the URL</td><td>When data is not sensitive (e.g., search forms)</td></tr>
+      <tr><td>POST</td><td>Sends data in the request body</td><td>When data is sensitive (e.g., login, registration)</td></tr>
+    </table>
+  </section>
+  
+  <section id="input-fields-in-forms">
+    <h3>Input Fields in Forms</h3>
+  
+    <h4>Text Input Field</h4>
+  <pre><code class="language-html">&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input type="text" id="username" name="username"&gt;</code></pre>
+  
+    <h4>Password Field</h4>
+  <pre><code class="language-html">&lt;label for="password"&gt;Password:&lt;/label&gt;
+&lt;input type="password" id="password" name="password"&gt;</code></pre>
+  
+    <h4>Email Field</h4>
+  <pre><code class="language-html">&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email" name="email"&gt;</code></pre>
+  
+    <h4>Radio Buttons</h4>
+  <pre><code class="language-html">&lt;p&gt;Gender:&lt;/p&gt;
+&lt;input type="radio" id="male" name="gender" value="male"&gt;
+&lt;label for="male"&gt;Male&lt;/label&gt;
+&lt;input type="radio" id="female" name="gender" value="female"&gt;
+&lt;label for="female"&gt;Female&lt;/label&gt;</code></pre>
+  
+    <h4>Checkboxes</h4>
+  <pre><code class="language-html">&lt;p&gt;Select your hobbies:&lt;/p&gt;
+&lt;input type="checkbox" id="reading" name="hobby" value="Reading"&gt;
+&lt;label for="reading"&gt;Reading&lt;/label&gt;
+&lt;input type="checkbox" id="sports" name="hobby" value="Sports"&gt;
+&lt;label for="sports"&gt;Sports&lt;/label&gt;</code></pre>
+  
+    <h4>Dropdown List (Select Box)</h4>
+  <pre><code class="language-html">&lt;label for="country"&gt;Choose a country:&lt;/label&gt;
+&lt;select id="country" name="country"&gt;
+    &lt;option value="USA"&gt;USA&lt;/option&gt;
+    &lt;option value="UK"&gt;UK&lt;/option&gt;
+    &lt;option value="India"&gt;India&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+  
+    <h4>Textarea (Multi-line Input)</h4>
+  <pre><code class="language-html">&lt;label for="comments"&gt;Your comments:&lt;/label&gt;
+&lt;textarea id="comments" name="comments" rows="4" cols="30"&gt;&lt;/textarea&gt;</code></pre>
+  
+    <h4>Date Picker</h4>
+  <pre><code class="language-html">&lt;label for="dob"&gt;Date of Birth:&lt;/label&gt;
+&lt;input type="date" id="dob" name="dob"&gt;</code></pre>
+  </section>
+  
+  <section id="form-buttons">
+    <h3>Form Buttons</h3>
+  
+    <h4>Submit Button</h4>
+    <pre><code class="language-html">&lt;input type="submit" value="Submit"&gt;</code></pre>
+  
+    <h4>Reset Button</h4>
+    <pre><code class="language-html">&lt;input type="reset" value="Reset"&gt;</code></pre>
+  
+    <h4>Button Element (Custom Actions)</h4>
+    <pre><code class="language-html">&lt;button type="button" onclick="alert('Button Clicked!')"&gt;Click Me&lt;/button&gt;</code></pre>
+  </section>
+  
+  <section id="form-validation">
+    <h3>Form Validation</h3>
+  
+    <h4>Required Fields</h4>
+    <pre><code class="language-html">&lt;input type="text" name="name" required&gt;</code></pre>
+  
+    <h4>Minimum and Maximum Length</h4>
+    <pre><code class="language-html">&lt;input type="text" name="username" minlength="3" maxlength="10"&gt;</code></pre>
+  
+    <h4>Pattern Matching</h4>
+    <pre><code class="language-html">&lt;input type="text" name="zipcode" pattern="[0-9]{5}" title="Enter a 5-digit ZIP code"&gt;</code></pre>
+  </section>
+  
+  <section id="quiz-forms-in-html">
+    <h3>Quiz: Forms in HTML</h3>
+    <ol>
+      <li>Which HTML tag is used to create a form?<br>
+        a) &lt;input&gt;<br>
+        b) &lt;form&gt;<br>
+        c) &lt;label&gt;<br>
+        d) &lt;table&gt;
+      </li>
+      <li>What does the action attribute in a form do?<br>
+        a) Defines the method type<br>
+        b) Specifies where form data should be sent<br>
+        c) Creates a button<br>
+        d) None of the above
+      </li>
+      <li>What is the correct way to make a text field required?<br>
+        a) &lt;input type="text"&gt;<br>
+        b) &lt;input type="text" required&gt;<br>
+        c) &lt;input required&gt;<br>
+        d) &lt;text required&gt;
+      </li>
+      <li>What is the difference between GET and POST?<br>
+        a) GET sends data in the URL, POST sends it in the request body<br>
+        b) GET is more secure than POST<br>
+        c) POST sends data in the URL, GET sends it in the request body<br>
+        d) No difference
+      </li>
+      <li>Which input type is used for selecting a single option from multiple choices?<br>
+        a) &lt;checkbox&gt;<br>
+        b) &lt;radio&gt;<br>
+        c) &lt;select&gt;<br>
+        d) &lt;input type="text"&gt;
+      </li>
+    </ol>
+  
+    <h4>Answers:</h4>
+    <ol>
+      <li>(b)</li>
+      <li>(b)</li>
+      <li>(b)</li>
+      <li>(a)</li>
+      <li>(b)</li>
+    </ol>
+  </section>
+  
+  <section id="assignment-user-registration-form" class="last-item">
+    <h3>Assignment: Create a User Registration Form</h3>
+  
+    <h4>Objective</h4>
+    <p>Each group (3-4 students) will create a registration form using HTML and CSS. The form must include:</p>
+    <ul>
+      <li>Name (text field)</li>
+      <li>Email (email field)</li>
+      <li>Password (password field)</li>
+      <li>Gender (radio buttons)</li>
+      <li>Country (dropdown)</li>
+      <li>Date of Birth (date picker)</li>
+      <li>Profile Picture Upload</li>
+      <li>Terms &amp; Conditions (checkbox)</li>
+      <li>Submit &amp; Reset buttons</li>
+    </ul>
+  
+    <h4>Submission Guidelines</h4>
+    <ul>
+      <li>Submit .html and .css files.</li>
+      <li>Validate fields using HTML5 validation.</li>
+      <li>Use CSS to style the form attractively.</li>
+    </ul>
+  
+    <h4>Answer</h4>
+  <pre><code class="language-html">&lt;style&gt;
+    form {
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+    }
+    label, input {
+        display: block;
+        margin: 5px 0;
+    }
+&lt;/style&gt;
+
+&lt;form action="submit.php" method="post"&gt;
+    &lt;label&gt;Name:&lt;/label&gt;
+    &lt;input type="text" required&gt;
+
+    &lt;label&gt;Email:&lt;/label&gt;
+    &lt;input type="email" required&gt;
+
+    &lt;label&gt;Password:&lt;/label&gt;
+    &lt;input type="password" required&gt;
+
+    &lt;label&gt;Gender:&lt;/label&gt;
+    &lt;input type="radio" name="gender"&gt; Male
+    &lt;input type="radio" name="gender"&gt; Female
+
+    &lt;input type="submit" value="Register"&gt;
+&lt;/form&gt;</code></pre>
+  </section>
+  
+  </div>
+
+  <aside id="right-sidebar">
+    <div>
+      <h3>In this Article</h3>
+      <ul>
+        <li><a href="#introduction-to-html-forms">Introduction to HTML Forms</a></li>
+        <li><a href="#form-attributes">Form Attributes</a></li>
+        <li><a href="#input-fields-in-forms">Input Fields in Forms</a></li>
+        <li><a href="#form-buttons">Form Buttons</a></li>
+        <li><a href="#form-validation">Form Validation</a></li>
+        <li><a href="#quiz-forms-in-html">Quiz: Forms in HTML</a></li>
+        <li><a href="#assignment-user-registration-form">Assignment: Create a User Registration Form</a></li>
+      </ul>
+    </div>
+  </aside>

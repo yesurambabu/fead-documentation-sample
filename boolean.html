@@ -1,0 +1,325 @@
+<div id="content">
+  <h2>Boolean</h2>
+
+  <section id="introduction-to-boolean">
+    <h3>Introduction</h3>
+    <p>A Boolean is a data type in JavaScript that represents one of two values:</p>
+    <ul>
+      <li>true</li>
+      <li>false</li>
+    </ul>
+    <p>Booleans are commonly used in conditional statements, comparisons, and logical operations.</p>
+  </section>
+
+  <section id="declaring-boolean-variables">
+    <h3>Declaring Boolean Variables</h3>
+    <p>Boolean values can be assigned to variables directly:</p>
+    <pre><code class="language-javascript">let isStudent = true;
+let hasLicense = false;
+</code></pre>
+    <p>Booleans can also be created using the Boolean() function:</p>
+    <pre><code class="language-javascript">let value1 = Boolean(1);  // true
+let value2 = Boolean(0);  // false
+let value3 = Boolean("Hello");  // true
+let value4 = Boolean("");  // false
+</code></pre>
+  </section>
+
+  <section id="boolean-in-conditions">
+    <h3>Boolean Values in Conditions</h3>
+    <pre><code class="language-javascript">let isRaining = true;
+
+if (isRaining) {
+    console.log("Take an umbrella!");
+} else {
+    console.log("Enjoy the sunshine!");
+}
+</code></pre>
+  </section>
+
+  <section id="falsy-truthy-values">
+    <h3>Falsy and Truthy Values</h3>
+    <h4>Falsy Values (evaluate to false in a Boolean context)</h4>
+    <ul>
+      <li>0</li>
+      <li>"" (empty string)</li>
+      <li>null</li>
+      <li>undefined</li>
+      <li>NaN (Not a Number)</li>
+      <li>false</li>
+    </ul>
+    <p>Example:</p>
+    <pre><code class="language-javascript">if (0) {
+    console.log("This won't run because 0 is falsy.");
+}
+</code></pre>
+
+    <h4>Truthy Values (evaluate to true in a Boolean context)</h4>
+    <ul>
+      <li>Any non-empty string ("Hello")</li>
+      <li>Any nonzero number (42, -1)</li>
+      <li>Any object ({}, [])</li>
+      <li>true</li>
+    </ul>
+    <p>Example:</p>
+    <pre><code class="language-javascript">if ("Hello") {
+    console.log("This will run because a non-empty string is truthy.");
+}
+</code></pre>
+  </section>
+
+  <section id="boolean-comparisons">
+    <h3>Boolean Comparisons</h3>
+    <p>Comparison operators return Boolean values.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Operator</th>
+          <th>Description</th>
+          <th>Example</th>
+          <th>Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>==</td>
+          <td>Equal to</td>
+          <td>5 == "5"</td>
+          <td>true (loose comparison)</td>
+        </tr>
+        <tr>
+          <td>===</td>
+          <td>Strict equal to</td>
+          <td>5 === "5"</td>
+          <td>false (strict comparison)</td>
+        </tr>
+        <tr>
+          <td>!=</td>
+          <td>Not equal to</td>
+          <td>10 != 5</td>
+          <td>true</td>
+        </tr>
+        <tr>
+          <td>!==</td>
+          <td>Strict not equal to</td>
+          <td>10 !== "10"</td>
+          <td>true</td>
+        </tr>
+        <tr>
+          <td>></td>
+          <td>Greater than</td>
+          <td>10 > 5</td>
+          <td>true</td>
+        </tr>
+        <tr>
+          <td><</td>
+          <td>Less than</td>
+          <td>5 < 10</td>
+          <td>true</td>
+        </tr>
+        <tr>
+          <td>>=</td>
+          <td>Greater than or equal to</td>
+          <td>10 >= 10</td>
+          <td>true</td>
+        </tr>
+        <tr>
+          <td><=</td>
+          <td>Less than or equal to</td>
+          <td>5 <= 10</td>
+          <td>true</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Example:</p>
+    <pre><code class="language-javascript">let x = 10;
+let y = 5;
+
+console.log(x > y);  // true
+console.log(x === "10");  // false (strict comparison)
+console.log(x != y);  // true
+</code></pre>
+  </section>
+
+  <section id="logical-operators">
+    <h3>Logical Operators</h3>
+    <p>Logical operators are used to combine multiple Boolean expressions.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Operator</th>
+          <th>Name</th>
+          <th>Example</th>
+          <th>Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&&</td>
+          <td>AND</td>
+          <td>true && false</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>||</td>
+          <td>OR</td>
+          <td>true || false</td>
+          <td>true</td>
+        </tr>
+        <tr>
+          <td>!</td>
+          <td>NOT</td>
+          <td>!true</td>
+          <td>false</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>AND (&&) Operator</h4>
+    <p>Returns true only if both conditions are true.</p>
+    <pre><code class="language-javascript">let hasID = true;
+let hasTicket = true;
+
+if (hasID && hasTicket) {
+    console.log("You can enter the event.");
+} else {
+    console.log("Entry denied.");
+}
+</code></pre>
+
+    <h4>OR (||) Operator</h4>
+    <p>Returns true if at least one condition is true.</p>
+    <pre><code class="language-javascript">let isWeekend = false;
+let isHoliday = true;
+
+if (isWeekend || isHoliday) {
+    console.log("You can relax!");
+}
+</code></pre>
+
+    <h4>NOT (!) Operator</h4>
+    <p>Reverses the Boolean value.</p>
+    <pre><code class="language-javascript">let isNight = false;
+console.log(!isNight);  // true
+</code></pre>
+  </section>
+
+  <section id="boolean-functions">
+    <h3>Boolean Functions</h3>
+
+    <h4>Using Boolean in Functions</h4>
+    <p>Booleans can be used in functions to return true or false.</p>
+    <pre><code class="language-javascript">function isEven(num) {
+    return num % 2 === 0;
+}
+
+console.log(isEven(4));  // true
+console.log(isEven(7));  // false
+</code></pre>
+
+    <h4>Boolean Conversion</h4>
+    <p>You can convert any value to a Boolean using Boolean().</p>
+    <pre><code class="language-javascript">console.log(Boolean(100));  // true
+console.log(Boolean(0));  // false
+console.log(Boolean(""));  // false
+console.log(Boolean("JavaScript"));  // true
+</code></pre>
+  </section>
+
+  <section id="conclusion" class="last-item">
+    <h3>Conclusion</h3>
+    <ul>
+      <li>JavaScript Booleans can hold true or false values.</li>
+      <li>Some values are truthy and others are falsy.</li>
+      <li>Boolean logic is essential in conditions, loops, and functions.</li>
+    </ul>
+  </section>
+
+  <section id="quiz-questions">
+    <h3>Quiz Questions</h3>
+    <ol>
+      <li>What are the two possible values of a Boolean in JavaScript?<br>
+        a) Yes, No<br>
+        b) True, False<br>
+        c) 1, 0<br>
+        d) On, Off
+      </li>
+      <li>Which of the following values is considered falsy in JavaScript?<br>
+        a) "0"<br>
+        b) "false"<br>
+        c) null<br>
+        d) []
+      </li>
+      <li>What is the output of Boolean("Hello")?<br>
+        a) true<br>
+        b) false<br>
+        c) null<br>
+        d) undefined
+      </li>
+      <li>What will be the output of the following?<br>
+        <pre><code class="language-javascript">console.log(5 > 3 && 10 < 20);</code></pre>
+        a) true<br>
+        b) false<br>
+        c) null<br>
+        d) undefined
+      </li>
+      <li>What does the ! operator do in JavaScript?<br>
+        a) Converts a value to a number<br>
+        b) Negates a Boolean value<br>
+        c) Converts a value to a string<br>
+        d) None of the above
+      </li>
+    </ol>
+  </section>
+
+  <section id="quiz-answers">
+    <h3>Quiz Answers</h3>
+    <ol>
+      <li>b) True, False</li>
+      <li>c) null</li>
+      <li>a) true</li>
+      <li>a) true</li>
+      <li>b) Negates a Boolean value</li>
+    </ol>
+  </section>
+
+  <section id="assignment">
+  <h3>Assignment</h3>
+  <ol>
+    <li>Create a voting eligibility checker that asks the user for their age.</li>
+    <li>If the user is 18 or older, print "Eligible to vote"; otherwise, print "Not eligible".</li>
+    <li>Use Boolean logic in your code.</li>
+  </ol>
+</section>
+
+  <section id="assignment-solution" class="last-item">
+    <h3>Assignment Solution</h3>
+    <pre><code class="language-javascript">let age = prompt("Enter your age:");
+age = Number(age);
+
+if (age >= 18) {
+    console.log("Eligible to vote");
+} else {
+    console.log("Not eligible");
+}
+</code></pre>
+  </section>
+</div>
+
+<aside id="right-sidebar">
+    <div>
+    <h3>In this Article</h3>
+    <ul>
+        <li><a href="#introduction-to-boolean">Introduction to Boolean in JavaScript</a></li>
+        <li><a href="#declaring-boolean-variables">Declaring Boolean Variables</a></li>
+        <li><a href="#boolean-in-conditions">Boolean Values in Conditions</a></li>
+        <li><a href="#falsy-truthy-values">Falsy and Truthy Values</a></li>
+        <li><a href="#boolean-comparisons">Boolean Comparisons</a></li>
+        <li><a href="#logical-operators">Logical Operators</a></li>
+        <li><a href="#boolean-functions">Boolean Functions</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#quiz-questions">Quiz Questions</a></li>
+        <li><a href="#assignment">Assignment</a></li>
+      </ul>
+    </div>
+</aside>

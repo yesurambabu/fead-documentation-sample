@@ -1,0 +1,214 @@
+<div id="content">
+  <h2>Operators</h2>
+
+  <section id="introduction-to-javascript-operators">
+    <h3>Introduction</h3>
+    <p>Operators in JavaScript are symbols used to perform operations on variables and values. JavaScript supports various types of operators.</p>
+  </section>
+
+  <section id="types-of-javascript-operators">
+    <h3>Types of JavaScript Operators</h3>
+    <ol>
+      <li>Arithmetic Operators</li>
+      <li>Assignment Operators</li>
+      <li>Comparison Operators</li>
+      <li>Logical Operators</li>
+      <li>Bitwise Operators</li>
+      <li>Ternary Operator</li>
+    </ol>
+  </section>
+
+  <section id="arithmetic-operators">
+    <h3>Arithmetic Operators</h3>
+    <table>
+      <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
+      <tr><td>+</td><td>Addition</td><td>5 + 3 = 8</td></tr>
+      <tr><td>-</td><td>Subtraction</td><td>5 - 3 = 2</td></tr>
+      <tr><td>*</td><td>Multiplication</td><td>5 * 3 = 15</td></tr>
+      <tr><td>/</td><td>Division</td><td>10 / 2 = 5</td></tr>
+      <tr><td>%</td><td>Modulus (Remainder)</td><td>10 % 3 = 1</td></tr>
+      <tr><td>**</td><td>Exponentiation</td><td>2 ** 3 = 8</td></tr>
+    </table>
+
+    <h4>Example</h4>
+    <pre><code class="language-javascript">let a = 10, b = 3;
+console.log(a + b); // Output: 13
+console.log(a % b); // Output: 1</code></pre>
+  </section>
+
+  <section id="assignment-operators">
+    <h3>Assignment Operators</h3>
+    <table>
+      <tr><th>Operator</th><th>Example</th><th>Equivalent To</th></tr>
+      <tr><td>=</td><td>x = 5</td><td>Assign 5 to x</td></tr>
+      <tr><td>+=</td><td>x += 3</td><td>x = x + 3</td></tr>
+      <tr><td>-=</td><td>x -= 3</td><td>x = x - 3</td></tr>
+      <tr><td>*=</td><td>x *= 3</td><td>x = x * 3</td></tr>
+      <tr><td>/=</td><td>x /= 3</td><td>x = x / 3</td></tr>
+    </table>
+
+    <h4>Example</h4>
+    <pre><code class="language-javascript">let x = 10;
+x += 5;
+console.log(x); // Output: 15</code></pre>
+  </section>
+
+  <section id="comparison-operators">
+    <h3>Comparison Operators</h3>
+    <table>
+      <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
+      <tr><td>==</td><td>Equal to</td><td>5 == "5" (true)</td></tr>
+      <tr><td>===</td><td>Strict Equal to</td><td>5 === "5" (false)</td></tr>
+      <tr><td>!=</td><td>Not Equal</td><td>5 != 3 (true)</td></tr>
+      <tr><td>!==</td><td>Strict Not Equal</td><td>5 !== "5" (true)</td></tr>
+      <tr><td>></td><td>Greater than</td><td>5 > 3 (true)</td></tr>
+      <tr><td><</td><td>Less than</td><td>5 < 3 (false)</td></tr>
+      <tr><td>>=</td><td>Greater than or Equal</td><td>5 >= 5 (true)</td></tr>
+      <tr><td><=</td><td>Less than or Equal</td><td>5 <= 3 (false)</td></tr>
+    </table>
+
+    <h4>Example</h4>
+    <pre><code class="language-javascript">console.log(10 > 5); // Output: true
+console.log(10 === "10"); // Output: false</code></pre>
+  </section>
+
+  <section id="logical-operators">
+    <h3>Logical Operators</h3>
+    <table>
+      <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
+      <tr><td>&&</td><td>AND</td><td>(5 > 3 && 10 > 5) → true</td></tr>
+      <tr><td>||</td><td>OR</td><td>(5 > 3 || 10 < 5) → true</td></tr>
+      <tr><td>!</td><td>NOT</td><td>!(5 > 3) → false</td></tr>
+    </table>
+
+    <h4>Example</h4>
+    <pre><code class="language-javascript">let a = true, b = false;
+console.log(a && b); // Output: false
+console.log(a || b); // Output: true</code></pre>
+  </section>
+
+  <section id="bitwise-operators">
+    <h3>Bitwise Operators</h3>
+    <table>
+      <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
+      <tr><td>&</td><td>AND</td><td>5 & 1 (1)</td></tr>
+      <tr><td>|</td><td>OR</td><td>5 | 1 (5)</td></tr>
+      <tr><td>^</td><td>XOR</td><td>5 ^ 1 (4)</td></tr>
+      <tr><td><<</td><td>Left Shift</td><td>5 << 1 (10)</td></tr>
+      <tr><td>>></td><td>Right Shift</td><td>5 >> 1 (2)</td></tr>
+    </table>
+  </section>
+
+  <section id="ternary-operator" class="last-item">
+    <h3>Ternary Operator</h3>
+    <p>A shorthand for if-else statements:</p>
+    <pre><code class="language-javascript">let age = 18;
+let status = (age >= 18) ? "Adult" : "Minor";
+console.log(status); // Output: Adult</code></pre>
+  </section>
+
+  <section id="quiz-javascript-operators">
+    <h3>Quiz: JavaScript Operators</h3>
+    <ol>
+      <li>What is the difference between == and ===?<br>
+      a) Both compare values and types<br>
+      b) == compares only values, === compares values and types<br>
+      c) === compares only values<br>
+      d) == checks strict equality</li>
+
+      <li>How do you write a ternary operator?<br>
+      a) if (a) then b else c<br>
+      b) a = b ? c : d<br>
+      c) (condition) ? value1 : value2<br>
+      d) condition ? then : else</li>
+
+      <li>What does the % operator do?<br>
+      a) Division<br>
+      b) Modulus (remainder)<br>
+      c) Power<br>
+      d) Equality check</li>
+
+      <li>What is the result of 5 && 0?<br>
+      a) 5<br>
+      b) 0<br>
+      c) true<br>
+      d) false</li>
+
+      <li>Which operator is used for exponentiation in JavaScript?<br>
+      a) ^<br>
+      b) **<br>
+      c) ^^<br>
+      d) exp()</li>
+    </ol>
+  </section>
+
+  <section id="quiz-answers-javascript-operators">
+    <h3>Answers</h3>
+    <ol>
+      <li>b</li>
+      <li>c</li>
+      <li>b</li>
+      <li>b</li>
+      <li>b</li>
+    </ol>
+  </section>
+
+  <section id="assignment-javascript-operators">
+    <h3>Assignment</h3>
+    <p>Create an interactive web page that:</p>
+    <ul>
+      <li>Performs arithmetic calculations based on user input.</li>
+      <li>Compares two values entered by the user.</li>
+      <li>Uses logical and ternary operators to determine conditions.</li>
+    </ul>
+  </section>
+
+  <section id="assignment-solution-javascript-operators" class="last-item">
+    <h3>Assignment Solution</h3>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Operators Example&lt;/title&gt;
+  &lt;script&gt;
+    function calculate() {
+      let num1 = Number(document.getElementById("num1").value);
+      let num2 = Number(document.getElementById("num2").value);
+      let sum = num1 + num2;
+      let comparison = (num1 > num2) ? "First is greater" : "Second is greater or equal";
+      let isBothPositive = (num1 > 0 && num2 > 0);
+
+      document.getElementById("output").innerHTML = 
+        "Sum: " + sum + "&lt;br&gt;" +
+        "Comparison: " + comparison + "&lt;br&gt;" +
+        "Both positive? " + isBothPositive;
+    }
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;input id="num1" type="number"&gt;
+  &lt;input id="num2" type="number"&gt;
+  &lt;button onclick="calculate()"&gt;Check&lt;/button&gt;
+  &lt;div id="output"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  </section>
+</div>
+
+<aside id="right-sidebar">
+    <div>
+    <h3>In this Article</h3>
+    <ul>
+        <li><a href="#introduction-to-javascript-operators">Introduction to JavaScript Operators</a></li>
+        <li><a href="#types-of-javascript-operators">Types of JavaScript Operators</a></li>
+        <li><a href="#arithmetic-operators">Arithmetic Operators</a></li>
+        <li><a href="#assignment-operators">Assignment Operators</a></li>
+        <li><a href="#comparison-operators">Comparison Operators</a></li>
+        <li><a href="#logical-operators">Logical Operators</a></li>
+        <li><a href="#bitwise-operators">Bitwise Operators</a></li>
+        <li><a href="#ternary-operator">Ternary Operator</a></li>
+        <li><a href="#quiz-javascript-operators">Quiz: JavaScript Operators</a></li>
+        <li><a href="#assignment-javascript-operators">Assignment</a></li>
+      </ul>
+    </div>
+</aside>

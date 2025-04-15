@@ -1,0 +1,205 @@
+<div id="content">
+  <h2>Frames</h2>
+
+  <section id="introduction-to-html-frames">
+    <h3>Introduction</h3>
+    <p>HTML frames were used to divide a web page into multiple sections where each section could load a different web page. Frames were widely used before the adoption of CSS layouts and flexbox/grid systems. However, frames are now deprecated in HTML5 because they cause usability and accessibility issues.</p>
+    <p>Although they are outdated, it's useful to understand them for maintaining older web projects.</p>
+  </section>
+
+  <section id="basic-structure-of-frames">
+    <h3>Basic Structure of Frames</h3>
+    <p>Frames are created using the <code>&lt;frameset&gt;</code> tag instead of <code>&lt;body&gt;</code>. Each frame is defined using the <code>&lt;frame&gt;</code> tag.</p>
+    <h4>Example: Creating a Two-Column Layout</h4>
+    <pre><code class="language-html">&lt;frameset cols="50%,50%"&gt;
+    &lt;frame src="page1.html"&gt;
+    &lt;frame src="page2.html"&gt;
+&lt;/frameset&gt;</code></pre>
+    <p>The <code>cols="50%,50%"</code> attribute divides the page into two vertical frames.</p>
+    <p>The <code>src</code> attribute loads different web pages inside the frames.</p>
+  </section>
+
+  <section id="attributes-of-frameset-tag">
+    <h3>Attributes of the &lt;frameset&gt; Tag</h3>
+    <table>
+      <thead>
+        <tr><th>Attribute</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>cols</td><td>Divides the page into columns (e.g., "30%, 70%")</td></tr>
+        <tr><td>rows</td><td>Divides the page into rows (e.g., "50%, 50%")</td></tr>
+        <tr><td>border</td><td>Defines the border width between frames</td></tr>
+        <tr><td>frameborder</td><td>Enables (1) or disables (0) the border</td></tr>
+        <tr><td>noresize</td><td>Prevents users from resizing frames</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="creating-multiple-rows-and-columns">
+    <h3>Creating Multiple Rows and Columns</h3>
+    <h4>Example: Creating a Layout with Two Rows</h4>
+    <pre><code class="language-html">&lt;frameset rows="30%, 70%"&gt;
+    &lt;frame src="header.html"&gt;
+    &lt;frame src="content.html"&gt;
+&lt;/frameset&gt;</code></pre>
+    <p>This divides the window into two horizontal sections.</p>
+    <p>The first frame (header) takes 30% of the height.</p>
+    <p>The second frame (content) takes the remaining 70%.</p>
+
+    <h4>Example: Creating a Complex Layout (Rows + Columns)</h4>
+    <pre><code class="language-html">&lt;frameset rows="20%,80%"&gt;
+    &lt;frame src="top.html" noresize&gt;
+    &lt;frameset cols="30%,70%"&gt;
+        &lt;frame src="menu.html"&gt;
+        &lt;frame src="main.html"&gt;
+    &lt;/frameset&gt;
+&lt;/frameset&gt;</code></pre>
+    <p>The first frame (header) takes 20% of the height.</p>
+    <p>The second part is divided into two vertical sections: menu (30%) and main content (70%).</p>
+  </section>
+
+  <section id="targeting-frames-with-links">
+    <h3>Targeting Frames with Links</h3>
+    <p>You can open links in a specific frame using the <code>target</code> attribute.</p>
+    <h4>Example: Link That Opens in Another Frame</h4>
+    <pre><code class="language-html">&lt;frameset cols="30%,70%"&gt;
+    &lt;frame src="menu.html" name="menu"&gt;
+    &lt;frame src="main.html" name="content"&gt;
+&lt;/frameset&gt;</code></pre>
+    <pre><code class="language-html">&lt;!-- Inside menu.html --&gt;
+&lt;a href="page2.html" target="content"&gt;Open in Right Frame&lt;/a&gt;</code></pre>
+    <p>Clicking the link loads <code>page2.html</code> in the right-side frame (content).</p>
+  </section>
+
+  <section id="advantages-and-disadvantages-of-frames">
+    <h3>Advantages & Disadvantages of Frames</h3>
+    <h4>Advantages</h4>
+    <ul>
+      <li>Reusable Layout – One frame (e.g., menu) can stay fixed while others change.</li>
+      <li>Faster Loading – Only part of the page reloads instead of the whole page.</li>
+    </ul>
+    <h4>Disadvantages (Why Frames Are Deprecated)</h4>
+    <ul>
+      <li>SEO Issues – Search engines have difficulty indexing frame-based sites.</li>
+      <li>No Bookmarking – Users cannot bookmark individual pages within frames.</li>
+      <li>Navigation Problems – The browser’s back/forward buttons may not work correctly.</li>
+      <li>Not Mobile-Friendly – Frames do not adapt well to small screens.</li>
+    </ul>
+  </section>
+
+  <section id="alternative-to-frames-iframe">
+    <h3>Alternative to Frames: Using &lt;iframe&gt;</h3>
+    <p>Unlike <code>&lt;frameset&gt;</code>, the <code>&lt;iframe&gt;</code> tag is still supported in HTML5. It allows embedding external pages inside a section of a webpage.</p>
+    <h4>Example: Embedding a YouTube Video with &lt;iframe&gt;</h4>
+    <pre><code class="language-html">&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen&gt;
+&lt;/iframe&gt;</code></pre>
+    <p>The video is embedded within a web page.</p>
+    <p>Responsive and better than traditional frames.</p>
+  </section>
+
+  <section id="conclusion-frames-in-html">
+    <h3>Conclusion</h3>
+    <p>HTML frames were a useful feature in early web development for dividing a browser window into multiple sections, each capable of displaying a different document. However, due to significant limitations in usability, SEO, and mobile responsiveness, frames are now deprecated in HTML5.</p>
+    <p>For modern web design, <code>&lt;iframe&gt;</code> can still be used when embedding external content, but it should be used sparingly and with accessibility in mind. Developers are encouraged to use CSS Flexbox or Grid for layouts instead of frames.</p>
+  </section>  
+
+  <section id="quiz-frames-in-html">
+    <h3>Quiz: Frames in HTML</h3>
+    <ol>
+      <li>Which tag is used to create frames?<br>
+        a) &lt;iframe&gt;<br>
+        b) &lt;frameset&gt;<br>
+        c) &lt;frame&gt;<br>
+        d) &lt;div&gt;
+      </li>
+      <li>What attribute is used to divide frames horizontally?<br>
+        a) cols<br>
+        b) rows<br>
+        c) border<br>
+        d) width
+      </li>
+      <li>What does the target attribute do in links inside a frame?<br>
+        a) Specifies a new window<br>
+        b) Opens a link in the same frame<br>
+        c) Opens a link in a specific frame<br>
+        d) Closes the frame
+      </li>
+      <li>Why are frames deprecated in HTML5?<br>
+        a) They are difficult to code<br>
+        b) They cause SEO and navigation issues<br>
+        c) They require JavaScript<br>
+        d) They are slower than tables
+      </li>
+      <li>Which tag should be used instead of &lt;frameset&gt; in modern HTML?<br>
+        a) &lt;frame&gt;<br>
+        b) &lt;iframe&gt;<br>
+        c) &lt;div&gt;<br>
+        d) &lt;section&gt;
+      </li>
+    </ol>
+
+    <h4>Answers:</h4>
+    <ol>
+      <li>(b)</li>
+      <li>(b)</li>
+      <li>(c)</li>
+      <li>(b)</li>
+      <li>(b)</li>
+    </ol>
+  </section>
+
+  <section id="assignment-frames-in-html" class="last-item">
+    <h3>Assignment</h3>
+    <h4>Objective:</h4>
+    <p>Create a modern webpage layout using <code>&lt;iframe&gt;</code> to embed external pages.</p>
+
+    <h4>Submission Guidelines:</h4>
+    <ul>
+      <li>A navigation menu (left side, using an iframe)</li>
+      <li>A content section (right side, where links open new pages)</li>
+      <li>A footer section</li>
+      <li>CSS styling for a professional look</li>
+    </ul>
+
+    <h4>Example Solution</h4>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;style&gt;
+        body { font-family: Arial, sans-serif; }
+        iframe { border: 1px solid #ccc; width: 100%; height: 400px; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h2&gt;Website with Navigation&lt;/h2&gt;
+&lt;iframe src="menu.html" width="30%" height="400px" name="menu"&gt;&lt;/iframe&gt;
+&lt;iframe src="home.html" width="70%" height="400px" name="content"&gt;&lt;/iframe&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <pre><code class="language-html">&lt;!-- menu.html --&gt;
+&lt;a href="about.html" target="content"&gt;About Us&lt;/a&gt;&lt;br&gt;
+&lt;a href="contact.html" target="content"&gt;Contact&lt;/a&gt;</code></pre>
+  </section>
+
+</div>
+
+<aside id="right-sidebar">
+  <div>
+    <h3>In this Article</h3>
+    <ul>
+      <li><a href="#introduction-to-html-frames">Introduction to HTML Frames</a></li>
+      <li><a href="#basic-structure-of-frames">Basic Structure of Frames</a></li>
+      <li><a href="#attributes-of-frameset-tag">Attributes of the &lt;frameset&gt; Tag</a></li>
+      <li><a href="#creating-multiple-rows-and-columns">Creating Multiple Rows and Columns</a></li>
+      <li><a href="#targeting-frames-with-links">Targeting Frames with Links</a></li>
+      <li><a href="#advantages-and-disadvantages-of-frames">Advantages & Disadvantages of Frames</a></li>
+      <li><a href="#alternative-to-frames-iframe">Alternative to Frames: Using &lt;iframe&gt;</a></li>
+      <li><a href="#conclusion-frames-in-html"> Conclusion </a></li>
+      <li><a href="#quiz-frames-in-html">Quiz: Frames in HTML</a></li>
+      <li><a href="#assignment-frames-in-html">Assignment</a></li>
+    </ul>
+  </div>
+</aside>

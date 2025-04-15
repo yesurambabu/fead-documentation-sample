@@ -1,0 +1,148 @@
+<div id="content">
+  <h2>CSS Selectors</h2>
+
+    <section id="css-basic-selectors">
+      <h3>CSS Basic Selectors</h3>
+  
+      <h4>Element Selector</h4>
+      <p>Targets all HTML elements of a specific type.</p>
+      <pre><code class="language-css">p {
+    color: blue;
+  }</code></pre>
+  
+      <h4>Class Selector</h4>
+      <p>Targets all elements with a specific class.</p>
+      <pre><code class="language-css">.highlight {
+    background-color: yellow;
+  }</code></pre>
+  
+      <h4>ID Selector</h4>
+      <p>Targets a specific element by its unique ID.</p>
+      <pre><code class="language-css">#header {
+    font-size: 24px;
+  }</code></pre>
+  
+      <h4>Attribute Selector</h4>
+      <p>Selects elements based on the presence or value of attributes.</p>
+      <pre><code class="language-css">input[type="text"] {
+    border: 1px solid gray;
+  }</code></pre>
+  
+      <h4>Universal Selector</h4>
+      <p>Targets all elements on the page.</p>
+      <pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+  }</code></pre>
+  
+    </section>
+  
+    <section id="quiz-questions">
+      <h3>Quiz Questions</h3>
+      <ol>
+        <li>What does the <code>.title</code> selector target?<br>
+          a) An element with ID <code>title</code><br>
+          b) All <code>&lt;title&gt;</code> tags<br>
+          c) All elements with class <code>title</code><br>
+          d) The first <code>&lt;title&gt;</code> tag
+        </li>
+        <li>Which selector targets an element with the ID <code>main</code>?<br>
+          a) <code>main</code><br>
+          b) <code>#main</code><br>
+          c) <code>.main</code><br>
+          d) <code>*main</code>
+        </li>
+        <li>What does the universal selector <code>*</code> do?<br>
+          a) Targets paragraphs<br>
+          b) Targets the body only<br>
+          c) Targets all elements<br>
+          d) Targets headings
+        </li>
+        <li>Choose the correct syntax for selecting an anchor tag with an <code>href</code> attribute<br>
+          a) <code>a[href]</code><br>
+          b) <code>a.here</code><br>
+          c) <code>#a[href]</code><br>
+          d) <code>href="a"</code>
+        </li>
+        <li>What does <code>input[type="text"]</code> target?<br>
+          a) All input fields<br>
+          b) Input elements with <code>type="text"</code><br>
+          c) Text elements<br>
+          d) Input with any type
+        </li>
+      </ol>
+    </section>
+
+    <section id="quiz-answers">
+        <h3>Answers</h3>
+      <ol>
+        <li>c) All elements with class <code>title</code></li>
+        <li>b) <code>#main</code></li>
+        <li>c) Targets all elements</li>
+        <li>a) <code>a[href]</code></li>
+        <li>b) Input elements with <code>type="text"</code></li>
+      </ol>
+    </section>
+  
+    <section id="assignment">
+      <h3>Assignment</h3>
+      <p>Create an HTML page with the following:</p>
+      <ul>
+        <li>A <code>&lt;h1&gt;</code> tag with an ID of <code>main-heading</code></li>
+        <li>Two <code>&lt;p&gt;</code> tags, both using the class <code>description</code></li>
+        <li>An <code>&lt;input&gt;</code> field with <code>type="text"</code></li>
+        <li>A <code>&lt;div&gt;</code> with a class <code>box</code></li>
+        <li>Use CSS to:
+          <ul>
+            <li>Style all paragraphs to have <code>color: green</code></li>
+            <li>Make <code>#main-heading</code> blue</li>
+            <li>Give <code>.box</code> a border</li>
+            <li>Set padding for all elements using the universal selector</li>
+            <li>Style only the input with <code>type="text"</code> to have a light gray border</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  
+    <section id="assignment-answer" class="last-item">
+      <h3>Assignment Solution</h3>
+  
+      <pre><code class="language-html">&lt;h1 id="main-heading"&gt;Welcome&lt;/h1&gt;
+  &lt;p class="description"&gt;This is the first paragraph.&lt;/p&gt;
+  &lt;p class="description"&gt;This is the second paragraph.&lt;/p&gt;
+  &lt;input type="text" /&gt;
+  &lt;div class="box"&gt;Box Content&lt;/div&gt;</code></pre>
+  
+      <pre><code class="language-css">* {
+    padding: 10px;
+  }
+  
+  p {
+    color: green;
+  }
+  
+  #main-heading {
+    color: blue;
+  }
+  
+  .box {
+    border: 1px solid black;
+  }
+  
+  input[type="text"] {
+    border: 1px solid lightgray;
+  }</code></pre>
+    </section>
+  
+  </div>  
+
+<aside id="right-sidebar">
+    <div>
+        <h3>In this Article</h3>
+        <ul>
+            <li><a href="#css-basic-selectors">CSS Basic Selectors</a></li>
+            <li><a href="#quiz-questions">Quiz Questions</a></li>
+            <li><a href="#assignment">Assignment</a></li>
+          </ul>
+    </div>
+</aside>

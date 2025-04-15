@@ -1,0 +1,153 @@
+<div id="content">
+  <h2>Special Characters</h2>
+  
+  <section id="javascript-special-characters">
+    <h3>Introduction</h3>
+
+    <p>JavaScript provides special characters (also called escape sequences) that allow developers to include special symbols, whitespace, and control characters within strings.</p>
+
+    <h4>Commonly Used Special Characters in JavaScript</h4>
+    <table>
+      <tr>
+        <th>Special Character</th>
+        <th>Meaning</th>
+        <th>Example</th>
+        <th>Output</th>
+      </tr>
+      <tr>
+        <td>\n</td>
+        <td>New Line</td>
+        <td><code>console.log("Hello\nWorld");</code></td>
+        <td>Hello<br>World</td>
+      </tr>
+      <tr>
+        <td>\t</td>
+        <td>Tab Space</td>
+        <td><code>console.log("Hello\tWorld");</code></td>
+        <td>Hello&nbsp;&nbsp;&nbsp;&nbsp;World</td>
+      </tr>
+      <tr>
+        <td>\"</td>
+        <td>Double Quote</td>
+        <td><code>console.log("She said \"Hello\".");</code></td>
+        <td>She said "Hello".</td>
+      </tr>
+      <tr>
+        <td>\'</td>
+        <td>Single Quote</td>
+        <td><code>console.log('It\'s a sunny day.');</code></td>
+        <td>It's a sunny day.</td>
+      </tr>
+      <tr>
+        <td>\\</td>
+        <td>Backslash</td>
+        <td><code>console.log("C:\\Program Files\\JavaScript");</code></td>
+        <td>C:\Program Files\JavaScript</td>
+      </tr>
+    </table>
+
+    <h4>Example: Using Special Characters in Strings</h4>
+    <pre><code class="language-js">let message = "Hello,\nWelcome to JavaScript!";
+console.log(message);</code></pre>
+
+    <h4>Output:</h4>
+    <pre><code class="language-text">Hello,
+Welcome to JavaScript!</code></pre>
+
+    <pre><code class="language-js">let path = "C:\\Users\\Admin\\Documents";
+console.log(path);</code></pre>
+
+    <h4>Output:</h4>
+    <pre><code class="language-text">C:\Users\Admin\Documents</code></pre>
+
+    <h4>Why Are Special Characters Important?</h4>
+    <ul>
+      <li>They help format text properly.</li>
+      <li>They allow the inclusion of special symbols without breaking the code.</li>
+      <li>They improve readability and organization in strings.</li>
+    </ul>
+  </section>
+
+  <section id="quiz-javascript-special-characters">
+    <h3>Quiz: JavaScript Special Characters</h3>
+    <ol>
+      <li>What special character is used to create a new line in a string?<br>
+        a. \t<br>
+        b. \\<br>
+        c. \n<br>
+        d. \r
+      </li>
+      <li>How can you include a double quote (") inside a string?<br>
+        a. Use '/"'<br>
+        b. Use \\<br>
+        c. Use \"<br>
+        d. Use '
+      </li>
+      <li>What does console.log("Hello\tWorld"); output?<br>
+        a. HelloWorld<br>
+        b. Hello&nbsp;&nbsp;&nbsp;&nbsp;World<br>
+        c. Hello\nWorld<br>
+        d. Hello World (with no tab)
+      </li>
+      <li>Which escape sequence is used to insert a backslash (\) inside a string?<br>
+        a. \\<br>
+        b. \/ <br>
+        c. \b<br>
+        d. \quote
+      </li>
+      <li>What will be the output of the following code?<br>
+<pre><code class="language-js">console.log("She said \"JavaScript is fun!\"");</code></pre>
+        a. She said 'JavaScript is fun!'<br>
+        b. She said "JavaScript is fun!"<br>
+        c. Error<br>
+        d. JavaScript is fun!
+      </li>
+    </ol>
+  </section>
+
+  <section id="quiz-answers-javascript-special-characters">
+    <h3>Answers: JavaScript Special Characters Quiz</h3>
+    <ol>
+      <li>c. \n</li>
+      <li>c. \"</li>
+      <li>b. Hello&nbsp;&nbsp;&nbsp;&nbsp;World</li>
+      <li>a. \\</li>
+      <li>b. She said "JavaScript is fun!"</li>
+    </ol>
+  </section>
+
+  <section id="assignment-javascript-special-characters">
+    <h3>Assignment</h3>
+    <p>Create a JavaScript program demonstrating the use of special characters in different scenarios.</p>
+    <p>Write a JavaScript script that:</p>
+    <ul>
+      <li>Displays a message with a new line (<code>\n</code>) and tab space (<code>\t</code>).</li>
+      <li>Includes quotes (<code>\"</code> and <code>\'</code>) inside a string.</li>
+      <li>Uses a backslash (<code>\\</code>) correctly.</li>
+      <li>Print all outputs using <code>console.log()</code>.</li>
+    </ul>
+  </section>
+
+  <section id="assignment-answer-javascript-special-characters" class="last-item">
+    <h3>Assignment Solution</h3>
+    <pre><code class="language-js">let greeting = "Hello,\n\tWelcome to JavaScript!";
+console.log(greeting);
+
+let quote = "She said \"JavaScript's awesome!\"";
+console.log(quote);
+
+let filePath = "C:\\Users\\Admin\\Desktop\\project";
+console.log(filePath);</code></pre>
+  </section>
+</div>
+
+<aside id="right-sidebar">
+    <div>
+    <h3>In this Article</h3>
+    <ul>
+        <li><a href="#javascript-special-characters">JavaScript Special Characters</a></li>
+        <li><a href="#quiz-javascript-special-characters">Quiz: JavaScript Special Characters</a></li>
+        <li><a href="#assignment-javascript-special-characters">Assignment</a></li>
+      </ul>
+    </div>
+</aside>

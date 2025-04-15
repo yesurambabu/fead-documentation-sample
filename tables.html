@@ -1,0 +1,293 @@
+<div id="content">
+    <h2>Tables</h2>
+  <section id="introduction-to-tables">
+    <h3>Introduction</h3>
+    <p>Tables in HTML are used to display data in a structured row and column format. They are commonly used for data representation, such as schedules, pricing tables, reports, and comparison charts.</p>
+  </section>
+
+  <section id="basic-structure">
+    <h3>Basic Structure of an HTML Table</h3>
+    <p>A table in HTML is created using the <code>&lt;table&gt;</code> element, with rows (<code>&lt;tr&gt;</code>), columns (<code>&lt;td&gt;</code>), and headers (<code>&lt;th&gt;</code>).</p>
+    <h4>Basic Example: Simple Table</h4>
+    <pre><code class="language-html">&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+    &lt;th&gt;City&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Alice&lt;/td&gt;
+    &lt;td&gt;22&lt;/td&gt;
+    &lt;td&gt;New York&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Bob&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+    &lt;td&gt;Los Angeles&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+    <p><code>&lt;table&gt;</code>: Defines the table.</p>
+    <p><code>&lt;tr&gt;</code>: Defines a table row.</p>
+    <p><code>&lt;th&gt;</code>: Defines a table header (bold and centered by default).</p>
+    <p><code>&lt;td&gt;</code>: Defines a table data cell.</p>
+  </section>
+
+  <section id="borders-spacing-padding">
+    <h3>Adding Borders, Spacing, and Padding</h3>
+    <h4>Bordered Table</h4>
+    <pre><code class="language-html">&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+    &lt;th&gt;City&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;John&lt;/td&gt;
+    &lt;td&gt;30&lt;/td&gt;
+    &lt;td&gt;Chicago&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+    <p>The <code>border="1"</code> attribute adds borders to the table.</p>
+
+    <h4>Styling with CSS (Spacing & Padding)</h4>
+    <pre><code class="language-html">&lt;style&gt;
+  table {
+    border-collapse: collapse;
+    width: 50%;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+  }
+&lt;/style&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+    &lt;th&gt;City&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;John&lt;/td&gt;
+    &lt;td&gt;30&lt;/td&gt;
+    &lt;td&gt;Chicago&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+    <p><code>border-collapse: collapse;</code> – Merges table borders.</p>
+    <p><code>padding: 10px;</code> – Adds space inside cells.</p>
+    <p><code>text-align: center;</code> – Aligns text.</p>
+  </section>
+
+  <section id="merging-cells">
+    <h3>Merging Cells (Rowspan & Colspan)</h3>
+    <h4>Merging Columns (colspan)</h4>
+    <pre><code class="language-html">&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th colspan="2"&gt;Full Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;John&lt;/td&gt;
+    &lt;td&gt;Doe&lt;/td&gt;
+    &lt;td&gt;28&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+    <p><code>colspan="2"</code> makes one cell span two columns.</p>
+
+    <h4>Merging Rows (rowspan)</h4>
+    <pre><code class="language-html">&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;City&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td rowspan="2"&gt;Alice&lt;/td&gt;
+    &lt;td&gt;New York&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Los Angeles&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+    <p><code>rowspan="2"</code> makes one cell span two rows.</p>
+  </section>
+
+  <section id="table-sections">
+    <h3>Adding Table Headers and Footers</h3>
+    <h4>Table with <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code></h4>
+    <pre><code class="language-html">&lt;table border="1"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+        &lt;th&gt;City&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;David&lt;/td&gt;
+        &lt;td&gt;29&lt;/td&gt;
+        &lt;td&gt;Boston&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Emma&lt;/td&gt;
+        &lt;td&gt;24&lt;/td&gt;
+        &lt;td&gt;Seattle&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+        &lt;td colspan="3"&gt;End of Data&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+    <p><code>&lt;thead&gt;</code> – Contains table headers.</p>
+    <p><code>&lt;tbody&gt;</code> – Contains main data.</p>
+    <p><code>&lt;tfoot&gt;</code> – Contains footer information.</p>
+  </section>
+
+  <section id="responsive-tables">
+    <h3>Responsive Tables</h3>
+    <h4>Making a Table Scrollable</h4>
+    <pre><code class="language-html">&lt;style&gt;
+  .table-container {
+    overflow-x: auto;
+  }
+&lt;/style&gt;
+
+&lt;div class="table-container"&gt;
+  &lt;table border="1"&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Age&lt;/th&gt;
+      &lt;th&gt;City&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Michael&lt;/td&gt;
+      &lt;td&gt;35&lt;/td&gt;
+      &lt;td&gt;San Francisco&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+    <p>The <code>overflow-x: auto;</code> makes the table scrollable on small screens.</p>
+  </section>
+
+  <section id="quiz-tables-in-html">
+    <h3>Quiz</h3>
+    <ol>
+      <li>Which HTML tag is used to create a table?<br>
+      a) &lt;tb&gt;<br>
+      b) &lt;tr&gt;<br>
+      c) &lt;td&gt;<br>
+      d) &lt;table&gt;</li>
+
+      <li>What does the &lt;th&gt; tag represent?<br>
+      a) Table footer<br>
+      b) Table row<br>
+      c) Table header<br>
+      d) Table column</li>
+
+      <li>What is the difference between colspan and rowspan?<br>
+      a) colspan merges rows, rowspan merges columns<br>
+      b) colspan merges columns, rowspan merges rows<br>
+      c) They are the same<br>
+      d) None of the above</li>
+
+      <li>Which tag groups the main content of a table?<br>
+      a) &lt;tbody&gt;<br>
+      b) &lt;thead&gt;<br>
+      c) &lt;tfoot&gt;<br>
+      d) &lt;th&gt;</li>
+
+      <li>How can you create a responsive table?<br>
+      a) Use &lt;table border="1"&gt;<br>
+      b) Use &lt;div style="overflow-x:auto;"&gt;<br>
+      c) Use &lt;table style="float:right;"&gt;<br>
+      d) Use &lt;table responsive&gt;</li>
+    </ol>
+    <button id="quiz-answers-btn">Show Answer</button>
+    <section id="quiz-answers">
+      <h4>Answers:</h4>
+      <ol>
+        <li>(d)</li>
+        <li>(c)</li>
+        <li>(b)</li>
+        <li>(a)</li>
+        <li>(b)</li>
+      </ol>
+    </section>
+  </section>
+
+  <section id="assignment-student-database" class="last-item">
+    <h3>Assignment</h3>
+    <p>Create an interactive student database using an HTML table. The table should include:</p>
+    <ul>
+      <li>Student Name</li>
+      <li>Roll Number</li>
+      <li>Course Name</li>
+      <li>Marks Obtained</li>
+      <li>Pass/Fail Status (Use CSS to highlight pass/fail in different colors)</li>
+    </ul>
+
+    <button id="assignment-solution-btn">Show Answer</button>
+    <section id="assignment-solution">
+    <h4>Solution Example:</h4>
+    <pre><code class="language-html">&lt;style&gt;
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+        border: 1px solid black;
+        text-align: center;
+    }
+    .pass {
+        background-color: lightgreen;
+    }
+    .fail {
+        background-color: lightcoral;
+    }
+&lt;/style&gt;
+
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Student Name&lt;/th&gt;
+        &lt;th&gt;Roll Number&lt;/th&gt;
+        &lt;th&gt;Course&lt;/th&gt;
+        &lt;th&gt;Marks&lt;/th&gt;
+        &lt;th&gt;Status&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John Doe&lt;/td&gt;
+        &lt;td&gt;101&lt;/td&gt;
+        &lt;td&gt;Web Development&lt;/td&gt;
+        &lt;td&gt;85&lt;/td&gt;
+        &lt;td class="pass"&gt;Pass&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Jane Smith&lt;/td&gt;
+        &lt;td&gt;102&lt;/td&gt;
+        &lt;td&gt;Web Development&lt;/td&gt;
+        &lt;td&gt;45&lt;/td&gt;
+        &lt;td class="fail"&gt;Fail&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+    </section>
+  </section>
+</div>
+
+<aside id="right-sidebar">
+  <div>
+    <h3>In this Article</h3>
+    <ul>
+      <li><a href="#introduction-to-tables">Introduction</a></li>
+      <li><a href="#basic-structure">Basic Structure of an HTML Table</a></li>
+      <li><a href="#borders-spacing-padding">Adding Borders, Spacing, and Padding</a></li>
+      <li><a href="#merging-cells">Merging Cells (Rowspan &amp; Colspan)</a></li>
+      <li><a href="#table-sections">Adding Table Headers and Footers</a></li>
+      <li><a href="#responsive-tables">Responsive Tables</a></li>
+      <li><a href="#quiz-tables-in-html">Quiz</a></li>
+      <li><a href="#assignment-student-database">Assignment</a></li>
+    </ul>
+  </div>
+</aside>

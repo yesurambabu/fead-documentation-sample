@@ -1,0 +1,286 @@
+<div id="content">
+  <h2>Events</h2>
+
+  <section id="introduction-to-javascript-events">
+    <h3>Introduction</h3>
+    <p>Events are actions or occurrences that happen in the browser, often triggered by user interactions such as clicking a button, typing in a text field, or moving the mouse. JavaScript allows us to handle these events using event listeners.</p>
+  </section>
+
+  <section id="what-are-javascript-events">
+    <h3>What Are JavaScript Events?</h3>
+    <p>JavaScript events are used to execute a function when an action occurs. Examples of events include:</p>
+    <ul>
+      <li>Clicking a button (<code>click</code> event)</li>
+      <li>Typing in an input field (<code>keyup</code>, <code>keydown</code>, <code>keypress</code> events)</li>
+      <li>Moving the mouse (<code>mousemove</code>, <code>mouseover</code>, <code>mouseout</code> events)</li>
+      <li>Submitting a form (<code>submit</code> event)</li>
+      <li>Loading a webpage (<code>load</code> event)</li>
+    </ul>
+  </section>
+
+  <section id="event-handling-in-javascript">
+    <h3>Event Handling in JavaScript</h3>
+    <p>There are three main ways to handle events in JavaScript:</p>
+    <ul>
+      <li>Inline Event Handlers (using HTML attributes)</li>
+      <li>JavaScript Event Properties</li>
+      <li>Event Listeners</li>
+    </ul>
+  </section>
+
+  <section id="inline-event-handlers">
+    <h3>Inline Event Handlers (Using HTML Attributes)</h3>
+    <p>The simplest way to handle events is by adding an event directly inside an HTML tag.</p>
+    <h4>Example: Click Event in HTML</h4>
+    <pre><code class="language-html">&lt;button onclick="alert('Button Clicked!')"&gt;Click Me&lt;/button&gt;</code></pre>
+    <p>🔹 This works but is not recommended for large-scale applications.</p>
+  </section>
+
+  <section id="javascript-event-properties">
+    <h3>JavaScript Event Properties</h3>
+    <p>You can assign event handler functions directly to HTML elements using JavaScript properties.</p>
+    <h4>Example: Click Event Using JavaScript Property</h4>
+    <pre><code class="language-html">&lt;button id="btn"&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+  let button = document.getElementById("btn");
+  button.onclick = function () {
+      alert("Button was clicked!");
+  };
+&lt;/script&gt;</code></pre>
+    <p>🔹 The event handler (<code>onclick</code>) is assigned to the button element.</p>
+  </section>
+
+  <section id="event-listeners">
+    <h3>Event Listeners (addEventListener)</h3>
+    <p>Using <code>addEventListener()</code> is the best way to handle events because:</p>
+    <ul>
+      <li>It allows multiple event handlers for the same event.</li>
+      <li>It separates JavaScript from HTML for cleaner code.</li>
+    </ul>
+    <h4>Example: Using addEventListener()</h4>
+    <pre><code class="language-html">&lt;button id="myButton"&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+  let btn = document.getElementById("myButton");
+  btn.addEventListener("click", function () {
+      alert("You clicked the button!");
+  });
+&lt;/script&gt;</code></pre>
+    <p>🔹 This method is preferred in modern JavaScript.</p>
+  </section>
+
+  <section id="common-javascript-events">
+    <h3>Common JavaScript Events</h3>
+    <table>
+      <tr><th>Event Type</th><th>Description</th></tr>
+      <tr><td>click</td><td>When an element is clicked</td></tr>
+      <tr><td>dblclick</td><td>When an element is double-clicked</td></tr>
+      <tr><td>mouseover</td><td>When the mouse hovers over an element</td></tr>
+      <tr><td>mouseout</td><td>When the mouse leaves an element</td></tr>
+      <tr><td>keydown</td><td>When a key is pressed</td></tr>
+      <tr><td>keyup</td><td>When a key is released</td></tr>
+      <tr><td>keypress</td><td>When a key is pressed down</td></tr>
+      <tr><td>load</td><td>When the webpage loads</td></tr>
+      <tr><td>submit</td><td>When a form is submitted</td></tr>
+    </table>
+  </section>
+
+  <section id="example-handling-events">
+    <h3>Example: Handling Different Events</h3>
+    <h4>Mouse Events</h4>
+    <pre><code class="language-html">&lt;button id="hoverBtn"&gt;Hover Over Me&lt;/button&gt;
+
+&lt;script&gt;
+  let hoverBtn = document.getElementById("hoverBtn");
+
+  hoverBtn.addEventListener("mouseover", function () {
+      hoverBtn.style.backgroundColor = "yellow";
+  });
+
+  hoverBtn.addEventListener("mouseout", function () {
+      hoverBtn.style.backgroundColor = "";
+  });
+&lt;/script&gt;</code></pre>
+    <p>🔹 Changes the button color when hovered.</p>
+
+    <h4>Keyboard Events</h4>
+    <pre><code class="language-html">&lt;input type="text" id="textInput" placeholder="Type something..."&gt;
+&lt;p id="output"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+  let input = document.getElementById("textInput");
+  let output = document.getElementById("output");
+
+  input.addEventListener("keyup", function () {
+      output.innerText = "You typed: " + input.value;
+  });
+&lt;/script&gt;</code></pre>
+    <p>🔹 Displays what the user types in real-time.</p>
+
+    <h4>Form Submission Event</h4>
+    <pre><code class="language-html">&lt;form id="myForm"&gt;
+  &lt;input type="text" id="name" placeholder="Enter your name"&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  let form = document.getElementById("myForm");
+
+  form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevents page reload
+      alert("Form Submitted!");
+  });
+&lt;/script&gt;</code></pre>
+    <p>🔹 Prevents default form submission behavior.</p>
+  </section>
+
+  <section id="conclusion" class="last-item">
+    <h3>Conclusion</h3>
+    <ul>
+      <li>JavaScript events help make web pages interactive.</li>
+      <li><code>onclick</code>, <code>onmouseover</code>, <code>onkeydown</code>, and <code>onsubmit</code> are commonly used.</li>
+      <li><code>addEventListener()</code> is the best practice for handling events.</li>
+    </ul>
+  </section>
+
+<section id="quiz-javascript-events">
+  <h3>Quiz Questions</h3>
+  <ol>
+    <li>Which of the following is NOT a JavaScript event?<br>
+      a) click<br>
+      b) mouseover<br>
+      c) type<br>
+      d) keydown
+    </li>
+    <li>What is the best method to handle multiple event listeners?<br>
+      a) element.onclick<br>
+      b) addEventListener()<br>
+      c) event.handle<br>
+      d) event.call()
+    </li>
+    <li>What does event.preventDefault() do?<br>
+      a) Stops event propagation<br>
+      b) Prevents the default browser behavior<br>
+      c) Prevents JavaScript execution<br>
+      d) Reloads the page
+    </li>
+    <li>What is the correct way to remove an event listener?<br>
+      a) element.removeEventListener("click", functionName)<br>
+      b) element.off("click", functionName)<br>
+      c) element.deleteEvent("click")<br>
+      d) element.stopListening("click")
+    </li>
+    <li>Which event fires when a user presses a key and releases it?<br>
+      a) keydown<br>
+      b) keyup<br>
+      c) keypress<br>
+      d) release
+    </li>
+  </ol>
+</section>
+
+<section id="quiz-answers">
+  <h3>Quiz Answers</h3>
+  <ol>
+    <li>c) type</li>
+    <li>b) addEventListener()</li>
+    <li>b) Prevents the default browser behavior</li>
+    <li>a) element.removeEventListener("click", functionName)</li>
+    <li>b) keyup</li>
+  </ol>
+</section>
+
+
+  <section id="assignment-javascript-events">
+    <h3>Assignment</h3>
+    <h4>Assignment 1: Click Event and Background Change</h4>
+    <p>Create a button that, when clicked, changes the background color of the page.</p>
+
+    <h4>Assignment 2: Keyboard Event Tracker</h4>
+    <p>Create an input field. When the user types, display the number of characters typed below the field.</p>
+
+    <h4>Assignment 3: Image Hover Effect</h4>
+    <p>Create an image that, when hovered over, changes to another image. When the mouse leaves, it returns to the original image.</p>
+
+    <h4>Assignment 4: Interactive Form</h4>
+    <p>Create a simple form with a text field and a submit button. Prevent form submission if the input field is empty and display an error message.</p>
+  </section>
+
+  <section id="assignment-solutions" class="last-item">
+    <h3>Assignment Answers</h3>
+
+    <p>1. Create a button that, when clicked, changes the background color of the page.</p>
+    <pre><code class="language-html">&lt;button onclick="document.body.style.backgroundColor='lightblue'"&gt;Change Background&lt;/button&gt;</code></pre>
+
+    <p>2. Create an input field. When the user types, display the number of characters typed below the field.</p>
+    <pre><code class="language-html">&lt;input type="text" id="inputText"&gt;
+&lt;p id="charCount"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+  let input = document.getElementById("inputText");
+  let count = document.getElementById("charCount");
+
+  input.addEventListener("input", function () {
+      count.innerText = "Characters typed: " + input.value.length;
+  });
+&lt;/script&gt;</code></pre>
+
+    <p>3. Create an image that changes when hovered and reverts when mouse leaves.</p>
+    <pre><code class="language-html">&lt;img id="hoverImage" src="image1.jpg" alt="Hover Image"&gt;
+
+&lt;script&gt;
+  let img = document.getElementById("hoverImage");
+
+  img.addEventListener("mouseover", function () {
+      img.src = "image2.jpg";
+  });
+
+  img.addEventListener("mouseout", function () {
+      img.src = "image1.jpg";
+  });
+&lt;/script&gt;</code></pre>
+
+    <p>4. Create a form that shows an error if submitted empty.</p>
+    <pre><code class="language-html">&lt;form id="myForm"&gt;
+  &lt;input type="text" id="name"&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+  &lt;p id="error" style="color:red;"&gt;&lt;/p&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  let form = document.getElementById("myForm");
+  let nameInput = document.getElementById("name");
+  let error = document.getElementById("error");
+
+  form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (nameInput.value.trim() === "") {
+          error.textContent = "Name field cannot be empty!";
+      } else {
+          error.textContent = "";
+          alert("Form submitted successfully!");
+      }
+  });
+&lt;/script&gt;</code></pre>
+  </section>
+</div>
+
+<aside id="right-sidebar">
+    <div>
+      <h3>In this Article</h3>
+      <ul>
+        <li><a href="#introduction-to-javascript-events">Introduction to JavaScript Events</a></li>
+        <li><a href="#what-are-javascript-events">What Are JavaScript Events?</a></li>
+        <li><a href="#event-handling-in-javascript">Event Handling in JavaScript</a></li>
+        <li><a href="#inline-event-handlers">Inline Event Handlers (Using HTML Attributes)</a></li>
+        <li><a href="#javascript-event-properties">JavaScript Event Properties</a></li>
+        <li><a href="#event-listeners">Event Listeners (addEventListener)</a></li>
+        <li><a href="#common-javascript-events">Common JavaScript Events</a></li>
+        <li><a href="#example-handling-events">Example: Handling Different Events</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#quiz-javascript-events">Quiz Questions on JavaScript Events</a></li>
+        <li><a href="#assignment-javascript-events">Assignment</a></li>
+      </ul>
+    </div>
+</aside>

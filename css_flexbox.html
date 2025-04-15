@@ -1,0 +1,349 @@
+<div id="content">
+  <h2>CSS Flexbox</h2>
+  
+  <section id="css-flexbox">
+    <h3>Introduction</h3>
+    <p>The Flexible Box Layout, commonly known as Flexbox, is a one-dimensional layout model used to design flexible and responsive layout structures. It helps distribute space along a single column or row, aligning elements intelligently depending on the container's available space.</p>
+    <p>To use Flexbox, set the container’s display property to <code>flex</code> or <code>inline-flex</code>.</p>
+<pre><code class="language-css">.container {
+  display: flex;
+}</code></pre>    
+  </section>
+
+  <section id="flex-direction">
+    <h3>flex-direction</h3>
+    <p>Defines the direction in which the flex container places its flex items.</p>
+    <table>
+      <tr>
+        <th>Property Name</th>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td rowspan="4" id="border-left-bottom-radius">flex-direction</td>
+        <td>row</td>
+        <td>Items are placed in a row from left to right (default).</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">row-reverse</td>
+        <td>Items are placed in a row from right to left.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">column</td>
+        <td>Items are placed in a column from top to bottom.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border-corner-radius">column-reverse</td>
+        <td>Items are placed in a column from bottom to top.</td>
+      </tr>
+    </table>
+    <h4>Example:</h4>
+<pre><code class="language-css">.container {
+  display: flex;
+  flex-direction: column-reverse;
+}</code></pre>
+  </section>
+
+  <section id="flex-wrap">
+    <h3>flex-wrap</h3>
+    <p>Specifies whether flex items should wrap or stay on a single line.</p>
+    <table>
+      <tr>
+        <th>Property Name</th>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td rowspan="3" id="border-left-bottom-radius">flex-wrap</td>
+        <td>nowrap</td>
+        <td>All flex items will be on one line (default).</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">wrap</td>
+        <td>Flex items will wrap onto multiple lines from top to bottom.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border-corner-radius">wrap-reverse</td>
+        <td>Flex items will wrap onto multiple lines from bottom to top.</td>
+      </tr>
+    </table>
+    <h4>Example:</h4>
+<pre><code class="language-css">.container {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}</code></pre>
+  </section>
+
+  <section id="justify-content">
+    <h3>justify-content</h3>
+    <p>Defines how flex items are aligned along the main axis.</p>
+    <table>
+      <tr>
+        <th>Property Name</th>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td rowspan="6" id="border-left-bottom-radius">justify-content</td>
+        <td>flex-start</td>
+        <td>Items are packed toward the start of the main axis (default).</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">flex-end</td>
+        <td>Items are packed toward the end of the main axis.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">center</td>
+        <td>Items are centered along the main axis.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">space-between</td>
+        <td>Items are evenly distributed with the first item at the start and last at the end.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">space-around</td>
+        <td>Items are evenly distributed with space around them.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border-corner-radius">space-evenly</td>
+        <td>Items are evenly distributed with equal space between and around them.</td>
+      </tr>
+    </table>
+    <h4>Example:</h4>
+  <pre><code class="language-css">.container {
+  display: flex;
+  justify-content: space-evenly;
+}</code></pre>
+  </section>
+
+  <section id="align-items">
+    <h3>align-items</h3>
+    <p>Aligns flex items along the cross axis (perpendicular to the main axis).</p>
+    <table>
+      <tr>
+        <th>Property Name</th>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td rowspan="5" id="border-left-bottom-radius">align-items</td>
+        <td>stretch</td>
+        <td>Items stretch to fill the container (default).</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">flex-start</td>
+        <td>Items are aligned to the start of the cross axis.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">flex-end</td>
+        <td>Items are aligned to the end of the cross axis.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">center</td>
+        <td>Items are centered along the cross axis.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border-corner-radius">baseline</td>
+        <td>Items are aligned such that their baselines align.</td>
+      </tr>
+    </table>
+    <h4>Example:</h4>
+<pre><code class="language-css">.container {
+  display: flex;
+  align-items: baseline;
+}</code></pre>
+  </section>
+
+  <section id="align-content">
+    <h3>align-content</h3>
+    <p>Aligns multiple lines of content along the cross axis when there is extra space.</p>
+    <table>
+      <tr>
+        <th>Property Name</th>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td rowspan="6" id="border-left-bottom-radius">align-content</td>
+        <td>flex-start</td>
+        <td>Lines are packed to the start of the container.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">flex-end</td>
+        <td>Lines are packed to the end of the container.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">center</td>
+        <td>Lines are centered in the container.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">space-between</td>
+        <td>Lines are evenly distributed; first at start, last at end.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">space-around</td>
+        <td>Lines are evenly distributed with space around each line.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border-corner-radius">stretch</td>
+        <td>Lines stretch to fill the remaining space (default).</td>
+      </tr>
+    </table>
+    <h4>Example:</h4>
+<pre><code class="language-css">.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+}</code></pre>
+  </section>
+
+  <section id="align-self" class="last-item">
+    <h3>align-self</h3>
+    <p>Overrides the align-items property for a specific flex item.</p>
+    <table>
+      <tr>
+        <th>Property Name</th>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td rowspan="6" id="border-left-bottom-radius">align-self</td>
+        <td>auto</td>
+        <td>Inherits the value from align-items (default).</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">flex-start</td>
+        <td>Aligns the item to the start of the cross axis.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">flex-end</td>
+        <td>Aligns the item to the end of the cross axis.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">center</td>
+        <td>Centers the item along the cross axis.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border">baseline</td>
+        <td>Aligns the item with the baseline of others.</td>
+      </tr>
+      <tr>
+        <td id="no-left-border-corner-radius">stretch</td>
+        <td>Stretches the item to fill the container.</td>
+      </tr>
+    </table>
+    <h4>Example:</h4>
+<pre><code class="language-css">.item {
+  align-self: stretch;
+}</code></pre>
+  </section>
+
+  <section id="quiz">
+    <h3>Quiz</h3>
+    <ol>
+      <li>Which CSS property defines the direction in which flex items are placed?
+        <br>a) justify-content
+        <br>b) align-items
+        <br>c) flex-direction
+        <br>d) align-content
+      </li>
+      <li>What value of <code>justify-content</code> distributes items with equal space around them?
+        <br>a) space-between
+        <br>b) space-evenly
+        <br>c) space-around
+        <br>d) center
+      </li>
+      <li>Which property allows items to wrap into multiple lines?
+        <br>a) flex-flow
+        <br>b) align-content
+        <br>c) flex-wrap
+        <br>d) align-items
+      </li>
+      <li>What is the default value of <code>align-items</code>?
+        <br>a) center
+        <br>b) flex-start
+        <br>c) flex-end
+        <br>d) stretch
+      </li>
+      <li>Which property is used to override alignment for a specific flex item?
+        <br>a) align-content
+        <br>b) align-self
+        <br>c) align-items
+        <br>d) justify-content
+      </li>
+    </ol>
+  </section>
+  
+  <section id="quiz-answers">
+    <h4>Answers</h4>
+    <ol>
+      <li>c) flex-direction</li>
+      <li>c) space-around</li>
+      <li>c) flex-wrap</li>
+      <li>d) stretch</li>
+      <li>b) align-self</li>
+    </ol>
+  </section>
+  
+  <section id="assignment">
+    <h3>Assignment</h3>
+    <p>Create a flex container with three boxes. Use the following requirements:</p>
+    <ul>
+      <li>Set the direction to column.</li>
+      <li>Allow the items to wrap if the screen is narrow.</li>
+      <li>Center all items both horizontally and vertically.</li>
+      <li>Use individual alignment for the second item to align it to the flex-start of the cross-axis.</li>
+    </ul>
+  </section>
+  
+  <section id="assignment-answer" class="last-item">
+    <h4>Assignment Solution</h4>
+  <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    .container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      background-color: lightblue;
+    }
+    .box:nth-child(2) {
+      align-self: flex-start;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="box"&gt;Box 1&lt;/div&gt;
+    &lt;div class="box"&gt;Box 2&lt;/div&gt;
+    &lt;div class="box"&gt;Box 3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  </section>
+  
+</div>
+  
+  <aside id="right-sidebar">
+    <div>
+      <h3>In this Article</h3>
+      <ul>
+        <li><a href="#css-flexbox">CSS Flexbox</a></li>
+        <li><a href="#flex-direction">flex-direction</a></li>
+        <li><a href="#flex-wrap">flex-wrap</a></li>
+        <li><a href="#justify-content">justify-content</a></li>
+        <li><a href="#align-items">align-items</a></li>
+        <li><a href="#align-content">align-content</a></li>
+        <li><a href="#align-self">align-self</a></li>
+      </ul>
+    </div>
+  </aside>

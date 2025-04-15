@@ -1,0 +1,392 @@
+<div id="content">
+  <h2>CSS Specificity</h2>
+
+  <section id="css-specificity">
+    <h3>Introduction</h3>
+
+    <p>CSS specificity determines which CSS rule applies when multiple rules target the same element. Specificity is calculated based on different types of selectors, the position in the stylesheet, and source order. Here's a breakdown of how it works:</p>
+
+    <h4>1. Specificity Based on Selector Types</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Selector Type</th>
+          <th>Specificity Value</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Universal Selector</td>
+          <td>0</td>
+          <td><code>* {}</code></td>
+        </tr>
+        <tr>
+          <td>Element Selector</td>
+          <td>1</td>
+          <td><code>h1 {}</code></td>
+        </tr>
+        <tr>
+          <td>Class Selector</td>
+          <td>10</td>
+          <td><code>.box {}</code></td>
+        </tr>
+        <tr>
+          <td>Attribute Selector</td>
+          <td>10</td>
+          <td><code>[type="text"] {}</code></td>
+        </tr>
+        <tr>
+          <td>Pseudo-class</td>
+          <td>10</td>
+          <td><code>:hover {}</code></td>
+        </tr>
+        <tr>
+          <td>ID Selector</td>
+          <td>100</td>
+          <td><code>#header {}</code></td>
+        </tr>
+        <tr>
+          <td>Inline Style</td>
+          <td>1000</td>
+          <td><code>style="color: red"</code></td>
+        </tr>
+        <tr>
+          <td><code>!important</code></td>
+          <td>Overrides all</td>
+          <td><code>color: red !important;</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>2. Specificity Based on Position (Source Order)</h4>
+    <p>If two rules have the same specificity, the one that comes last in the stylesheet (or HTML) takes precedence.</p>
+
+    <h4>3. Specificity Based on Source of the Style</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Style Location</th>
+          <th>Priority Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>External Stylesheet</td>
+          <td>Lowest</td>
+        </tr>
+        <tr>
+          <td>Internal Style</td>
+          <td>Higher</td>
+        </tr>
+        <tr>
+          <td>Inline Style</td>
+          <td>Highest</td>
+        </tr>
+        <tr>
+          <td><code>!important</code></td>
+          <td>Overrides all</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>4. Visual Hierarchy Representation</h4>
+    <pre><code class="language-css">              !important
+                  ↑
+          Inline styles (1000)
+                  ↑
+          ID selectors (100)
+                  ↑
+   Class, attribute, pseudo-class (10)
+                  ↑
+       Element, pseudo-element (1)
+                  ↑
+          Universal selector (0)</code></pre>
+    <p>If specificity values are equal, the last one wins (source order).</p>
+
+    <h4>5. Examples</h4>
+    <pre><code class="language-css">/* Specificity: 1 */
+p {
+  color: black;
+}
+
+/* Specificity: 10 */
+.text {
+  color: green;
+}
+
+/* Specificity: 100 */
+#main {
+  color: blue;
+}
+
+/* Specificity: 1000 */
+&lt;p style="color: red"&gt;Red text&lt;/p&gt;
+
+/* Overrides everything */
+#main {
+  color: blue !important;
+}</code></pre>
+
+    <h4>Quiz</h4>
+    <ol>
+      <li>What is the specificity of the selector <code>#header</code>?<br>
+        a) 1<br>
+        b) 10<br>
+        c) 100<br>
+        d) 1000<br>
+      </li>
+      <li>Which of the following has the highest specificity?<br>
+        a) .box<br>
+        b) #main<br>
+        c) div<br>
+        d) *<br>
+      </li>
+      <li>If two rules have the same specificity, which one applies?<br>
+        a) The first rule<br>
+        b) The rule in external CSS<br>
+        c) The one with !important<br>
+        d) The rule that appears last<br>
+      </li>
+      <li>What is the specificity of an inline style?<br>
+        a) 10<br>
+        b) 100<br>
+        c) 1000<br>
+        d) 1<br>
+      </li>
+      <li>Which rule will override others regardless of specificity?<br>
+        a) A rule inside an external stylesheet<br>
+        b) An inline style<br>
+        c) A rule with !important<br>
+        d) A class selector<br>
+      </li>
+    </ol>
+
+    <h4>Answers</h4>
+    <ol>
+      <li>c) 100</li>
+      <li>b) #main</li>
+      <li>d) The rule that appears last</li>
+      <li>c) 1000</li>
+      <li>c) A rule with !important</li>
+    </ol>
+
+    <h4>Assignment</h4>
+    <p>Create a single HTML file with a <code>&lt;div&gt;</code> element. Apply multiple styles from different sources:</p>
+    <ul>
+      <li>An external style that sets the background to red.</li>
+      <li>An internal style that sets it to green.</li>
+      <li>An inline style that sets it to blue.</li>
+      <li>Add another internal rule using <code>!important</code> to override all.</li>
+      <li>Analyze and test which style is applied and why.</li>
+    </ul>
+
+    <h4>Assignment Answer</h4>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    /* Internal style */
+    div {
+      background-color: green;
+    }
+
+    .important-style {
+      background-color: yellow !important;
+    }
+  &lt;/style&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;div class="important-style" style="background-color: blue;"&gt;Test Div&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <p><strong>External CSS (style.css)</strong></p>
+    <pre><code class="language-css">div {
+  background-color: red;
+}</code></pre>
+    <p><strong>Expected Result:</strong> The div will have a yellow background due to the <code>!important</code> rule, even though the inline style sets it to blue.</p>
+  </section>
+
+  <section id="position">
+    <h3>Position</h3>
+    <p>When two rules have the same specificity, the one that appears later in the code will override the earlier one.</p>
+
+    <h4>Example</h4>
+    <pre><code class="language-css">li {
+  color: red;
+  color: blue;
+}</code></pre>
+
+    <p><strong>Result:</strong> <code>color: blue;</code> is applied.</p>
+    <p><strong>Why?</strong> Because it's later in the same rule – this shows how position in code affects the final style.</p>
+  </section>
+
+  <section id="specificity">
+    <h3>Specificity (Selector Type-Based)</h3>
+    <p>Specificity increases based on the type and complexity of the selector.</p>
+
+    <h4>Example</h4>
+    <pre><code class="language-css">li { color: blue; }                         /* Element selector - low specificity */
+.first-class { color: red; }               /* Class selector - medium specificity */
+li[draggable] { color: purple; }           /* Attribute selector - medium specificity */
+#first-id { color: orange; }               /* ID selector - high specificity */</code></pre>
+
+    <p><strong>Result:</strong> If all rules apply to the same element, <code>#first-id</code> wins because ID selectors have higher specificity.</p>
+  </section>
+
+  <section id="type">
+    <h3>Type (Source of the CSS)</h3>
+    <p>CSS can come from different sources, and they have different levels of importance by default.</p>
+
+    <h4>Order of Precedence (Lowest to Highest):</h4>
+    <ul>
+      <li>External Stylesheets (<code>&lt;link&gt;</code>)</li>
+      <li>Internal Styles (<code>&lt;style&gt;</code>)</li>
+      <li>Inline Styles (<code>style</code> attribute)</li>
+    </ul>
+
+    <h4>Example</h4>
+    <pre><code class="language-html">&lt;link rel="stylesheet" href="style.css"&gt;  &lt;!-- Lowest priority --&gt;
+&lt;style&gt;
+  h1 { color: green; }                    &lt;!-- Higher --&gt;
+&lt;/style&gt;
+&lt;h1 style="color: blue;"&gt;Hello&lt;/h1&gt;       &lt;!-- Highest --&gt;</code></pre>
+
+    <p><strong>Result:</strong> The inline style (<code>style="color: blue;"</code>) will be applied unless something stronger like <code>!important</code> is used.</p>
+  </section>
+
+  <section id="importance">
+    <h3>Importance (!important)</h3>
+    <p>The <code>!important</code> keyword overrides all other declarations, regardless of specificity or position.</p>
+
+    <h4>Example</h4>
+    <pre><code class="language-css">color: red;
+color: green !important;</code></pre>
+
+    <p><strong>Result:</strong> <code>color: green</code> will be applied due to <code>!important</code>.</p>
+  </section>
+
+  <section id="quiz-questions">
+    <h3>Quiz Questions</h3>
+    <p>Q1. Which of the following selectors has the highest specificity?<br>
+    a) p<br>
+    b) .heading<br>
+    c) #header<br>
+    d) a:hover</p>
+
+    <p>Q2. Which rule will override others in the same block?</p>
+    <pre><code class="language-css">p {
+  color: red;
+  color: green;
+}</code></pre>
+    <p>a) red<br>
+    b) green<br>
+    c) Both<br>
+    d) Depends on source</p>
+
+    <p>Q3. Which of the following styles has the lowest priority?<br>
+    a) Inline Style<br>
+    b) Internal Style<br>
+    c) External Style<br>
+    d) !important</p>
+
+    <p>Q4. What happens when <code>!important</code> is used?<br>
+    a) It lowers priority<br>
+    b) It overrides everything<br>
+    c) It only works with inline<br>
+    d) It doesn’t affect anything</p>
+
+    <p>Q5. Which one wins?</p>
+    <pre><code class="language-html">&lt;h1 style="color: red;"&gt;Title&lt;/h1&gt;
+&lt;style&gt; h1 { color: green; } &lt;/style&gt;</code></pre>
+    <p>a) red<br>
+    b) green<br>
+    c) Both<br>
+    d) None</p>
+  </section>
+
+  <section id="quiz-answers">
+    <h3>Quiz Answers</h3>
+    <ul>
+      <li>Q1: c) #header</li>
+      <li>Q2: b) green</li>
+      <li>Q3: c) External Style</li>
+      <li>Q4: b) It overrides everything</li>
+      <li>Q5: a) red</li>
+    </ul>
+  </section>
+
+  <section id="assignment">
+    <h3>Assignment</h3>
+    <p>Create an HTML page that includes:</p>
+    <ul>
+      <li>A paragraph (<code>&lt;p&gt;</code>) styled using:</li>
+      <ul>
+        <li>An external CSS file</li>
+        <li>An internal <code>&lt;style&gt;</code> tag</li>
+        <li>An inline style</li>
+        <li>A class selector and an ID selector</li>
+        <li>A rule with <code>!important</code></li>
+      </ul>
+      <li>Use different color values at each level.</li>
+      <li>Observe which one is finally applied.</li>
+    </ul>
+  </section>
+
+  <section id="assignment-answers" class="last-item">
+    <h3>Assignment Solution</h3>
+
+    <h4>HTML</h4>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;style&gt;
+    #para {
+      color: green;
+    }
+    .text {
+      color: orange;
+    }
+    p {
+      color: red !important;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;p id="para" class="text" style="color: blue;"&gt;This is a test paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h4>External CSS (style.css)</h4>
+    <pre><code class="language-css">p {
+  color: black;
+}</code></pre>
+
+    <p><strong>Result:</strong> Despite all styles, the <code>color: red !important;</code> from the internal style overrides all others.</p>
+  </section>
+
+</div>
+
+<aside id="right-sidebar">
+  <div>
+    <h3>In this Article</h3>
+    <ul>
+      <li><a href="#css-specificity-advanced">CSS Specificity (Advanced)</a></li>
+      <li><a href="#position">Position</a></li>
+      <li><a href="#specificity">Specificity (Selector Type-Based)</a></li>
+      <li><a href="#type">Type (Source of the CSS)</a></li>
+      <li><a href="#importance">Importance (!important)</a></li>
+      <li><a href="#quiz-questions">Quiz Questions</a></li>
+      <li><a href="#quiz-answers">Quiz Answers</a></li>
+      <li><a href="#assignment">Assignment</a></li>
+      <li><a href="#assignment-answers">Assignment Solution</a></li>
+    </ul>
+  </div>
+</aside>

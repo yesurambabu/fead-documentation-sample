@@ -1,0 +1,204 @@
+<div id="content">
+  <h2>CSS Combiners</h2>
+
+  <section id="css-combiners">
+    <h3>Introduction</h3>
+
+    <p>CSS combiners are used to define relationships between selectors. They allow you to target elements based on their location relative to other elements in the HTML structure.</p>
+
+    <h4>Grouping Selector (,)</h4>
+    <p>Used to apply the same style to multiple, unrelated selectors.</p>
+    <pre><code class="language-css">h1, p, .note {
+  color: blue;
+}</code></pre>
+
+    <h4>Descendant Selector (space)</h4>
+    <p>Targets elements that are nested inside a specified ancestor, at any depth.</p>
+    <pre><code class="language-css">div p {
+  font-size: 16px;
+}</code></pre>
+
+    <h4>Child Selector (&gt;)</h4>
+    <p>Targets only direct child elements.</p>
+    <pre><code class="language-css">ul &gt; li {
+  list-style: square;
+}</code></pre>
+
+    <h4>Adjacent Sibling Selector (+)</h4>
+    <p>Selects the first sibling element that comes immediately after a specific element.</p>
+    <pre><code class="language-css">h2 + p {
+  color: green;
+}</code></pre>
+
+    <h4>General Sibling Selector (~)</h4>
+    <p>Selects all sibling elements that come after a specified element.</p>
+    <pre><code class="language-css">h2 ~ p {
+  font-style: italic;
+}</code></pre>
+
+    <h4>Chaining Selectors</h4>
+    <p>Combines multiple selectors without space to target elements that match all conditions.</p>
+    <pre><code class="language-css">p.note.important {
+  background-color: yellow;
+}</code></pre>
+
+    <h4>Combining Combiners</h4>
+    <p>You can use multiple combiners together to create very specific rules.</p>
+    <pre><code class="language-css">div &gt; ul li a {
+  text-decoration: none;
+}</code></pre>
+  </section>
+
+  <section id="quiz">
+    <h3>Quiz</h3>
+
+    <ol>
+      <li>What does the selector <code>div p</code> select?<br>
+        a) Only direct children p of div<br>
+        b) All p elements that are children of div<br>
+        c) All p elements inside div at any level<br>
+        d) p elements after div</li>
+
+      <li>What is the function of the <code>&gt;</code> selector in CSS?<br>
+        a) Targets sibling elements<br>
+        b) Targets all nested elements<br>
+        c) Targets direct child elements only<br>
+        d) Targets adjacent elements</li>
+
+      <li>Which selector applies the same style to multiple selectors?<br>
+        a) Descendant<br>
+        b) Chaining<br>
+        c) Grouping<br>
+        d) Sibling</li>
+
+      <li>What does <code>h2 + p</code> select?<br>
+        a) All p tags in h2<br>
+        b) Any p sibling of h2<br>
+        c) The p element immediately following an h2<br>
+        d) First child p of h2</li>
+
+      <li>What does this rule target: <code>div &gt; ul li a</code>?<br>
+        a) All a tags<br>
+        b) All a tags inside li inside any ul<br>
+        c) a tags inside li that are inside a ul which is a direct child of div<br>
+        d) a tags that follow a div</li>
+    </ol>
+  </section>
+
+  <section id="quiz-answers">
+    <h3>Quiz Answers</h3>
+
+    <ol>
+      <li>c) All p elements inside div at any level</li>
+      <li>c) Targets direct child elements only</li>
+      <li>c) Grouping</li>
+      <li>c) The p element immediately following an h2</li>
+      <li>c) a tags inside li that are inside a ul which is a direct child of div</li>
+    </ol>
+  </section>
+
+  <section id="assignment">
+    <h3>Assignment</h3>
+
+    <h4>Objective</h4>
+    <p>Create an HTML file that demonstrates the use of all the following combiners:</p>
+
+    <ul>
+      <li>Grouping selector</li>
+      <li>Descendant selector</li>
+      <li>Child selector</li>
+      <li>Adjacent sibling selector</li>
+      <li>General sibling selector</li>
+      <li>Chained selector</li>
+      <li>Combination of combiners</li>
+    </ul>
+
+    <h4>Submission Guidelines</h4>
+    <ul>
+      <li>Use internal CSS.</li>
+      <li>Use clear text and borders/colors to show visual effects of the selectors.</li>
+      <li>Ensure your HTML is semantic and well-formatted.</li>
+    </ul>
+  </section>
+
+  <section id="assignment-answers" class="last-item">
+    <h3>Assignment Solution</h3>
+
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    h1, h2 {
+      color: blue; /* Grouping */
+    }
+
+    div p {
+      font-size: 16px; /* Descendant */
+    }
+
+    ul &gt; li {
+      color: green; /* Child */
+    }
+
+    h2 + p {
+      background: yellow; /* Adjacent sibling */
+    }
+
+    h2 ~ p {
+      font-style: italic; /* General sibling */
+    }
+
+    p.note.important {
+      border: 1px solid red; /* Chaining */
+    }
+
+    section &gt; div p span {
+      color: purple; /* Combining combiners */
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1&gt;Grouped Heading 1&lt;/h1&gt;
+  &lt;h2&gt;Grouped Heading 2&lt;/h2&gt;
+
+  &lt;div&gt;
+    &lt;p&gt;Paragraph inside div (descendant)&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;h2&gt;Heading 2&lt;/h2&gt;
+  &lt;p&gt;Paragraph next to h2 (adjacent)&lt;/p&gt;
+  &lt;p&gt;Another paragraph (general sibling)&lt;/p&gt;
+
+  &lt;p class="note important"&gt;Chained Selector Example&lt;/p&gt;
+
+  &lt;section&gt;
+    &lt;div&gt;
+      &lt;p&gt;&lt;span&gt;Nested Span for Combination&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  </section>
+
+</div>
+
+<aside id="right-sidebar">
+  <div>
+    <h3>In this Article</h3>
+    <ul>
+      <li><a href="#css-combiners">CSS Combiners</a></li>
+      <li><a href="#quiz">Quiz</a></li>
+      <li><a href="#quiz-answers">Quiz Answers</a></li>
+      <li><a href="#assignment">Assignment</a></li>
+      <li><a href="#assignment-answers">Assignment Solution</a></li>
+    </ul>
+  </div>
+</aside>

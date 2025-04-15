@@ -1,0 +1,262 @@
+<div id="content">
+  <h2>Introduction to JavaScript</h2>
+
+  <section id="introduction-to-javascript">
+    <h3>Introduction</h3>
+
+    <p>JavaScript is a lightweight, interpreted programming language that runs in the browser. It enables dynamic behavior on web pages such as interactivity, validations, DOM manipulation, animations, and more.</p>
+
+    <h4>Why JavaScript?</h4>
+    <ul>
+      <li>Makes web pages interactive</li>
+      <li>Handles browser events and user interactions</li>
+      <li>Manipulates HTML and CSS dynamically</li>
+      <li>Performs calculations and validations</li>
+      <li>Communicates with servers using AJAX</li>
+    </ul>
+
+    <h4>Ways to Include JavaScript</h4>
+    <p>JavaScript can be written in three ways:</p>
+    <ul>
+      <li><strong>Inline:</strong> Inside an HTML element using the <code>onclick</code> or similar attribute</li>
+      <li><strong>Internal:</strong> Inside a <code>&lt;script&gt;</code> tag within the HTML file</li>
+      <li><strong>External:</strong> Linking to a separate <code>.js</code> file</li>
+    </ul>
+  </section>
+<section id="how-to-add-scripts-to-a-page">
+  <h4>1. Inline JavaScript</h4>
+  <p>JavaScript can be added directly inside an HTML tag using the <code>onclick</code>, <code>onmouseover</code>, or other event attributes.</p>
+
+  <p><strong>Example:</strong></p>
+  <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Inline JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;button onclick="alert('Hello, JavaScript!')"&gt;Click Me&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+  <p><strong>Pros:</strong></p>
+  <ul>
+    <li>Simple and easy to use for small tasks.</li>
+    <li>No need for an external file.</li>
+  </ul>
+
+  <p><strong>Cons:</strong></p>
+  <ul>
+    <li>Difficult to maintain for large projects.</li>
+    <li>Mixing JavaScript with HTML is not a good practice.</li>
+  </ul>
+
+  <h4>2. Internal JavaScript</h4>
+  <p>JavaScript can be placed inside a <code>&lt;script&gt;</code> tag within the <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code> section of an HTML file.</p>
+
+  <p><strong>Example:</strong></p>
+  <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Internal JavaScript&lt;/title&gt;
+  &lt;script&gt;
+      function showMessage() {
+          alert('Hello from Internal JavaScript!');
+      }
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;button onclick="showMessage()"&gt;Click Me&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+  <p><strong>Pros:</strong></p>
+  <ul>
+    <li>Keeps JavaScript separate from the HTML elements.</li>
+    <li>Easier to manage than inline JavaScript.</li>
+  </ul>
+
+  <p><strong>Cons:</strong></p>
+  <ul>
+    <li>Still mixes JavaScript within the HTML file, which may not be ideal for large applications.</li>
+  </ul>
+
+  <h4>3. External JavaScript</h4>
+  <p>The best way to include JavaScript is by using an external file. This method enhances code organization and reusability.</p>
+
+  <p><strong>Example:</strong></p>
+  <pre><code class="language-html">&lt;!-- HTML File --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;External JavaScript&lt;/title&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;button onclick="showMessage()"&gt;Click Me&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+  <pre><code class="language-js">// script.js File
+function showMessage() {
+  alert('Hello from External JavaScript!');
+}</code></pre>
+
+  <p><strong>Pros:</strong></p>
+  <ul>
+    <li>Improves code maintainability.</li>
+    <li>Allows multiple pages to share the same JavaScript file.</li>
+    <li>Keeps HTML and JavaScript separate for better readability.</li>
+  </ul>
+
+  <p><strong>Cons:</strong></p>
+  <ul>
+    <li>Requires an additional HTTP request to load the JavaScript file (can be minimized using caching).</li>
+  </ul>
+
+  <h4>Best Practices for Including JavaScript</h4>
+  <ul>
+    <li>Always use external JavaScript for better organization.</li>
+    <li>Place <code>&lt;script&gt;</code> tags before <code>&lt;/body&gt;</code> to prevent blocking page loading.</li>
+    <li>Use event listeners instead of inline JavaScript to keep HTML clean.</li>
+    <li>Avoid global variables to prevent conflicts.</li>
+  </ul>
+
+  <h4>Summary</h4>
+  <table>
+    <tr>
+      <th>Method</th>
+      <th>Pros</th>
+      <th>Cons</th>
+    </tr>
+    <tr>
+      <td>Inline JavaScript</td>
+      <td>Simple for small tasks</td>
+      <td>Hard to maintain, not recommended</td>
+    </tr>
+    <tr>
+      <td>Internal JavaScript</td>
+      <td>Separates logic from elements</td>
+      <td>Still mixes HTML and JavaScript</td>
+    </tr>
+    <tr>
+      <td>External JavaScript</td>
+      <td>Best for organization and reusability</td>
+      <td>Requires an extra file</td>
+    </tr>
+  </table>
+</section>
+
+  <section id="quiz-how-to-add-scripts-to-a-page">
+    <h3>Quiz Questions</h3>
+    <ol>
+      <li>What type of language is JavaScript?<br>
+        a) Compiled<br>
+        b) Markup<br>
+        c) Interpreted<br>
+        d) Database
+      </li>
+      <li>Which HTML tag is used to write JavaScript code inside an HTML file?<br>
+        a) &lt;js&gt;<br>
+        b) &lt;script&gt;<br>
+        c) &lt;javascript&gt;<br>
+        d) &lt;code&gt;
+      </li>
+      <li>What is the best practice for adding JavaScript to a web page?<br>
+        a) Using inline JavaScript for all elements<br>
+        b) Using internal JavaScript inside &lt;head&gt;<br>
+        c) Using an external JavaScript file<br>
+        d) Writing JavaScript inside the CSS file
+      </li>
+      <li>Where should you place the &lt;script&gt; tag for better performance?<br>
+        a) Inside the &lt;head&gt; section<br>
+        b) At the beginning of the &lt;body&gt;<br>
+        c) Before the closing &lt;/body&gt; tag<br>
+        d) Inside a &lt;div&gt; tag
+      </li>
+      <li>Which method is used to display a message box in JavaScript?<br>
+        a) message()<br>
+        b) display()<br>
+        c) alert()<br>
+        d) popup()
+      </li>
+      <li>What does the following code do?<br>
+        <code>&lt;button onclick="alert('Hello!')"&gt;Click Me&lt;/button&gt;</code><br>
+        a) Displays a message in the console<br>
+        b) Shows an alert box with "Hello!" when the button is clicked<br>
+        c) Changes the button color<br>
+        d) Does nothing
+      </li>
+    </ol>
+  </section>
+  
+  <section id="answers-how-to-add-scripts-to-a-page">
+    <h3>Answers</h3>
+    <ol>
+      <li>c) Interpreted</li>
+      <li>b) &lt;script&gt;</li>
+      <li>c) Using an external JavaScript file</li>
+      <li>d) Before the closing &lt;/body&gt; tag</li>
+      <li>c) alert()</li>
+      <li>b) Shows an alert box with "Hello!" when the button is clicked</li>
+    </ol>
+  </section>
+
+  <section id="assignment-how-to-add-scripts-to-a-page">
+    <h3>Assignment: How to Add Scripts to a Page</h3>
+    <p>Create a simple web page demonstrating all three ways to include JavaScript (Inline, Internal, and External).</p>
+
+    <h4>Instructions:</h4>
+    <ul>
+      <li>Create an HTML file with:</li>
+      <li>An inline JavaScript example (button with an alert message).</li>
+      <li>An internal JavaScript example (script inside &lt;script&gt; tag).</li>
+      <li>An external JavaScript example (linked .js file).</li>
+      <li>Use proper formatting and comments to explain each method.</li>
+    </ul>
+  </section>
+
+  <section id="assignment-answer-how-to-add-scripts-to-a-page" class="last-item">
+    <h3>Assignment Solution: How to Add Scripts to a Page</h3>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;All Script Types&lt;/title&gt;
+    &lt;script&gt;
+        // Internal JavaScript
+        function showInternal() {
+            alert('Hello from Internal JavaScript!');
+        }
+    &lt;/script&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt; &lt;!-- External JavaScript --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Inline JavaScript --&gt;
+    &lt;button onclick="alert('Hello from Inline JavaScript!')"&gt;Inline Button&lt;/button&gt;
+
+    &lt;!-- Internal JavaScript Trigger --&gt;
+    &lt;button onclick="showInternal()"&gt;Internal Button&lt;/button&gt;
+
+    &lt;!-- External JavaScript Trigger --&gt;
+    &lt;button onclick="showExternal()"&gt;External Button&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <pre><code class="language-js">// script.js
+function showExternal() {
+    alert('Hello from External JavaScript!');
+}
+</code></pre>
+  </section>
+</div>
+
+<aside id="right-sidebar">
+  <div>
+    <h3>In this Article</h3>
+    <ul>
+      <li><a href="#introduction-to-javascript">Introduction to JavaScript</a></li>
+      <li><a href="#how-to-add-scripts-to-a-page">How to Add Scripts</a></li>
+      <li><a href="#quiz">Quiz</a></li>
+      <li><a href="#assignment">Assignment</a></li>
+    </ul>
+  </div>
+</aside>

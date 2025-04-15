@@ -1,0 +1,194 @@
+<div id="content">
+  <h2>Variables</h2>
+
+  <section id="introduction-to-javascript-variables">
+    <h3>Introduction</h3>
+    <p>A variable in JavaScript is used to store data values. Variables act as containers for storing information that can be used and modified throughout the script.</p>
+  </section>
+
+  <section id="declaring-variables-in-javascript">
+    <h3>Declaring Variables in JavaScript</h3>
+    <p>JavaScript provides three ways to declare variables:</p>
+
+    <h4>1. Using <code>var</code> (Old Method)</h4>
+    <p>The <code>var</code> keyword was traditionally used to declare variables. However, it has some scope issues.</p>
+    <pre><code class="language-javascript">var message = "Hello, JavaScript!";
+console.log(message);</code></pre>
+
+    <h4>2. Using <code>let</code> (Recommended for Modern JavaScript)</h4>
+    <p>The <code>let</code> keyword allows block-scoped variables (limited to the block where they are defined).</p>
+    <pre><code class="language-javascript">let name = "John";
+console.log(name);</code></pre>
+
+    <h4>3. Using <code>const</code> (For Constant Values)</h4>
+    <p>The <code>const</code> keyword is used for variables that should not be reassigned.</p>
+    <pre><code class="language-javascript">const PI = 3.14;
+console.log(PI);</code></pre>
+  </section>
+
+  <section id="variable-naming-rules">
+    <h3>Variable Naming Rules</h3>
+    <ul>
+      <li>Must start with a letter, underscore (_), or dollar sign ($).</li>
+      <li>Cannot start with a number.</li>
+      <li>Can contain letters, digits, underscores, and dollar signs.</li>
+      <li>Case-sensitive (age and Age are different variables).</li>
+      <li>Cannot be a reserved keyword (e.g., let, var, const).</li>
+    </ul>
+
+    <h4>Examples of Valid and Invalid Variables</h4>
+    <pre><code class="language-javascript">let userName = "Alice"; // Valid
+let _score = 100; // Valid
+let $price = 50.99; // Valid
+let 1number = 10; // Invalid (cannot start with a number)
+let var = "test"; // Invalid (cannot use reserved keywords)</code></pre>
+  </section>
+
+  <section id="variable-scope">
+    <h3>Variable Scope</h3>
+
+    <h4>1. Global Scope</h4>
+    <p>A variable declared outside any function is global and can be accessed anywhere in the script.</p>
+    <pre><code class="language-javascript">var globalVar = "I'm global!";
+function showGlobal() {
+    console.log(globalVar);
+}
+showGlobal();</code></pre>
+
+    <h4>2. Local (Function) Scope</h4>
+    <p>A variable declared inside a function is local and can only be accessed within that function.</p>
+    <pre><code class="language-javascript">function localExample() {
+    let localVar = "I'm local!";
+    console.log(localVar);
+}
+localExample();
+// console.log(localVar); // Error: localVar is not defined</code></pre>
+
+    <h4>3. Block Scope (With let and const)</h4>
+    <p>Variables declared inside a block <code>{}</code> using <code>let</code> or <code>const</code> are limited to that block.</p>
+    <pre><code class="language-javascript">if (true) {
+    let blockVar = "I exist only inside this block";
+    console.log(blockVar);
+}
+// console.log(blockVar); // Error: blockVar is not defined</code></pre>
+  </section>
+
+  <section id="quiz-javascript-variables">
+    <h3>Quiz: JavaScript Variables</h3>
+    <ol>
+      <li> Which keyword should be used to declare a variable that never changes?<br />
+       a) var
+       b) let<br />
+       c) const<br />
+       d) change
+      </li>
+
+      <li> What is the correct way to declare a JavaScript variable?<br />
+       a) variable x = 10;<br />
+       b) var x = 10;<br />
+       c) x := 10;<br />
+       d) let x == 10;
+      </li>
+
+      <li> Which of the following is a valid variable name?<br />
+       a) 2name<br />
+       b) _userAge<br />
+       c) var<br />
+       d) if
+      </li>
+
+      <li> What will happen if you try to reassign a const variable?<br />
+       a) It will change its value<br />
+       b) It will throw an error<br />
+       c) It will be ignored<br />
+       d) It will create a new variable
+      </li>
+
+    <li> What will the following code output?<br />
+    <pre><code class="language-javascript">var x = 5;
+if (true) {
+    var x = 10;
+}
+console.log(x);</code></pre>
+      a) 5<br />
+      b) 10<br />
+      c) Error<br />
+      d) Undefined<br />
+    </ol>
+  </section>
+
+  <section id="answers">
+    <h4>Answers</h4>
+    <ol>
+      <li>c) const</li>
+      <li>b) var x = 10;</li>
+      <li>b) _userAge</li>
+      <li>b) It will throw an error</li>
+      <li>b) 10</li>
+    </ol>
+  </section>
+
+  <section id="assignment">
+    <h3>Assignment</h3>
+    <h4>Instructions:</h4>
+    <ul>
+      <li>Write a JavaScript script that declares and initializes variables using <code>var</code>, <code>let</code>, and <code>const</code>.</li>
+      <li>Demonstrate the difference between global scope, function scope, and block scope.</li>
+      <li>Use <code>console.log()</code> to display variable values and their changes.</li>
+      <li>Submit a JavaScript file (.js) with proper comments explaining the usage of each variable.</li>
+    </ul>
+  </section>
+
+  <section id="assignment-solution" class="last-item">
+    <h4>Assignment Solution</h4>
+    <pre><code class="language-javascript">// Global variable using var
+var globalVar = "Global variable";
+
+// Function demonstrating function scope
+function functionScopeExample() {
+    var functionVar = "Inside function";
+    console.log(functionVar); // Accessible here
+}
+functionScopeExample();
+// console.log(functionVar); // Error
+
+// Block scope using let
+if (true) {
+    let blockScoped = "Inside block";
+    console.log(blockScoped); // Accessible here
+}
+// console.log(blockScoped); // Error
+
+// const declaration
+const pi = 3.14;
+console.log("Value of pi:", pi);
+
+// Variable using let
+let name = "Alice";
+console.log("Name:", name);
+
+// Reassignment example
+name = "Bob";
+console.log("Updated Name:", name);
+
+// Trying to reassign const (uncommenting next line causes error)
+// pi = 3.14159;
+</code></pre>
+  </section>
+</div>
+
+<aside id="right-sidebar">
+    <div>
+    <h3>In this Article</h3>
+        <ul>
+            <li><a href="#introduction-to-javascript-variables">Introduction to JavaScript Variables</a></li>
+            <li><a href="#declaring-variables-in-javascript">Declaring Variables in JavaScript</a></li>
+            <li><a href="#variable-naming-rules">Variable Naming Rules</a></li>
+            <li><a href="#variable-scope">Variable Scope</a></li>
+            <li><a href="#quiz-javascript-variables">Quiz: JavaScript Variables</a></li>
+            <li><a href="#answers">Answers</a></li>
+            <li><a href="#assignment">Assignment</a></li>
+            <li><a href="#assignment-solution">Assignment Solution</a></li>
+        </ul>
+    </div>
+</aside>

@@ -1,0 +1,208 @@
+<div id="content">
+  <h2>Arrays</h2>
+
+  <section id="introduction-to-arrays">
+    <h3>Introduction</h3>
+    <h4>Declaring and Initializing Arrays</h4>
+    <p>There are multiple ways to declare an array in JavaScript:</p>
+
+    <h4>Using Array Literal (Recommended)</h4>
+    <pre><code class="language-js">let fruits = ["Apple", "Banana", "Mango", "Orange"];</code></pre>
+
+    <h4>Using the new Array() Constructor</h4>
+    <pre><code class="language-js">let numbers = new Array(10, 20, 30, 40);</code></pre>
+
+    <h4>Creating an Empty Array and Adding Elements Later</h4>
+    <pre><code class="language-js">let colors = [];
+colors[0] = "Red";
+colors[1] = "Blue";</code></pre>
+
+    <h4>Accessing Array Elements</h4>
+    <pre><code class="language-js">let fruits = ["Apple", "Banana", "Mango"];
+console.log(fruits[0]); // Output: Apple
+console.log(fruits[1]); // Output: Banana
+console.log(fruits[2]); // Output: Mango</code></pre>
+
+    <h4>Modifying Array Elements</h4>
+    <pre><code class="language-js">let fruits = ["Apple", "Banana", "Mango"];
+fruits[1] = "Grapes";
+console.log(fruits); // Output: ["Apple", "Grapes", "Mango"]</code></pre>
+
+    <h4>Array Properties</h4>
+    <pre><code class="language-js">let fruits = ["Apple", "Banana", "Mango"];
+console.log(fruits.length);  // Output: 3</code></pre>
+
+    <h4>Array Methods</h4>
+
+    <h4>1. Adding and Removing Elements</h4>
+    <table>
+      <tr><th>Method</th><th>Description</th><th>Example</th></tr>
+      <tr><td>push()</td><td>Adds an element to the end</td><td>arr.push("New")</td></tr>
+      <tr><td>pop()</td><td>Removes the last element</td><td>arr.pop()</td></tr>
+      <tr><td>unshift()</td><td>Adds an element to the beginning</td><td>arr.unshift("New")</td></tr>
+      <tr><td>shift()</td><td>Removes the first element</td><td>arr.shift()</td></tr>
+    </table>
+    <pre><code class="language-js">let fruits = ["Apple", "Banana", "Mango"];
+fruits.push("Orange");
+fruits.pop();
+fruits.unshift("Grapes");
+fruits.shift();</code></pre>
+
+    <h4>2. Merging and Slicing</h4>
+    <table>
+      <tr><th>Method</th><th>Description</th><th>Example</th></tr>
+      <tr><td>concat()</td><td>Merges two arrays</td><td>arr1.concat(arr2)</td></tr>
+      <tr><td>slice(start, end)</td><td>Extracts a portion of an array</td><td>arr.slice(1,3)</td></tr>
+    </table>
+    <pre><code class="language-js">let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6];
+let merged = arr1.concat(arr2);
+let sliced = merged.slice(2, 5);</code></pre>
+
+    <h4>3. Searching for Elements</h4>
+    <table>
+      <tr><th>Method</th><th>Description</th><th>Example</th></tr>
+      <tr><td>indexOf(value)</td><td>Returns index of first occurrence</td><td>arr.indexOf(3)</td></tr>
+      <tr><td>lastIndexOf(value)</td><td>Returns last occurrence index</td><td>arr.lastIndexOf(3)</td></tr>
+      <tr><td>includes(value)</td><td>Checks if value exists</td><td>arr.includes(3)</td></tr>
+    </table>
+    <pre><code class="language-js">let numbers = [10, 20, 30, 40, 50];
+console.log(numbers.indexOf(30));
+console.log(numbers.includes(25));</code></pre>
+
+    <h4>4. Sorting and Reversing</h4>
+    <table>
+      <tr><th>Method</th><th>Description</th><th>Example</th></tr>
+      <tr><td>sort()</td><td>Sorts the array</td><td>arr.sort()</td></tr>
+      <tr><td>reverse()</td><td>Reverses order of elements</td><td>arr.reverse()</td></tr>
+    </table>
+    <pre><code class="language-js">let fruits = ["Banana", "Apple", "Mango"];
+fruits.sort();
+fruits.reverse();</code></pre>
+
+    <h4>5. Joining and Splitting</h4>
+    <table>
+      <tr><th>Method</th><th>Description</th><th>Example</th></tr>
+      <tr><td>join(separator)</td><td>Joins array into string</td><td>arr.join(", ")</td></tr>
+      <tr><td>split(separator)</td><td>Splits string into array</td><td>"text".split(" ")</td></tr>
+    </table>
+    <pre><code class="language-js">let words = ["JavaScript", "is", "fun"];
+let sentence = words.join(" ");
+let newArray = sentence.split(" ");</code></pre>
+
+    <h4>Multidimensional Arrays</h4>
+    <pre><code class="language-js">let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+console.log(matrix[1][2]);</code></pre>
+
+    <h4>Looping Through an Array</h4>
+    <pre><code class="language-js">let numbers = [10, 20, 30, 40];
+for (let i = 0; i &lt; numbers.length; i++) {
+  console.log(numbers[i]);
+}</code></pre>
+
+    <pre><code class="language-js">let fruits = ["Apple", "Banana", "Mango"];
+fruits.forEach(function(fruit) {
+  console.log(fruit);
+});</code></pre>
+
+    <pre><code class="language-js">let numbers = [1, 2, 3];
+let squared = numbers.map(num =&gt; num * num);
+console.log(squared);</code></pre>
+
+    <h4>Conclusion</h4>
+    <ul>
+      <li>Arrays store multiple values in a single variable.</li>
+      <li>They can be modified dynamically using methods.</li>
+      <li>Loops help iterate through arrays efficiently.</li>
+    </ul>
+  </section>
+
+  <section id="quiz-questions">
+    <h3>Quiz Questions</h3>
+    <ol>
+      <li>How do you declare an array in JavaScript?<br>
+      a) let arr = {}<br>
+      b) let arr = []<br>
+      c) let arr = ()<br>
+      d) let arr = new Object()</li>
+
+      <li>How do you access the third element of an array fruits = ["Apple", "Banana", "Mango", "Orange"]?<br>
+      a) fruits[3]<br>
+      b) fruits[2]<br>
+      c) fruits[1]<br>
+      d) fruits[-1]</li>
+
+      <li>What will be the output?<br>
+<pre><code class="language-js">let nums = [10, 20, 30];
+nums.push(40);
+console.log(nums);</code></pre>
+      a) [10, 20, 30]<br>
+      b) [40, 10, 20, 30]<br>
+      c) [10, 20, 30, 40]<br>
+      d) Error</li>
+
+      <li>Which method removes the last element of an array?<br>
+      a) pop()<br>
+      b) push()<br>
+      c) shift()<br>
+      d) unshift()</li>
+
+      <li>How do you find the length of an array arr?<br>
+      a) arr.length()<br>
+      b) arr.size<br>
+      c) arr.length<br>
+      d) arr.count()</li>
+    </ol>
+  </section>
+
+  <section id="answers">
+    <h3>Answers</h3>
+    <ol>
+      <li>b) let arr = []</li>
+      <li>b) fruits[2]</li>
+      <li>c) [10, 20, 30, 40]</li>
+      <li>a) pop()</li>
+      <li>c) arr.length</li>
+    </ol>
+  </section>
+
+  <section id="assignment">
+    <h3>Assignment</h3>
+    <p>Create an array of student names.</p>
+    <ul>
+      <li>Add a new student to the array.</li>
+      <li>Remove the last student from the array.</li>
+      <li>Display the total number of students.</li>
+      <li>Print all student names using a loop.</li>
+    </ul>
+  </section>
+
+  <section id="assignment-solution" class="last-item">
+    <h3>Assignment Solution</h3>
+    <pre><code class="language-js">let students = ["Alice", "Bob", "Charlie"];
+students.push("David");
+students.pop();
+console.log("Total Students:", students.length);
+
+students.forEach(function(name) {
+  console.log(name);
+});</code></pre>
+  </section>
+</div>
+
+<aside id="right-sidebar">
+    <div>
+    <h3>In this Article</h3>
+    <ul>
+        <li><a href="#introduction-to-arrays">Introduction to Arrays</a></li>
+        <li><a href="#quiz-questions">Quiz Questions</a></li>
+        <li><a href="#answers">Answers</a></li>
+        <li><a href="#assignment">Assignment</a></li>
+        <li><a href="#assignment-solution">Assignment Solution</a></li>
+      </ul>
+    </div>
+</aside>

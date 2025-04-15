@@ -1,0 +1,174 @@
+<div id="content">
+  <h2>Links and Navigation</h2>
+  <section id="introduction-to-links-and-navigation">
+    <h3>1. Introduction</h3>
+    <h4>What are Links?</h4>
+    <p>Links (or hyperlinks) connect different web pages or sections within the same page.</p>
+    <p>Links allow users to navigate across different resources on the web.</p>
+
+    <h4>What is Navigation?</h4>
+    <p>Navigation refers to the structured menu system on a website that helps users move between pages easily.</p>
+    <p>Good navigation improves user experience (UX) and SEO ranking.</p>
+  </section>
+
+  <section id="types-of-links">
+    <h3>2. Types of Links</h3>
+    <ul>
+      <li>External Links – Links to other websites.</li>
+      <li>Internal Links – Links within the same website.</li>
+      <li>Anchor Links – Links to a specific section of the same page.</li>
+      <li>Email and Telephone Links – Links that trigger an email or phone call.</li>
+    </ul>
+  </section>
+
+  <section id="basic-structure-of-links">
+    <h3>3. Basic Structure of Links in HTML</h3>
+    <h4>Basic Hyperlink Structure</h4>
+    <pre><code class="language-html">&lt;a href="https://www.google.com"&gt;Visit Google&lt;/a&gt;</code></pre>
+    <ul>
+      <li>The <code>&lt;a&gt;</code> (anchor) tag creates a link.</li>
+      <li>The <code>href</code> attribute specifies the link destination.</li>
+      <li>Clicking the text inside <code>&lt;a&gt;</code> will take the user to the specified URL.</li>
+    </ul>
+  </section>
+
+  <section id="types-of-links-implementation">
+    <h3>4. Types of Links and Their Implementation</h3>
+    <h4>1. Internal Links</h4>
+    <pre><code class="language-html">&lt;a href="about.html"&gt;About Us&lt;/a&gt;</code></pre>
+
+    <h4>2. External Links</h4>
+    <pre><code class="language-html">&lt;a href="https://www.wikipedia.org" target="_blank"&gt;Visit Wikipedia&lt;/a&gt;</code></pre>
+
+    <h4>3. Anchor Links</h4>
+    <pre><code class="language-html">&lt;a href="#section2"&gt;Go to Section 2&lt;/a&gt;
+
+&lt;h2 id="section2"&gt;Section 2&lt;/h2&gt;
+&lt;p&gt;This is Section 2 of the page.&lt;/p&gt;</code></pre>
+
+    <h4>4. Email and Phone Links</h4>
+    <pre><code class="language-html">&lt;a href="mailto:someone@example.com"&gt;Email Us&lt;/a&gt;
+&lt;a href="tel:+1234567890"&gt;Call Us&lt;/a&gt;</code></pre>
+  </section>
+
+  <section id="creating-navigation-menu">
+    <h3>5. Creating a Navigation Menu</h3>
+    <h4>Basic Navigation Bar Using HTML</h4>
+    <pre><code class="language-html">&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+  </section>
+
+  <section id="quiz-links-navigation">
+    <h3>Quiz</h3>
+    <ol>
+      <li>Which HTML tag is used to create a hyperlink?<br>
+      a) &lt;link&gt;<br>
+      b) &lt;a&gt;<br>
+      c) &lt;nav&gt;<br>
+      d) &lt;href&gt;</li>
+
+      <li>What does target="_blank" do in a link?<br>
+      a) Opens the link in the same tab<br>
+      b) Opens the link in a new tab<br>
+      c) Changes the text color<br>
+      d) Makes the link clickable</li>
+
+      <li>How do you create a link to an email address?<br>
+      a) &lt;a href="emailto:someone@example.com"&gt;Email&lt;/a&gt;<br>
+      b) &lt;a href="mailto:someone@example.com"&gt;Email&lt;/a&gt;<br>
+      c) &lt;a href="mail:someone@example.com"&gt;Email&lt;/a&gt;<br>
+      d) &lt;email&gt;someone@example.com&lt;/email&gt;</li>
+
+      <li>Which tag is used to create a navigation menu?<br>
+      a) &lt;nav&gt;<br>
+      b) &lt;menu&gt;<br>
+      c) &lt;ul&gt;<br>
+      d) &lt;navmenu&gt;</li>
+
+      <li>What is the purpose of anchor links (#id)?<br>
+      a) To open a new website<br>
+      b) To create a new navigation bar<br>
+      c) To navigate to a specific section within the same page<br>
+      d) To display an image</li>
+    </ol>
+
+    <button id="quiz-answers-btn">Show Answer</button>
+    <section id="quiz-answers">
+      <h4>Answers:</h4>
+      <ol>
+        <li>(b)</li>
+        <li>(b)</li>
+        <li>(b)</li>
+        <li>(a)</li>
+        <li>(c)</li>
+      </ol>
+    </section>
+  </section>
+
+  <section id="assignment-navigation-system" class="last-item">
+    <h3>Assignment</h3>
+    <p>Create a responsive navigation menu that includes:</p>
+    <ul>
+      <li>A homepage with a structured navigation bar</li>
+      <li>Dropdown menus for categories</li>
+      <li>Anchor links to sections within a page</li>
+      <li>External links to social media pages</li>
+    </ul>
+
+    <button id="assignment-solution-btn">Show Answer</button>
+    <section id="assignment-solution">
+    <h4>Solution Example: A Portfolio Navigation Bar</h4>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Portfolio&lt;/title&gt;
+  &lt;style&gt;
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      background-color: #222;
+      padding: 10px;
+    }
+    nav li {
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="portfolio.html"&gt;Portfolio&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+  </section>
+</div>
+
+<aside id="right-sidebar">
+  <div>
+    <h3>In this Article</h3>
+    <ul>
+      <li><a href="#introduction-to-links-and-navigation">Introduction</a></li>
+      <li><a href="#types-of-links">Types of Links</a></li>
+      <li><a href="#basic-structure-of-links">Basic Structure of Links in HTML</a></li>
+      <li><a href="#types-of-links-implementation">Types of Links and Their Implementation</a></li>
+      <li><a href="#creating-navigation-menu">Creating a Navigation Menu</a></li>
+      <li><a href="#quiz-links-navigation">Quiz</a></li>
+      <li><a href="#assignment-navigation-system">Assignment</a></li>
+    </ul>
+  </div>
+</aside>

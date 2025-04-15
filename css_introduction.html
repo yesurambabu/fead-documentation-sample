@@ -1,0 +1,243 @@
+<div id="content">
+  <h2>CSS Introduction</h2>
+
+  <section id="what-is-css">
+    <h3>What is CSS?</h3>
+    <p>CSS stands for <strong>Cascading Style Sheets</strong>. It is a language used to describe the style of an HTML document. CSS controls the layout, colors, fonts, spacing, and overall presentation of web content.</p>
+    <p>CSS allows developers to separate content (HTML) from design (CSS), improving maintainability and flexibility.</p>
+  </section>
+
+  <section id="why-use-css">
+    <h3>Why Use CSS?</h3>
+    <ul>
+      <li>Separates content from design</li>
+      <li>Reduces code duplication across pages</li>
+      <li>Improves website maintainability</li>
+      <li>Enables consistent look and feel</li>
+      <li>Reduces file sizes for faster loading</li>
+    </ul>
+  </section>
+
+  <section id="css-syntax">
+    <h3>CSS Syntax</h3>
+    <p>CSS rules are made up of a selector and a declaration block. A declaration contains property and value pairs.</p>
+    <pre><code class="language-css">selector {
+  property: value;
+}</code></pre>
+    <p><strong>Example:</strong></p>
+    <pre><code class="language-css">p {
+  color: red;
+  font-size: 16px;
+}</code></pre>
+  </section>
+
+  <section id="types-of-css">
+    <h3>Types of CSS</h3>
+
+    <h4>Inline CSS</h4>
+    <p>Styles added directly to the HTML element using the <code>style</code> attribute.</p>
+    <pre><code class="language-html">&lt;p style="color: blue;"&gt;This is blue text.&lt;/p&gt;</code></pre>
+
+    <h4>Internal CSS</h4>
+    <p>Defined inside a <code>&lt;style&gt;</code> tag within the HTML <code>&lt;head&gt;</code>.</p>
+    <pre><code class="language-html">&lt;head&gt;
+  &lt;style&gt;
+    h1 {
+      color: green;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+
+    <h4>External CSS</h4>
+    <p>Linked using a separate <code>.css</code> file via the <code>&lt;link&gt;</code> tag.</p>
+    <pre><code class="language-html">&lt;head&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;</code></pre>
+  </section>
+
+  <section id="css-selectors">
+    <h3>CSS Selectors</h3>
+    <p>Selectors are used to target HTML elements for styling.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Selector</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Element</td>
+          <td>Selects all elements of a type</td>
+          <td><code>p {}</code></td>
+        </tr>
+        <tr>
+          <td>ID</td>
+          <td>Selects a specific element with an ID</td>
+          <td><code>#main {}</code></td>
+        </tr>
+        <tr>
+          <td>Class</td>
+          <td>Selects elements with a given class</td>
+          <td><code>.menu {}</code></td>
+        </tr>
+        <tr>
+          <td>Group</td>
+          <td>Targets multiple elements</td>
+          <td><code>h1, h2, p {}</code></td>
+        </tr>
+        <tr>
+          <td>Universal</td>
+          <td>Selects all elements</td>
+          <td><code>* {}</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="css-comments">
+    <h3>CSS Comments</h3>
+    <p>Comments help annotate the CSS code and are ignored by browsers.</p>
+    <pre><code class="language-css">/* This is a CSS comment */</code></pre>
+  </section>
+
+  <section id="css-colors">
+    <h3>CSS Colors</h3>
+    <p>Colors can be defined using names, hexadecimal values, or RGB.</p>
+    <pre><code class="language-css">color: red;
+color: #ff0000;
+color: rgb(255, 0, 0);</code></pre>
+  </section>
+
+  <section id="cascading-order">
+    <h3>Cascading Order</h3>
+    <p>When multiple rules apply to the same element, CSS follows this order:</p>
+    <ol>
+      <li>Inline styles (highest priority)</li>
+      <li>Internal styles</li>
+      <li>External styles</li>
+      <li>Browser default (lowest priority)</li>
+    </ol>
+  </section>
+
+  <section id="css-quiz">
+    <h3>Quiz</h3>
+    <ol>
+      <li>What does CSS stand for?</li>
+      <li>Which CSS type is placed directly inside an HTML tag?</li>
+      <li>Which selector targets elements with a specific class?</li>
+      <li>Write the correct syntax for setting text color to green.</li>
+      <li>True or False: You can apply multiple CSS rules to the same HTML element.</li>
+      <li>What tag is used in HTML to link an external CSS file?</li>
+      <li>Which CSS selector applies to all elements?</li>
+      <li>What’s the correct way to add a comment in CSS?</li>
+      <li>List two advantages of using CSS.</li>
+      <li>Which type of CSS has the highest priority?</li>
+    </ol>
+  </section>
+
+  <section id="quiz-answers">
+    <h3>Answers</h3>
+    <ol>
+      <li>Cascading Style Sheets</li>
+      <li>Inline CSS</li>
+      <li><code>.classname</code></li>
+      <li><code>color: green;</code></li>
+      <li>True</li>
+      <li><code>&lt;link&gt;</code></li>
+      <li><code>*</code></li>
+      <li><code>/* comment */</code></li>
+      <li>Separation of content/design, reusability</li>
+      <li>Inline CSS</li>
+    </ol>
+  </section>
+
+  <section id="assignment">
+    <h3>Assignment</h3>
+
+    <h4>Objective</h4>
+    <p>Create a simple webpage and apply CSS using all three types (inline, internal, and external).</p>
+
+    <h4>Task Instructions</h4>
+    <ul>
+      <li>Create a webpage named <code>css-intro.html</code>.</li>
+      <li>Use a heading, a paragraph, and an image in the HTML.</li>
+      <li>Style the heading with inline CSS (color and font).</li>
+      <li>Add internal CSS to change paragraph color and size.</li>
+      <li>Link an external CSS file to style the image (width and border).</li>
+    </ul>
+
+    <h4>Submission Guidelines</h4>
+    <ul>
+      <li>Submit both <code>css-intro.html</code> and <code>style.css</code>.</li>
+      <li>Use semantic structure and indentation.</li>
+    </ul>
+  </section>
+
+  <section id="assignment-solution" class="last-item">
+    <h3>Assignment Solution</h3>
+  
+    <h4>HTML File: <code>css-intro.html</code></h4>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+  &lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;CSS Introduction Assignment&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;style&gt;
+      p {
+        color: #444;
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  
+    &lt;h1 style="color: darkblue; font-family: Arial, sans-serif;"&gt;Welcome to CSS Styling&lt;/h1&gt;
+  
+    &lt;p&gt;This is a sample paragraph demonstrating internal CSS for text styling. 
+    CSS makes websites beautiful and maintainable.&lt;/p&gt;
+  
+    &lt;img src="example.jpg" alt="Example Image" class="styled-img"&gt;
+  
+  &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+  
+    <h4>CSS File: <code>style.css</code></h4>
+    <pre><code class="language-css">.styled-img {
+    width: 300px;
+    border: 2px solid #888;
+    border-radius: 5px;
+  }</code></pre>
+  
+    <h4>Notes</h4>
+    <ul>
+      <li>The heading uses <strong>inline CSS</strong> for color and font.</li>
+      <li>The paragraph is styled using <strong>internal CSS</strong> defined in a <code>&lt;style&gt;</code> block.</li>
+      <li>The image is styled using <strong>external CSS</strong> linked via <code>style.css</code>.</li>
+    </ul>
+  </section>
+  
+
+</div>
+
+<aside id="right-sidebar">
+  <div>
+    <h3>In this Article</h3>
+    <ul>
+      <li><a href="#what-is-css">What is CSS?</a></li>
+      <li><a href="#why-use-css">Why Use CSS?</a></li>
+      <li><a href="#css-syntax">CSS Syntax</a></li>
+      <li><a href="#types-of-css">Types of CSS</a></li>
+      <li><a href="#css-selectors">CSS Selectors</a></li>
+      <li><a href="#css-comments">CSS Comments</a></li>
+      <li><a href="#css-colors">CSS Colors</a></li>
+      <li><a href="#cascading-order">Cascading Order</a></li>
+      <li><a href="#css-quiz">Quiz</a></li>
+      <li><a href="#quiz-answers">Answers</a></li>
+      <li><a href="#assignment">Assignment</a></li>
+    </ul>
+  </div>
+</aside>

@@ -1,0 +1,190 @@
+<div id="content">
+  <h2>CSS Animation</h2>
+
+  <section id="css-animation">
+    <h3>Introduction</h3>
+
+    <p>CSS animations allow the transition of HTML elements from one style configuration to another. They are defined using keyframes and applied using the <code>animation</code> property.</p>
+
+    <h4>Objective</h4>
+    <p>Understand how to animate HTML elements using CSS properties like <code>@keyframes</code>, <code>animation-name</code>, <code>animation-duration</code>, <code>animation-delay</code>, and others.</p>
+
+    <h4>Basic Syntax</h4>
+    <pre><code class="language-css">@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.box {
+  animation-name: slideIn;
+  animation-duration: 2s;
+}</code></pre>
+
+    <h4>Common Animation Properties</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>animation-name</td>
+          <td>Name of the <code>@keyframes</code> to apply.</td>
+        </tr>
+        <tr>
+          <td>animation-duration</td>
+          <td>Specifies how long the animation should take to complete one cycle.</td>
+        </tr>
+        <tr>
+          <td>animation-delay</td>
+          <td>Delay before the animation starts.</td>
+        </tr>
+        <tr>
+          <td>animation-iteration-count</td>
+          <td>Number of times the animation should repeat (or <code>infinite</code>).</td>
+        </tr>
+        <tr>
+          <td>animation-direction</td>
+          <td>Direction of animation (normal, reverse, alternate, alternate-reverse).</td>
+        </tr>
+        <tr>
+          <td>animation-timing-function</td>
+          <td>Speed curve of the animation (ease, linear, ease-in, etc.).</td>
+        </tr>
+        <tr>
+          <td>animation-fill-mode</td>
+          <td>How styles are applied before/after animation (none, forwards, backwards, both).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Example</h4>
+    <pre><code class="language-html">&lt;div class="animated-box"&gt;Animate Me!&lt;/div&gt;</code></pre>
+
+    <pre><code class="language-css">@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animated-box {
+  width: 150px;
+  height: 150px;
+  background-color: tomato;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}</code></pre>
+
+  </section>
+
+  <section id="quiz">
+    <h3>Quiz</h3>
+    <ol>
+      <li>Which property defines the name of the keyframes?<br>
+        a) animation-name<br>
+        b) animation-duration<br>
+        c) animation-fill-mode<br>
+        d) animation-delay
+      </li>
+      <li>Which value of <code>animation-iteration-count</code> makes the animation run forever?<br>
+        a) 0<br>
+        b) 1<br>
+        c) infinite<br>
+        d) forever
+      </li>
+      <li>What does <code>animation-delay</code> do?<br>
+        a) Speeds up the animation<br>
+        b) Delays animation start<br>
+        c) Reverses animation<br>
+        d) Removes animation
+      </li>
+      <li>Which property controls the direction in which the animation runs?<br>
+        a) animation-fill-mode<br>
+        b) animation-direction<br>
+        c) animation-timing-function<br>
+        d) animation-delay
+      </li>
+      <li>What is the purpose of <code>@keyframes</code> in CSS?<br>
+        a) Set up transitions<br>
+        b) Create animations<br>
+        c) Delay animation<br>
+        d) Group CSS properties
+      </li>
+    </ol>
+  </section>
+
+  <section id="quiz-answers">
+    <h3>Quiz Answers</h3>
+    <ol>
+      <li>a) animation-name</li>
+      <li>c) infinite</li>
+      <li>b) Delays animation start</li>
+      <li>b) animation-direction</li>
+      <li>b) Create animations</li>
+    </ol>
+  </section>
+
+  <section id="assignment">
+    <h3>Assignment</h3>
+    <p>Create a webpage with a div that animates using <code>animation</code> properties:</p>
+    <ul>
+      <li>Define a <code>@keyframes</code> animation that changes background color from blue to green.</li>
+      <li>Apply this animation to a div with 200px width and 200px height.</li>
+      <li>Set duration to 3 seconds, delay of 1 second, and make it repeat 2 times.</li>
+      <li>Ensure the final color remains visible after animation completes.</li>
+    </ul>
+  </section>
+
+  <section id="assignment-answer" class="last-item">
+    <h3>Assignment Answer</h3>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;CSS Animation Assignment&lt;/title&gt;
+  &lt;style&gt;
+    @keyframes colorChange {
+      from { background-color: blue; }
+      to { background-color: green; }
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      animation-name: colorChange;
+      animation-duration: 3s;
+      animation-delay: 1s;
+      animation-iteration-count: 2;
+      animation-fill-mode: forwards;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="box"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  </section>
+
+</div>
+
+<aside id="right-sidebar">
+  <div>
+    <h3>In this Article</h3>
+    <ul>
+      <li><a href="#css-animation">CSS Animation</a></li>
+      <li><a href="#quiz">Quiz</a></li>
+      <li><a href="#quiz-answers">Quiz Answers</a></li>
+      <li><a href="#assignment">Assignment</a></li>
+      <li><a href="#assignment-answer">Assignment Answer</a></li>
+    </ul>
+  </div>
+</aside>

@@ -1,0 +1,325 @@
+<div id="content">
+  <h2>Loops</h2>
+
+  <section id="introduction-to-loops">
+    <h3>Introduction</h3>
+    <p>Loops in JavaScript allow you to execute a block of code multiple times. They are useful for iterating over arrays, objects, and performing repetitive tasks efficiently.</p>
+  </section>
+
+  <section id="types-of-loops-in-javascript">
+    <h3>Types of Loops in JavaScript</h3>
+    <p>JavaScript provides several types of loops:</p>
+    <ul>
+      <li>For Loop</li>
+      <li>While Loop</li>
+      <li>Do-While Loop</li>
+      <li>For-In Loop (used for objects)</li>
+      <li>For-Of Loop (used for arrays and iterable objects)</li>
+    </ul>
+  </section>
+
+  <section id="for-loop">
+    <h3>1. for Loop</h3>
+    <h4>Syntax</h4>
+    <pre><code class="language-js">for (initialization; condition; increment/decrement) {
+    // Code to execute
+}</code></pre>
+
+    <h4>Example</h4>
+    <pre><code class="language-js">for (let i = 1; i <= 5; i++) {
+    console.log("Iteration " + i);
+}</code></pre>
+
+    <h4>Explanation</h4>
+    <ul>
+      <li>Initialization: let i = 1; (Loop starts with i = 1)</li>
+      <li>Condition: i <= 5; (Loop runs while this is true)</li>
+      <li>Increment: i++ (Increases i by 1 in each iteration)</li>
+    </ul>
+
+    <h4>Output</h4>
+    <pre><code class="language-js">Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5</code></pre>
+
+    <h4>Loop with Array</h4>
+    <pre><code class="language-js">let fruits = ["Apple", "Banana", "Mango"];
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}</code></pre>
+  </section>
+
+  <section id="while-loop">
+    <h3>2. while Loop</h3>
+    <h4>Explanation</h4>
+    A while loop is used when the number of iterations is not known beforehand. It continues as long as the condition remains true.
+
+    <h4>Syntax</h4>
+    <pre><code class="language-js">while (condition) {
+    // Code to execute
+}</code></pre>
+
+    <h4>Example</h4>
+    <pre><code class="language-js">let count = 1;
+while (count <= 5) {
+    console.log("Count: " + count);
+    count++;
+}</code></pre>
+
+    <h4>Explanation</h4>
+    <ul>
+      <li>The loop checks count <= 5 before each iteration.</li>
+      <li>If the condition is true, the loop runs and increments count.</li>
+    </ul>
+
+    <h4>Output</h4>
+    <pre><code class="language-js">Count: 1
+Count: 2
+Count: 3
+Count: 4
+Count: 5</code></pre>
+  </section>
+
+  <section id="do-while-loop">
+    <h3>3. do-while Loop</h3>
+    <h4>Explanation</h4>
+    A do-while loop is similar to a while loop, but it guarantees at least one execution, even if the condition is false.
+
+    <h4>Syntax</h4>
+    <pre><code class="language-js">do {
+    // Code to execute
+} while (condition);</code></pre>
+
+    <h4>Example</h4>
+    <pre><code class="language-js">let num = 1;
+do {
+    console.log("Number: " + num);
+    num++;
+} while (num <= 5);</code></pre>
+
+    <h4>Explanation</h4>
+    <ul>
+      <li>The code inside the do block runs once before checking the condition.</li>
+      <li>If the condition is true, it continues looping.</li>
+    </ul>
+
+    <h4>Output</h4>
+    <pre><code class="language-js">Number: 1
+Number: 2
+Number: 3
+Number: 4
+Number: 5</code></pre>
+  </section>
+
+  <section id="for-in-loop">
+    <h3>4. for-in Loop (Used for Objects)</h3>
+    <h4>Syntax</h4>
+    <pre><code class="language-js">for (key in object) {
+    // Code to execute
+}</code></pre>
+
+    <h4>Example</h4>
+    <pre><code class="language-js">let student = { name: "John", age: 20, grade: "A" };
+
+for (let key in student) {
+    console.log(key + ": " + student[key]);
+}</code></pre>
+
+    <h4>Output</h4>
+    <pre><code class="language-js">name: John
+age: 20
+grade: A</code></pre>
+  </section>
+
+  <section id="for-of-loop">
+    <h3>5. for-of Loop (Used for Arrays and Iterables)</h3>
+    <h4>Syntax</h4>
+    <pre><code class="language-js">for (variable of iterable) {
+    // Code to execute
+}</code></pre>
+
+    <h4>Example</h4>
+    <pre><code class="language-js">let colors = ["Red", "Green", "Blue"];
+
+for (let color of colors) {
+    console.log(color);
+}</code></pre>
+
+    <h4>Output</h4>
+    <pre><code class="language-js">Red
+Green
+Blue</code></pre>
+  </section>
+
+  <section id="loop-control-statements">
+    <h3>Loop Control Statements</h3>
+
+    <h4>1. break Statement</h4>
+    <p>Used to exit a loop before it finishes.</p>
+    <pre><code class="language-js">for (let i = 1; i <= 5; i++) {
+    if (i === 3) {
+        break;
+    }
+    console.log(i);
+}</code></pre>
+    <h4>Output</h4>
+    <pre><code class="language-js">1
+2</code></pre>
+
+    <h4>2. continue Statement</h4>
+    <p>Skips the current iteration and moves to the next.</p>
+    <pre><code class="language-js">for (let i = 1; i <= 5; i++) {
+    if (i === 3) {
+        continue;
+    }
+    console.log(i);
+}</code></pre>
+    <h4>Output</h4>
+    <pre><code class="language-js">1
+2
+4
+5</code></pre>
+  </section>
+
+  <section id="comparison-of-loops">
+    <h3>Comparison of Loops</h3>
+    <table>
+      <tr>
+        <th>Loop Type</th>
+        <th>Best Used When</th>
+      </tr>
+      <tr>
+        <td>for</td>
+        <td>When the number of iterations is known</td>
+      </tr>
+      <tr>
+        <td>while</td>
+        <td>When the number of iterations is unknown</td>
+      </tr>
+      <tr>
+        <td>do-while</td>
+        <td>When you need at least one execution</td>
+      </tr>
+      <tr>
+        <td>for-in</td>
+        <td>When iterating over object properties</td>
+      </tr>
+      <tr>
+        <td>for-of</td>
+        <td>When iterating over array elements</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="conclusion">
+    <h3>Conclusion</h3>
+    <ul>
+      <li>Loops are essential for performing repetitive tasks in JavaScript.</li>
+      <li>Use <code>for</code> loops when the number of iterations is known.</li>
+      <li><code>while</code> and <code>do...while</code> loops are useful when the condition depends on dynamic input or logic.</li>
+      <li><code>for...in</code> is ideal for iterating over object properties.</li>
+      <li><code>break</code> and <code>continue</code> allow for more control over loop execution.</li>
+    </ul>
+  </section>
+
+  <section id="quiz-questions">
+    <h3>Quiz Questions</h3>
+    <ol>
+      <li>Which loop will always execute at least once?<br>a) for loop<br>b) while loop<br>c) do-while loop<br>d) for-in loop</li>
+      <li>What is the output of this code?<br><pre><code class="language-js">for (let i = 0; i < 3; i++) {
+    console.log(i);
+}</code></pre>a) 1, 2, 3<br>b) 0, 1, 2<br>c) 0, 1, 2, 3<br>d) 0, 1, 2, 3, 4</li>
+      <li>What will happen in this while loop?<br><pre><code class="language-js">let x = 5;
+while (x > 0) {
+    console.log(x);
+}</code></pre>a) It will print 5, 4, 3, 2, 1<br>b) It will print 5 infinitely<br>c) It will print 0, 1, 2, 3, 4, 5<br>d) It will throw an error</li>
+      <li>Which statement is used to exit a loop immediately?<br>a) continue<br>b) break<br>c) return<br>d) stop</li>
+      <li>What does continue do in a loop?<br>a) Exits the loop<br>b) Skips the current iteration<br>c) Jumps to the next loop<br>d) Restarts the loop</li>
+      <li>What does a for-in loop iterate over?<br>a) Arrays<br>b) Objects<br>c) Functions<br>d) Numbers</li>
+      <li>What is the output?<br><pre><code class="language-js">let student = { name: "Alice", age: 20 };
+for (let key in student) {
+    console.log(key);
+}</code></pre>a) "Alice", 20<br>b) "name", "age"<br>c) Error<br>d) undefined</li>
+      <li>What will this code output?<br><pre><code class="language-js">let colors = ["Red", "Green", "Blue"];
+for (let color of colors) {
+    console.log(color);
+}</code></pre>a) Red Green Blue<br>b) 0 1 2<br>c) undefined<br>d) Error</li>
+      <li>Can a for-in loop be used to iterate over an array?<br>a) Yes<br>b) No</li>
+      <li>What type of loop is best for iterating over an array?<br>a) for<br>b) for-in<br>c) for-of<br>d) while</li>
+    </ol>
+  </section>
+
+  <section id="quiz-answers">
+    <h3>Answers</h3>
+    <ol>
+      <li>c) do-while loop</li>
+      <li>b) 0, 1, 2</li>
+      <li>b) It will print 5 infinitely</li>
+      <li>b) break</li>
+      <li>b) Skips the current iteration</li>
+      <li>b) Objects</li>
+      <li>b) "name", "age"</li>
+      <li>a) Red Green Blue</li>
+      <li>a) Yes</li>
+      <li>c) for-of</li>
+    </ol>
+  </section>
+
+  <section id="assignment">
+    <h3>Assignment</h3>
+    <ol>
+      <li>Write a for loop that prints numbers from 1 to 20, skipping multiples of 3 using continue.</li>
+      <li>Create a while loop that prints even numbers from 1 to 10.</li>
+      <li>Write a program that keeps asking the user for a number until they enter a number greater than 10 (Use do-while).</li>
+    </ol>
+  </section>
+
+  <section id="assignment-solution" class="last-item">
+    <h3>Assignment Answers</h3>
+
+    <p>1. Write a for loop that prints numbers from 1 to 20, skipping multiples of 3 using continue.</p>
+        <pre><code class="language-js">for (let i = 1; i <= 20; i++) {
+  if (i % 3 === 0) {
+      continue;
+  }
+  console.log(i);
+}</code></pre>
+
+    <p>2. Create a while loop that prints even numbers from 1 to 10.</p>
+        <pre><code class="language-js">let num = 1;
+while (num <= 10) {
+  if (num % 2 === 0) {
+      console.log(num);
+  }
+  num++;
+}</code></pre>
+      
+    <p>3. Write a program that keeps asking the user for a number until they enter a number greater than 10 (Use do-while).</p>
+        <pre><code class="language-js">let number;
+do {
+    number = parseInt(prompt("Enter a number greater than 10:"));
+} while (number <= 10);</code></pre>
+     
+  </section>
+</div>
+
+<aside id="right-sidebar">
+  <div>
+  <h3>In this Article</h3>
+  <ul>
+    <li><a href="#introduction-to-loops">Introduction to Loops</a></li>
+    <li><a href="#for-loop">for Loop</a></li>
+    <li><a href="#while-loop">while Loop</a></li>
+    <li><a href="#do-while-loop">do-while Loop</a></li>
+    <li><a href="#for-in-loop">for-in Loop (Used for Objects)</a></li>
+    <li><a href="#for-of-loop">for-of Loop (Used for Arrays and Iterables)</a></li>
+    <li><a href="#loop-control-statements">Loop Control Statements</a></li>
+    <li><a href="#comparison-of-loops">Comparison of Loops</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#quiz-questions">Quiz Questions</a></li>
+    <li><a href="#assignment">Assignment</a></li>
+  </ul>
+  </div>
+</aside>
